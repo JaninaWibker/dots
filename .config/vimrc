@@ -1,0 +1,96 @@
+" .vimrc
+
+" how many lines of history VIM needs to remember
+set history=500
+
+"use system clipboard
+set clipboard=unnamedplus
+
+" filetype plugins
+filetype plugin on
+filetype indent on
+
+" autoread
+set autoread
+
+" sudo save file
+command W w !sudo tee % > /dev/null
+
+" something cursor and line related
+set so=7
+
+" ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+  set wildignore+=.git\*,.hg\*,.svn\*
+else
+  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
+
+" show current position and some line number / line stuff
+set ruler
+set number
+
+" height of command bar
+set cmdheight=1
+
+" search stuff
+set ignorecase
+set smartcase
+
+set hlsearch
+set incsearch
+
+" don't redraw while executing macros
+set lazyredraw
+
+" regex
+set magic
+
+" show matching brackets
+set showmatch
+
+" no bell sounds
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" enable syntax highlighting
+syntax enable
+
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+" text, tab, indent related
+
+set expandtab
+set smarttab
+set shiftwidth=2
+set tabstop=2
+
+" auto linebreak on 500 chars
+set lbr
+set tw=500
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+" status line
+set statusline=\ %l:%c\ %{HasPaste()}%F%m%r%h\ %w\ %r%{getcwd()}%h
+
+" editing mapping
+nmap <M-j> mz:m+<cr>`z
+nmap <M-k> mz:m-2<cr>`z
+vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+" helper functions
+function! HasPaste()
+  if &paste
+    return 'PASTE MODE  '
+  endif
+  return ''
+endfunction
