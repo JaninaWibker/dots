@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+if(process.argv[2] == null || process.argv[2] == undefined) {
+  console.log('no argument given')
+}
+
+let gen_hash = (node, path, name, length = 16) => {
+  let n = new Date().valueOf().toString(), result = '', p = 0, chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  for(let i = length; i > 0; --i) {
+    result += ((i & 1) && n.charAt(p) ? n.charAt(p) : chars[Math.floor(Math.random() * chars.length)])
+    if(i & 1) p++
+  }
+  return result
+}
+
+
+let functions = {
+  gen_hash: gen_hash
+}
+
+Object.keys(functions).forEach((item) => {
+  if(process.argv[2] === item) {
+    console.log(functions[item](...process.argv))
+  } else {
+    console.log('program not found')
+  }
+})
