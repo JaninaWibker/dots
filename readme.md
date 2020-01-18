@@ -2,6 +2,8 @@
 
 These dotfiles are a mixture of dotfiles across both Linux and Mac OS systems, some things only work on one but not the other. This repository is best used as a git bare repository ([see this](https://www.atlassian.com/git/tutorials/dotfiles)).
 
+![Screenshot](https://i.imgur.com/HA0qGcK.png)
+
 ## What’s included?
 
 - dunst config
