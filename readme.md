@@ -22,7 +22,7 @@ These dotfiles are a mixture of dotfiles across both Linux and Mac OS systems, s
 
 ## What’s not included?
 
-My awesome config, as it’s located in it’s own git repo (and submodule) [here](https://github.com/JannikWikber/awesome-config).
+My awesome config, as it’s located in it’s own git repo (and submodule) [here](https://github.com/JannikWibker/awesome-config).
 
 ## What to install (incl. optional)?
 
