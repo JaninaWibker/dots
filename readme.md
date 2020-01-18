@@ -38,7 +38,10 @@ My awesome config, as it’s located in it’s own git repo (and submodule) [her
 
 ## Other notes
 
+
 ### VS Code
+
+VS Code configs are split between linux and mac, the linux files are inside "config/Code - OSS/User/" while the mac files are inside ".vscode-symlink/" (this is because of how the settings are implemented on my mac installation). The files may be somewhat out of sync, also the reason behind the split is different keybinds (because mac os has an extra modifier with the cmd key), so they are different by design.
 
 > important packages are in bold
 
