@@ -1,0 +1,33 @@
+{
+    "atomKeymap.promptV3Features": true,
+    "editor.tabSize": 2,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "markdown-preview-enhanced.enableTypographer": true,
+    "markdown-preview-enhanced.frontMatterRenderingOption": "code block",
+    "markdown-preview-enhanced.printBackground": true,
+    "workbench.colorTheme": "Activate SCARLET protocol (beta)",
+    "clock.dateFormat": "HH:MM (dd.mm)",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+    "markdown-preview-enhanced.scrollSync": false,
+    "window.zoomLevel": 0,
+    "workbench.statusBar.feedback.visible": false,
+    "git.inputValidationLength": 88,
+    "liveshare.featureSet": "insiders",
+    "editor.suggest.maxVisibleSuggestions": 6,
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.quickSuggestionsDelay": 100,
+    "editor.parameterHints.enabled": true,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.minimap.enabled": true,
+    "breadcrumbs.enabled": false,
+    "hexdump.littleEndian": false,
+    "hexdump.nibbles": 4,
+    "workbench.activityBar.visible": true,
+    "extensions.ignoreRecommendations": true,
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "files.associations": {
+        "*.ne": "bnf"
+    }
+}
