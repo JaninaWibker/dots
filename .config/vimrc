@@ -6,6 +6,15 @@ set history=500
 "use system clipboard
 set clipboard=unnamedplus
 
+" if using alacritty this helps with mouse support
+set ttymouse=sgr
+
+" general mouse stuff
+set mouse=a
+
+" disable timeout for escape sequences
+set timeoutlen=1000 ttimeoutlen=0
+
 " filetype plugins
 filetype plugin on
 filetype indent on
