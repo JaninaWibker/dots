@@ -1,0 +1,27 @@
+[submodule ".config/vim/pack/themes/dracula"]
+	path = .config/vim/pack/themes/dracula
+	url = https://github.com/dracula/vim
+[submodule ".config/vim/pack/plugins/start/nerdtree"]
+	path = .config/vim/pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule ".config/vim/pack/plugins/start/nerdtree-git-plugin"]
+	path = .config/vim/pack/plugins/start/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule ".config/vim/pack/plugins/start/vim-airline"]
+	path = .config/vim/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule ".config/vim/pack/plugins/start/vim-ctrlspace"]
+	path = .config/vim/pack/plugins/start/vim-ctrlspace
+	url = https://github.com/vim-ctrlspace/vim-ctrlspace
+[submodule ".config/vim/pack/syntax/start/nim.vim"]
+	path = .config/vim/pack/syntax/start/nim.vim
+	url = https://github.com/zah/nim.vim
+[submodule ".config/vim/pack/syntax/start/json"]
+	path = .config/vim/pack/syntax/start/json
+	url = https://github.com/elzr/vim-json
+[submodule ".config/vim/pack/syntax/start/js"]
+	path = .config/vim/pack/syntax/start/js
+	url = https://github.com/yuezk/vim-js
+[submodule ".config/vim/pack/syntax/start/jsx"]
+	path = .config/vim/pack/syntax/start/jsx
+	url = https://github.com/MaxMEllon/vim-jsx-pretty
