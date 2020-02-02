@@ -29,6 +29,9 @@ alias dotsa="dots add"
 alias dotsd="dots diff"
 alias dotsf="dots fetch"
 alias dotsg="dots merge"
+alias dotsdd="dots diff --staged"
+
+alias gdd="git diff --staged"
 
 # some random aliases
 alias c="pygmentize -O style=solarizeddark -f console256 -g"

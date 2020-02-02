@@ -64,11 +64,11 @@ command W w !sudo tee % > /dev/null
 set so=7
 
 " ignore compiled files
-set wildignore=*.o,*~,*.pyc
+set wildignore=*.o,*.so,*~,*.pyc
 if has("win16") || has("win32")
   set wildignore+=.git\*,.hg\*,.svn\*
 else
-  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,*.swp
 endif
 
 " show current position and some line number / line stuff
@@ -130,20 +130,46 @@ set wrap "Wrap lines
 " status line
 set statusline=\ %l:%c\ %{HasPaste()}%F%m%r%h\ %w\ %r%{getcwd()}%h
 
+
+" utility function
+function! HasPaste()
+  if &paste
+    return 'PASTE MODE  '
+  endif
+  return ''
+endfunction
+
 " editing mapping
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
+" doesn't seem to work sadly (something related to alt key not being recognized correctly)
 nmap <A-q> :bp<CR>
 
+" switch between idek what they are, it's like backwards/forwards buttons
 map <C-Left> <Esc>:bprev<CR>
 map <C-Right> <Esc>:bnext<CR>
 
-" switch to left / right split (mostly for Nerd Tree)
+" switch to the next tab / the previous tab
+map <C-Up> <Esc>:tabprev<CR>
+map <C-Down> <Esc>:tabnext<CR>
+
+" These shortcuts might seem like an anti-pattern as they use the arrow keys
+" but these are actually intended to be used with a keyboard layout that
+" maps the key right of the spacebar + hjkl to the arrow keys. This means
+" that these shortcuts actually are really close to the ones below for different
+" splits / panes as the only difference is additionally hitting the key right
+" of the spacebar (this key is either right alt or right control depending on
+" layout).
+
+
+" switch to left / right / top / bottom split (mostly for Nerd Tree)
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+map <C-j> <C-W>j
+map <C-k> <C-W>k
 
 " apparently fixes something with 
 autocmd FileType nerdtree noremap <buffer> <A-q> <nop>
@@ -175,9 +201,8 @@ map <C-n> :NERDTreeToggle<CR>
 " delete current file
 " helper functions
 
-function! HasPaste()
-  if &paste
-    return 'PASTE MODE  '
-  endif
-  return ''
-endfunction
+" airline stuff
+let g:airline_theme = 'dracula'
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#branch#enabled = 1
+let g:airline_section_y = ''
