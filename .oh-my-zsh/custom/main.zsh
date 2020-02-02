@@ -6,7 +6,7 @@ export PRJ="${HOME}/Desktop/projects"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 ### vim
-export VIMINIT="source $XDG_CONFIG_HOME/vimrc"
+export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
 
 export EDITOR="/usr/bin/vim"
 

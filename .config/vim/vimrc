@@ -9,6 +9,9 @@ set clipboard=unnamedplus
 " if using alacritty this helps with mouse support
 set ttymouse=sgr
 
+" required for ctrl-space
+set hidden
+
 " general mouse stuff
 set mouse=a
 
@@ -18,6 +21,38 @@ set timeoutlen=1000 ttimeoutlen=0
 " filetype plugins
 filetype plugin on
 filetype indent on
+
+" how many lines of history VIM needs to remember
+set history=500
+
+"use system clipboard
+set clipboard=unnamedplus
+
+" if using alacritty this helps with mouse support
+set ttymouse=sgr
+
+" general mouse stuff
+set mouse=a
+
+" disable timeout for escape sequences
+set timeoutlen=1000 ttimeoutlen=0
+
+" filetype plugins
+filetype plugin on
+filetype indent on
+
+set runtimepath+=$XDG_CONFIG_HOME/vim/
+set packpath+=$XDG_CONFIG_HOME/vim/
+let g:dracula_colorterm = 0
+packadd! dracula
+packadd! nerdtree
+packadd! nerdtree-git-plugin
+
+
+colorscheme dracula
+
+" this may improve the quality of colors or may make it worse, depends. But worth trying out
+" set termguicolors
 
 " autoread
 set autoread
@@ -43,12 +78,15 @@ set number
 " height of command bar
 set cmdheight=1
 
+" swap file
+set noswapfile
+
 " search stuff
 set ignorecase
 set smartcase
 
-set hlsearch
-set incsearch
+set hlsearch " highlight matches
+set incsearch " search as characters are entered
 
 " don't redraw while executing macros
 set lazyredraw
@@ -78,6 +116,8 @@ set expandtab
 set smarttab
 set shiftwidth=2
 set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " auto linebreak on 500 chars
 set lbr
@@ -96,7 +136,45 @@ nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
+nmap <A-q> :bp<CR>
+
+map <C-Left> <Esc>:bprev<CR>
+map <C-Right> <Esc>:bnext<CR>
+
+" switch to left / right split (mostly for Nerd Tree)
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" apparently fixes something with 
+autocmd FileType nerdtree noremap <buffer> <A-q> <nop>
+
+" nerdtree stuff
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsable = '▾'
+
+let g:NERDTreeIndicatorMapCustom = {
+  \ "Modified"  : "*",
+  \ "Staged"    : "+",
+  \ "Untracked" : "-",
+  \ "Renamed"   : "➜",
+  \ "Unmerged"  : "═",
+  \ "Deleted"   : "✖",
+  \ "Dirty"     : "✗",
+  \ "Clean"     : "✔︎",
+  \ "Ignored"   : "_",
+  \ "Unknown"   : "?",
+  \ }
+
+let NERDTreeQuitOnOpen = 1
+
+map <C-n> :NERDTreeToggle<CR>
+
+" create new file in same directory as current file
+" nmap <C-N> :wincmd w<CR>ma
+
+" delete current file
 " helper functions
+
 function! HasPaste()
   if &paste
     return 'PASTE MODE  '
