@@ -25,3 +25,9 @@
 [submodule ".config/vim/pack/syntax/start/jsx"]
 	path = .config/vim/pack/syntax/start/jsx
 	url = https://github.com/MaxMEllon/vim-jsx-pretty
+[submodule ".config/vim/pack/syntax/start/nim"]
+	path = .config/vim/pack/syntax/start/nim
+	url = https://github.com/zah/nim.vim
+[submodule ".config/vim/pack/themes/start/dracula"]
+	path = .config/vim/pack/themes/start/dracula
+	url = https://github.com/dracula/vim
