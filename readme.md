@@ -15,6 +15,7 @@ These dotfiles are a mixture of dotfiles across both Linux and Mac OS systems, s
 - st config / fork / build
 - tmux config
 - iterm2 config / theme (Default, Snazzy, Cyberpunk; currently using Default)
+- alacritty config
 - vscode settings (and list of installed packages)
 - [yabai](https://github.com/koekeishiya/yabai) & [skhd](https://github.com/koekeishiya/skhd) config
 - [karabiner elements](https://pqrs.org/osx/karabiner/) config
@@ -34,7 +35,7 @@ My awesome config, as it’s located in it’s own git repo (and submodule) [her
 
 **On Mac OS** specifically install Karabiner Elements, iTerm2, TablePlus, Notion, Anybar, LuLu, VEEER, IINA, Tunnelblick, puuush,, Übersicht, yabai, skhd, Discovery.
 
-**On Linux** specifically install dunst, rofi, zathura, st / lxterminal, maybe awesome wm, xclip (and similar), Flameshot, Notion (using Lotion or some other method), Font Manager, Color Picker, InkScape, Gimp, Thunar / Nautilus, widevine related stuff (for chrome/chromium/vivaldi).
+**On Linux** specifically install dunst, rofi, zathura, st / alacritty / lxterminal, maybe awesome wm, xclip (and similar), Flameshot, Notion (using Lotion or some other method), Font Manager, Color Picker, InkScape, Gimp, Thunar / Nautilus, widevine related stuff (for chrome/chromium/vivaldi).
 
 ## Other notes
 
@@ -62,6 +63,7 @@ VS Code configs are split between linux and mac, the linux files are inside "con
 
 - **Markdown Preview Enhanced**
 - **hexdump for VSCode**
+- **better comments**
 - LaTeX Workshop
 - Live Share
 - Live Share Chat
@@ -79,7 +81,5 @@ VS Code configs are split between linux and mac, the linux files are inside "con
 - gnuplot
 - haskell syntax highlighting
 - Language Support for Java by RedHat
-- language-stylus
 - **Lua**
 - vimL
-- vue
