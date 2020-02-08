@@ -25,6 +25,9 @@ export PATH="$PATH:/home/jannik/.gem/ruby/2.6.0"
 ### GO PATH THINGY
 export PATH="$PATH:/home/jannik/go/bin"
 
+### Script thingy
+export PATH="$PATH:/home/jannik/scripts"
+
 ### NVM
 export NVM_DIR="/Users/pingraham/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

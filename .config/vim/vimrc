@@ -206,3 +206,25 @@ let g:airline_theme = 'dracula'
 let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#branch#enabled = 1
 let g:airline_section_y = ''
+
+let g:airline_mode_map = {
+  \ 'n': 'normal',
+  \ 'no': 'n·op pending',
+  \ 'v': 'visual',
+  \ 'V': 'v·line',
+  \ '': 'v·block',
+  \ 's': 'select',
+  \ 'S': 's·line',
+  \ '': 's·block',
+  \ 'i': 'insert',
+  \ 'R': 'replace',
+  \ 'Rv': 'v·replace',
+  \ 'c': 'command',
+  \ 'cv': 'idk (cv)',
+  \ 'ce': 'idk (ce)',
+  \ 'r': 'prompt',
+  \ 'rm': 'more',
+  \ 'r?': 'confirm',
+  \ '!': 'shell',
+  \ 't': 'terminal',
+  \ }
