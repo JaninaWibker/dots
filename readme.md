@@ -2,7 +2,11 @@
 
 These dotfiles are a mixture of dotfiles across both Linux and Mac OS systems, some things only work on one but not the other. This repository is best used as a git bare repository ([see this](https://www.atlassian.com/git/tutorials/dotfiles)).
 
-![Screenshot](https://i.imgur.com/hEFKuEZ.png)
+![Screenshot - Linux](https://i.imgur.com/hEFKuEZ.png)
+<!--suppress HtmlDeprecatedAttribute --><p align="center">Linux</p>
+
+![Screenshot - macOS](https://i.imgur.com/gn352UH.png)
+<!--suppress HtmlDeprecatedAttribute --><p align="center">macOS</p>
 
 ## What’s included?
 
