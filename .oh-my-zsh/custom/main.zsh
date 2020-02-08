@@ -20,16 +20,16 @@ export JANNIK="/Volumes/JANNIK"
 eval $(luarocks path --bin)
 
 ### RUBY GEMS PATH THINGY
-export PATH="$PATH:/home/jannik/.gem/ruby/2.6.0"
+export PATH="$PATH:$HOME/.gem/ruby/2.6.0"
 
 ### GO PATH THINGY
-export PATH="$PATH:/home/jannik/go/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 ### Script thingy
-export PATH="$PATH:/home/jannik/scripts"
+export PATH="$PATH:$HOME/scripts"
 
 ### Program thingies
-export PATH="$PATH:/home/jannik/programs:/home/jannik/programs/links"
+export PATH="$PATH:$HOME/programs:$HOME/programs/links"
 
 ### NVM
 export NVM_DIR="/Users/pingraham/.nvm"
