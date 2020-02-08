@@ -5,7 +5,7 @@ These dotfiles are a mixture of dotfiles across both Linux and Mac OS systems, s
 ![Screenshot - Linux](https://i.imgur.com/hEFKuEZ.png)
 <!--suppress HtmlDeprecatedAttribute --><p align="center">Linux</p>
 
-![Screenshot - macOS](https://i.imgur.com/gn352UH.png)
+![Screenshot - macOS](https://i.imgur.com/gn350UH.png)
 <!--suppress HtmlDeprecatedAttribute --><p align="center">macOS</p>
 
 ## What’s included?
