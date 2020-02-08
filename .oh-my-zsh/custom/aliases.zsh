@@ -1,5 +1,5 @@
 # for GNU ls command on Mac OS
-if [[ "$OSTYPE" == "darwin" ]]; then
+if [[ $OSTYPE == darwin* ]]; then
   alias ls='gls --color=auto'
   alias la='gls --color=auto -a'
   alias ll='gls --color=auto -lh'
@@ -41,7 +41,7 @@ alias gitstat='git log --shortstat | awk "/^ [0-9]/ { f += \$1; i += \$4; d+= \$
 alias sp="$HOME/programs/sp/sp"
 
 # battery stuff on Mac OS
-if [[ "$OSTYPE" == "darwin" ]]; then
+if [[ $OSTYPE == darwin* ]]; then
   alias battsrc="pmset -g batt | grep -Eo \"'(.*)'\" | grep --color=never -Eo \"([^']+)\""
   alias batt="pmset -g batt | grep --color=never -Eo '([0-9]{1,3})%'"
   alias battery='echo "$(battsrc): $(batt)"'
@@ -54,7 +54,7 @@ alias urlencode_json='xargs -0 node -e "console.log(encodeURIComponent(process.a
 alias urldecode_json='xargs -0 node -e "console.log(decodeURIComponent(process.argv[1]))"'
 
 # special aliases on Mac OS
-if [[ "$OSTYPE" == "darwin" ]]; then
+if [[ $OSTYPE == darwin* ]]; then
   # typora
   alias typora="open -a typora"
   # subl
