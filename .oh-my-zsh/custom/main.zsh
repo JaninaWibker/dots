@@ -28,6 +28,9 @@ export PATH="$PATH:/home/jannik/go/bin"
 ### Script thingy
 export PATH="$PATH:/home/jannik/scripts"
 
+### Program thingies
+export PATH="$PATH:/home/jannik/programs:/home/jannik/programs/links"
+
 ### NVM
 export NVM_DIR="/Users/pingraham/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
