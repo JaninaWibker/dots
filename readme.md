@@ -20,6 +20,7 @@ These dotfiles are a mixture of dotfiles across both Linux and Mac OS systems, s
 - tmux config
 - iterm2 config / theme (Default, Snazzy, Cyberpunk; currently using Default)
 - alacritty config
+- neofetch config & [custom build](https://github.com/JannikWibker/neofetch) ([überzug](https://github.com/seebye/ueberzug) support)
 - vscode settings (and list of installed packages)
 - [yabai](https://github.com/koekeishiya/yabai) & [skhd](https://github.com/koekeishiya/skhd) config
 - [karabiner elements](https://pqrs.org/osx/karabiner/) config
@@ -35,11 +36,11 @@ My awesome config, as it’s located in it’s own git repo (and submodule) [her
 
 > These are lists of applications I often use, some of these have config files in this repo, some don’t.
 
-**In general** install tmux, zsh, oh-my-zsh, zsh-completions, vim (newest version), git (newest version), VS-Code, SublimeText, Atom, Spotify, Chrome/Chromium, Vivaldi, Firefox, Insomnia, Discord, Typora, KDE-Connect, cloc, ffmpeg, gcc, gdb, gnuplot, jq, lua, nodejs, ruby, python, nano (newest version), wget, sqlite, mitm-proxy.
+**In general** install tmux, zsh, oh-my-zsh, zsh-completions, vim (newest version), git (newest version), VS-Code, SublimeText, Atom, Spotify, Chrome/Chromium, Vivaldi, Firefox, Insomnia, Discord, Typora, KDE-Connect, cloc, ffmpeg, gcc, gdb, gnuplot, jq, lua, nodejs, ruby, python, nano (newest version), wget, sqlite, neofetch, mitm-proxy.
 
 **On Mac OS** specifically install Karabiner Elements, iTerm2, TablePlus, Notion, Anybar, LuLu, VEEER, IINA, Tunnelblick, puuush,, Übersicht, yabai, skhd, Discovery.
 
-**On Linux** specifically install dunst, rofi, zathura, st / alacritty / lxterminal, maybe awesome wm, xclip (and similar), Flameshot, Notion (using Lotion or some other method), Font Manager, Color Picker, InkScape, Gimp, Thunar / Nautilus, widevine related stuff (for chrome/chromium/vivaldi).
+**On Linux** specifically install dunst, rofi, zathura, st / alacritty / lxterminal, überzug, maybe awesome wm, xclip (and similar), Flameshot, Notion (using Lotion or some other method), Font Manager, Color Picker, InkScape, Gimp, Thunar / Nautilus, widevine related stuff (for chrome/chromium/vivaldi).
 
 ## Other notes
 
