@@ -69,10 +69,10 @@ if ${use_color} ; then
 		fi
 	fi
 
-	if [[ ${EUID} == 0 ]] ; then
-		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
-	else
-		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+	if [[ ${EUID} == 0 ]] ; then # if root
+		PS1='\[\033[01;31m\][root\[\033[01;36m\] \W\[\033[01;31m\]]\#\[\033[00m\] '
+	else # if not root
+		PS1='\[\033[01;34m\]\u\[\033[01;36m\] \W\[\033[01;34m\]\[\033[00m\] '
 	fi
 
 	alias ls='ls --color=auto'
@@ -112,6 +112,12 @@ shopt -s expand_aliases
 
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
+
+# auto completion ignore case
+bind 'set completion-ignore-case on'
+# if ambiguous show all
+bind 'set show-all-if-ambiguous on'
+
 
 #
 # # ex - archive extractor

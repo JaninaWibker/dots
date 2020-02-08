@@ -31,3 +31,9 @@
 [submodule ".config/vim/pack/themes/start/dracula"]
 	path = .config/vim/pack/themes/start/dracula
 	url = https://github.com/dracula/vim
+[submodule ".config/vim/pack/plugins/start/vim-pencil"]
+	path = .config/vim/pack/plugins/start/vim-pencil
+	url = https://github.com/reedes/vim-pencil
+[submodule ".config/vim/pack/plugins/start/targets"]
+	path = .config/vim/pack/plugins/start/targets
+	url = https://github.com/wellle/targets.vim
