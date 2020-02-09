@@ -18,6 +18,9 @@ set mouse=a
 " disable timeout for escape sequences
 set timeoutlen=1000 ttimeoutlen=0
 
+" splits open at the bottom and right, unlike vim defaults
+set splitbelow splitright
+
 " filetype plugins
 filetype plugin on
 filetype indent on
@@ -154,6 +157,12 @@ vnoremap d "_d
 nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
+
+" allow entering spaces when in normal mode
+nnoremap <space> i<space><esc>
+" don't go into insert mode when using o/O to insert newlines (notice that they are swapped)
+nnoremap o O<esc>
+nnoremap O o<esc>
 
 " doesn't seem to work sadly (something related to alt key not being recognized correctly)
 nmap <A-q> :bp<CR>

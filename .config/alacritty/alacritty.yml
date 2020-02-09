@@ -97,7 +97,7 @@ window:
 # Some applications, like Emacs, rely on knowing about the width of a tab.
 # To prevent unexpected behavior in these applications, it's also required to
 # change the `it` value in terminfo when altering this setting.
-tabspaces: 4
+tabspaces: 2 
 
 # Font configuration
 font:
@@ -182,12 +182,72 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night Bright)
-colors:
+schemes:
+  dark: &dark
+    primary:
+      background: '0x000000'
+      foreground: '0x839496'
+
+    cursor:
+      text:   '0x000000'
+      cursor: '0xadd8e6'
+
+    normal:
+      black:    '0x000000'
+      red:      '0xdc322f'
+      green:    '0x859901'
+      yellow:   '0xb58901'
+      blue:     '0x268bd2'
+      magenta:  '0xd33682'
+      cyan:     '0x2aa198'
+      white:    '0xeee8d5'
+
+    bright:
+      black:    '0x002833'
+      red:      '0xcb4b16'
+      green:    '0x859901'
+      yellow:   '0xb58901'
+      blue:     '0x268bc2'
+      magenta:  '0xd33682'
+      cyan:     '0x93a1a1'
+      white:    '0xfdf6e3'
+
+
+  light: &light
+    primary:
+      background: '0xffffff'
+      foreground: '0x474c4d'
+
+    cursor:
+      text:   '0xffffff'
+      cursor: '0x13181a'
+
+    normal:
+      black:    '0xffffff'
+      red:      '0xdc322f'
+      green:    '0x859901'
+      yellow:   '0xb58901'
+      blue:     '0x268bd2'
+      magenta:  '0xd33682'
+      cyan:     '0x2aa198'
+      white:    '0x002b36'
+
+    bright:
+      black:    '0x7c9ea7'
+      red:      '0xa93503'
+      green:    '0x387d04'
+      yellow:   '0xa27b06'
+      blue:     '0x268bc2'
+      magenta:  '0xd33682'
+      cyan:     '0x1d726f'
+      white:    '0x073642'
+
+# Colors
+colors: *dark
   # Default colors
-  primary:
-    background: '0x000000'
-    foreground: '0x839496'
+  # primary:
+  #   background: '0x000000'
+  #   foreground: '0x839496'
 
     # Bright and dim foreground colors
     #
@@ -201,9 +261,9 @@ colors:
   #
   # Colors which should be used to draw the terminal cursor. If these are unset,
   # the cursor color will be the inverse of the cell color.
-  cursor:
-    text: '0x000000'
-    cursor: '0xadd8e6'
+  # cursor:
+  #   text: '0x000000'
+  #   cursor: '0xadd8e6'
 
   # Selection colors
   #
@@ -214,27 +274,27 @@ colors:
   #  text: '0xeaeaea'
   #  background: '0x404040'
 
-  # Normal colors
-  normal:
-    black:   '0x000000'
-    red:     '0xdc322f'
-    green:   '0x859901'
-    yellow:  '0xb58901'
-    blue:    '0x268bd2'
-    magenta: '0xd33682'
-    cyan:    '0x2aa198'
-    white:   '0xeee8d5'
+  # # Normal colors
+  # normal:
+  #   black:   '0x000000'
+  #   red:     '0xdc322f'
+  #   green:   '0x859901'
+  #   yellow:  '0xb58901'
+  #   blue:    '0x268bd2'
+  #   magenta: '0xd33682'
+  #   cyan:    '0x2aa198'
+  #   white:   '0xeee8d5'
 
-  # Bright colors
-  bright:
-    black:   '0x002833'
-    red:     '0xcb4b16'
-    green:   '0x859901'
-    yellow:  '0xb58901'
-    blue:    '0x268bc2'
-    magenta: '0xd33682'
-    cyan:    '0x93a1a1'
-    white:   '0xfdf6e3'
+  # # Bright colors
+  # bright:
+  #   black:   '0x002833'
+  #   red:     '0xcb4b16'
+  #   green:   '0x859901'
+  #   yellow:  '0xb58901'
+  #   blue:    '0x268bc2'
+  #   magenta: '0xd33682'
+  #   cyan:    '0x93a1a1'
+  #   white:   '0xfdf6e3'
 
   # Dim colors
   #
