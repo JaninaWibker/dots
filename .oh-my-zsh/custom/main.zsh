@@ -1,6 +1,16 @@
 ### Vi awesomeness
 bindkey -v
 export KEYTIMEOUT=1 # 0.1s
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word # just can't live without w, a and e emacs shortcuts tbh
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
+bindkey '^b' backward-char
+bindkey '^f' forward-char
+
+bindkey '^r' history-incremental-search-backward
 
 ### Emacs awesomeness
 #bindkey -e
