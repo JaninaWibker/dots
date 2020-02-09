@@ -1,4 +1,9 @@
-#source ~/Downloads/emsdk_portable/emsdk_env.sh  > /dev/null 2>&1
+### Vi awesomeness
+bindkey -v
+export KEYTIMEOUT=1 # 0.1s
+
+### Emacs awesomeness
+#bindkey -e
 
 ### Folders
 export PRJ="${HOME}/Desktop/projects"
