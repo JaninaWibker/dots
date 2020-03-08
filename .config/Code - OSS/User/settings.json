@@ -26,5 +26,10 @@
     "git.autofetch": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "java.configuration.checkProjectSettingsExclusions": false,
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "colorize.languages": [
+        "javascript",
+        "lua",
+      ]
 }

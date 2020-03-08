@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+if [[ $1 == "screen-off" ]]; then
+  betterlockscreen --off 5 -l dim
+else
+  betterlockscreen -l dim
+fi

@@ -1,0 +1,46 @@
+#!/usr/bin/env sh
+
+if [[ $1 == "dark" ]]; then
+  UI_THEME_GTK="Adapta-Nokto-Eta-Maia"
+  UI_THEME_QT="KvAdaptaMaiaDark"
+  UI_ICONS="Papirus-Dark-Maia"
+  CURSOR_THEME="capitaine-cursors"
+  AWESOME_THEME_VARIANT="dark"
+  ALACRITTY_THEME="dark"
+  SPICETIFY_THEME="Gradianto" # alternatives: "Lovelace", "Black" or just "SpicetifyDefault"
+  VSCODE_THEME="Activate SCARLET protocol (beta)"
+  ROFI_THEME="light"
+elif [[ $1 == "light" ]]; then
+  UI_THEME_GTK="Adwaita" # "Adapta-Eta-Maia"
+  UI_THEME_QT="KvAdaptaMaia"
+  UI_ICONS="Papirus-Light-Maia"
+  CURSOR_THEME="capitaine-cursors"
+  AWESOME_THEME_VARIANT="light"
+  ALACRITTY_THEME="light"
+  SPICETIFY_THEME="SpicetifyDefault" 
+  VSCODE_THEME="Activate SCARLET protocol (beta)"
+  ROFI_THEME="light"
+else
+  echo "specify theme (dark|light)"
+  exit 1
+fi
+
+# set GTK theme
+xfconf-query --create -c xsettings -p /Net/ThemeName -t string -s "$UI_THEME_GTK"
+
+# set GTK icon theme
+xfconf-query --create -c xsettings -p /Net/IconThemeName -t string -s "$UI_ICONS"
+
+# set Qt5 theme
+kvantummanager --set "$UI_THEME_QT"
+
+# set alacritty theme
+cat $XDG_CONFIG_HOME/alacritty/base.yml $XDG_CONFIG_HOME/alacritty/$ALACRITTY_THEME-theme.yml > $XDG_CONFIG_HOME/alacritty/alacritty.yml
+
+# set rofi theme
+cat $XDG_CONFIG_HOME/rofi/base-config $XDG_CONFIG_HOME/rofi/$ROFI_THEME-theme-config > $XDG_CONFIG_HOME/rofi/config
+
+# set spicetify theme
+# spicetify config current_theme $SPICETIFY_THEME
+# spicetify apply
+

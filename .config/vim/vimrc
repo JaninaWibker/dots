@@ -204,7 +204,7 @@ let g:NERDTreeIndicatorMapCustom = {
   \ "Renamed"   : "➜",
   \ "Unmerged"  : "═",
   \ "Deleted"   : "✖",
-  \ "Dirty"     : "✗",
+  \ "Dirty"     : "x",
   \ "Clean"     : "✔︎",
   \ "Ignored"   : "_",
   \ "Unknown"   : "?",
@@ -247,3 +247,10 @@ let g:airline_mode_map = {
   \ '!': 'shell',
   \ 't': 'terminal',
   \ }
+
+" https://stackoverflow.com/questions/6453595/prevent-vim-from-clearing-the-clipboard-on-exit
+" xorg only stores a pointer to the clipboard data that resides in the program itself, meaning that
+" after quitting this pointer is no longer usable, that is why after quitting applications the
+" clipboard gets reset if the contents of teh clipboard belonged to the specific application.
+" This should fix this atleast for vim by manually copying the "+" register directly into the clipboard.
+autocmd VimLeave * call system("xsel -ib", getreg('+'))

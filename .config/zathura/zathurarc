@@ -1,3 +1,5 @@
+set recolor true
+
 set statusbar-h-padding 0
 set statusbar-v-padding 0
 set page-padding 1
@@ -10,3 +12,11 @@ map K zoom out
 map J zoom in
 map i recolor
 map p print
+
+set adjust-open "width"
+
+
+set highlight-color "#ff0080"
+set highlight-active-color "#268bd2"
+
+set statusbar-home-tilde "true"

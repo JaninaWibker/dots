@@ -1,6 +1,6 @@
 * {
-    color1: #000000;
-    color2: #ffffff;
+    color1: #ffffff;
+    color2: #000000;
 
     active-background: @color1;
     active-foreground: @foreground;
