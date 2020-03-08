@@ -35,6 +35,30 @@ My awesome config, as it’s located in it’s own git repo (and submodule) [her
 
 My wallpapers and all other kinds of images like lockscreen background and neofetch image.
 
+## How to install
+
+The installation differs a bit from just normally cloning the repo and using it as the files belong in vastly different locations and not in a single folder, that is the reason I use a [git bare repository](https://www.atlassian.com/git/tutorials/dotfiles) for my dotfiles.
+
+The installation is as follows:
+
+```shell
+# this is only needed temporarily, the ZSH config includes this line as well, no need to manually add this somewhere.
+alias dots=/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME
+echo ".cfg" >> .gitignore # this is to avoid weird recursion problems
+git clone --bare --resursive-submodules https://www.github.com/JannikWibker/dots $HOME/.cfg
+dots checkout
+# this avoids having git status polluted with random files
+dots config --local status.showUntrackedFiles no
+# source the newly added files
+zsh
+# this initializes a lot of config files like explained in "Other notes"
+change-theme dark
+```
+
+In general use `dots` everywhere where you would normally use `git` for dealing with these dotfiles.
+
+When updating use `dots submodule update --recursive --remote` to update all submodules.
+
 ## What to install (incl. optional)?
 
 > These are lists of applications I often use, some of these have config files in this repo, some don’t.
