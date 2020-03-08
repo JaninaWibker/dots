@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# set the position of the screens as follows:
+# one 1080p screen (1; HDMI-1) on the left, vertical (right)
+# one 1080p screen (4; HDMI-0) on the right, vertical (left)
+# one 1080p screen (2;DP-3) right of (1) rotated normally
+# one 3840p screen (3;DP-0) left of (4) rotated normally
+# 
+# this is how the whole setup looks roughly:
+#
+# |#####|                           |#####|
+# |#####|             |###########| |#####|
+# |# 1 #| |#########| |###########| |# 4 #|
+# |#####| |### 2 ###| |#### 3 ####| |#####|
+# |#####| |#########| |###########| |#####|
+#
+# the monitors (2) and (3) are slightly raised (not shown above)
+# and the screen (3) has a 4x larger resolution than any other
+# but is physically almost the same size, only slightly larger
+
+# my old config had another 1080p screen instead of the 4k screen (3)
+# to use this set the high_dpi variable to 0 
+
+if [[ $HIGH_DPI -eq 1  ]]; then
+  high_dpi=true
+else
+  high_dpi=false
+fi
+
+# uncomment to easily override:
+# high_dpi=true
+
+if "$high_dpi"; then
+  echo "setting xrandr conf to high dpi"
+  xrandr \
+    --output HDMI-1 --mode 1920x1080 --pos 0x470      --rotate right \
+    --output DP-3   --mode 1920x1080 --pos 1080x1080  --rotate normal \
+    --output DP-0   --mode 3840x2160 --pos 3000x0     --rotate normal \
+    --output HDMI-0 --mode 1920x1080 --pos 6840x470   --rotate left
+else
+  echo "setting xrandr conf to non-high dpi"
+  xrandr \
+    --output HDMI-1  --mode 1920x1080 --pos 0x470      --rotate right \
+    --output DP-3    --mode 1920x1080 --pos 1080x1080  --rotate normal \
+    --output DVI-D-0 --mode 1920x1080 --pos 3000x0     --rotate normal \
+    --output HDMI-0  --mode 1920x1080 --pos 4920x470   --rotate left
+fi

@@ -23,6 +23,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 ### vim
 export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
 
+# incase .profile does not set the editor correctly
 export EDITOR="/usr/bin/vim"
 
 ### USB STICK | EXT. VOLUME
@@ -47,8 +48,14 @@ export PATH="$PATH:$HOME/scripts"
 export PATH="$PATH:$HOME/programs:$HOME/programs/links"
 
 ### NVM
-export NVM_DIR="/Users/pingraham/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+if [[ "$OSTYPE" != "linux-gnu" ]]; then
+  export NVM_DIR="/Users/jannik/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+fi
+
+# incase .profile does not set these correctly
+export HIGH_DPI=1
+export THEME_VARIANT="dark"
 
 ### NPM FOLDER PREFIX; used by dependency of markdown-preview-enhanced (which searches for the install location of global npm packages
 export PREFIX="/usr/local/"

@@ -284,7 +284,6 @@ schemes:
       white:    '0x073642'
 
 # Colors
-colors: *dark
   # Default colors
   # primary:
   #   background: '0x000000'

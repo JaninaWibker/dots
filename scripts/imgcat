@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+
+if [[ "$#" -eq 1 ]]; then
+  xoffset=0
+  yoffset=0
+  image=$1
+else
+  xoffset=$1
+  yoffset=$2
+  image=$3
+fi
+
+if ! [[ -e $image ]];  then
+  echo "error: file doesn't exist"
+  exit 1
+fi
+
+
+function join_by { local IFS="$1"; shift; echo "$*"; }
+function ueberzug_show {
+  join_by $'\t' action "add" identifier "image" x "$1" y "$2" path "$3"
+}
+
+{ ueberzug_show $xoffset $yoffset "$image"; read; } | ueberzug layer --parser simple &>/dev/null

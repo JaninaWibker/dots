@@ -40,3 +40,6 @@
 [submodule "programs/neofetch"]
 	path = programs/neofetch
 	url = https://github.com/JannikWibker/neofetch
+[submodule ".config/vim/pack/plugins/start/vim-goyo"]
+	path = .config/vim/pack/plugins/start/vim-goyo
+	url = https://github.com/junegunn/goyo.vim

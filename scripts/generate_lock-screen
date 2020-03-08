@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+betterlockscreen -u $XDG_CONFIG_HOME/awesome/themes/blue/wallpaper/lockscreen-adjusted.png
