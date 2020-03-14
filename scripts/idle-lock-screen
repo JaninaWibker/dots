@@ -12,7 +12,7 @@ xidlehook \
     'notify-send -u critical -t 10000 -- "locking screen in 30s"' \
   `# Undim & lock after 10 more seconds` \
   --timer 10 \
-    'sh $HOME/scripts/lock-screen screen off' \
+    'sh $HOME/scripts/lock-screen screen-off' \
   `# Finally, suspend an hour after it locks` \
   --timer 3600 \
     'systemctl suspend'
