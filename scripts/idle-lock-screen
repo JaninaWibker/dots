@@ -10,9 +10,12 @@ xidlehook \
   `# Dim the screen after 60 seconds, undim if user becomes active` \
   --timer 180 \
     'notify-send -u critical -t 10000 -- "locking screen in 30s"' \
-  `# Undim & lock after 10 more seconds` \
+  `# Lock after 10 more seconds` \
   --timer 10 \
-    'sh $HOME/scripts/lock-screen screen-off' \
+    'sh $HOME/scripts/lock-screen' \
+  `# After 5 seconds turn screens off (doing this here because this timer cancels if not idling)`
+  -- timer 5 \
+    'xset dpms force off'
   `# Finally, suspend an hour after it locks` \
   --timer 3600 \
     'systemctl suspend'
