@@ -154,6 +154,9 @@ nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
 
+nnoremap <silent> gc xph
+nnoremap <silent> gC Xp
+
 nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
