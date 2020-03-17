@@ -31,5 +31,6 @@
     "colorize.languages": [
         "javascript",
         "lua",
-      ]
+      ],
+      "window.enableMenuBarMnemonics": false
 }
