@@ -41,6 +41,9 @@ export PATH="$PATH:$HOME/.gem/ruby/2.6.0"
 ### GO PATH THINGY
 export PATH="$PATH:$HOME/go/bin"
 
+### RUST PATH THINGY
+export PATH="$PATH:$HOME/.cargo/bin"
+
 ### Script thingy
 export PATH="$PATH:$HOME/scripts"
 
