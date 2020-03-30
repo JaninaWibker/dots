@@ -16,6 +16,7 @@ function zle-line-init zle-keymap-select {
     case $KEYMAP in
       vicmd)      mode="∆" ;;
       viins|main) mode="λ" ;;
+      vivis)      mode="V" ;; # incase I add have a solution for [this](https://stackoverflow.com/questions/39871079/detect-zsh-keymap-mode-for-vi-visual-mode) at some point
     esac
 
     local rs_true="%{$fg_bold[green]$mode%}"
@@ -41,3 +42,9 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+bindkey "^w" backward-kill-word # Delete word
+
+bindkey -M vicmd "^V" edit-command-line
+
+bindkey '^[[Z' reverse-menu-complete # Shift-Tab support for auto completion
+

@@ -49,3 +49,6 @@
 [submodule ".config/vim/pack/syntax/start/markdown"]
 	path = .config/vim/pack/syntax/start/markdown
 	url = https://github.com/plasticboy/vim-markdown
+[submodule ".config/vim/pack/plugins/start/css-color"]
+	path = .config/vim/pack/plugins/start/css-color
+	url = https://github.com/ap/vim-css-color
