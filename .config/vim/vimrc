@@ -130,6 +130,16 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+" vim-markdown options
+
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_emphasis_multiline = 0
+let g:vim_markdown_fenced_languages = ['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini']
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_new_list_item_indent = 2
+
 " status line
 set statusline=\ %l:%c\ %{HasPaste()}%F%m%r%h\ %w\ %r%{getcwd()}%h
 

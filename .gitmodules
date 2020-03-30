@@ -43,3 +43,9 @@
 [submodule ".config/vim/pack/plugins/start/vim-goyo"]
 	path = .config/vim/pack/plugins/start/vim-goyo
 	url = https://github.com/junegunn/goyo.vim
+[submodule ".config/vim/pack/syntax/start/vimtex"]
+	path = .config/vim/pack/syntax/start/vimtex
+	url = https://github.com/lervag/vimtex
+[submodule ".config/vim/pack/syntax/start/markdown"]
+	path = .config/vim/pack/syntax/start/markdown
+	url = https://github.com/plasticboy/vim-markdown

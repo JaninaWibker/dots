@@ -73,3 +73,6 @@ function lolban() {
 
 # don't ask
 alias unix="curl -sL https://git.io/unix | cat"
+
+# fixing $TERM for ssh since host might not know the specific terminal being used (i.e. alacritty)
+alias ssh="TERM=xterm-256color ssh"

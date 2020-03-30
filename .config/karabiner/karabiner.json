@@ -16,6 +16,26 @@
                 },
                 "rules": [
                     {
+                        "description": "Cmd + Shift + Enter -> open Terminal",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [{
+                                  "shell_command": "osascript -e 'tell application \"iTerm2\"\ncreate window with default profile\nend tell'"  
+                                }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "left cmd + right cmd + uiop -> left cmd + ctrl + alt + arrow keys",
                         "manipulators": [
                             {
