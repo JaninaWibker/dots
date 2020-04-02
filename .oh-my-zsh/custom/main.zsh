@@ -18,11 +18,6 @@ bindkey '^r' history-incremental-search-backward
 ### Folders
 export PRJ="${HOME}/Desktop/projects"
 
-export XDG_CONFIG_HOME="$HOME/.config"
-
-### vim
-export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
-
 # incase .profile does not set the editor correctly
 export EDITOR="/usr/bin/vim"
 
@@ -46,6 +41,9 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 ### Script thingy
 export PATH="$PATH:$HOME/scripts"
+
+### dvisvgm thingy
+export PATH="$PATH:/usr/local/dvisvgm/bin"
 
 ### Program thingies
 export PATH="$PATH:$HOME/programs:$HOME/programs/links"

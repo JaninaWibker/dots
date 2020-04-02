@@ -63,7 +63,19 @@ if [[ $OSTYPE == darwin* ]]; then
   alias interfaces="networksetup -listallhardwareports" 
 fi
 
+
 export NODE_ICU_DATA=/usr/local/lib/node_modules/full-icu
+
+
+# enforcing $XDG_CONFIG_HOME and similar
+export ATOM_HOME="$XDG_DATA_HOME/atom"
+export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
+export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
+
+
+alias sqlite3="sqlite3 -init \"$XDG_CONFIG_HOME/sqlite3/sqliterc\""
+alias mc="mc --config-dir \"$XDG_CONFIG_HOME/mc\""
+alias tmux="tmux -f \"$XDG_CONFIG_HOME/tmux/tmux.conf\""
 
 function lolban() {
   if [[ -x "$(command -v toilet)" ]] && [[ "$(command -v lolcat)" ]]; then
