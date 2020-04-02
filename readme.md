@@ -67,7 +67,7 @@ When updating use `dots submodule update --recursive --remote` to update all sub
 
 > These are lists of applications I often use, some of these have config files in this repo, some don’t.
 
-**In general** install tmux, zsh, oh-my-zsh, zsh-completions, vim (newest version), git (newest version), VS-Code, SublimeText, Atom, Spotify, Chrome/Chromium, Vivaldi, Firefox, Insomnia, Discord, Typora, KDE-Connect, cloc, ffmpeg, gcc, gdb, gnuplot, jq, lua, nodejs, ruby, python, nano (newest version), wget, sqlite, neofetch, mitm-proxy.
+**In general** install tmux, zsh, oh-my-zsh, zsh-completions, vim (newest version), git (newest version), VS-Code, SublimeText, Atom, Spotify, Chrome/Chromium, Vivaldi, Firefox, Insomnia, Discord, Typora, KDE-Connect, cloc, ffmpeg, gcc, gdb, gnuplot, jq, lua, nodejs, ruby, python, nano (newest version), wget, sqlite, neofetch, mitm-proxy, some latex distribution, dvisvgm.
 
 **On Mac OS** specifically install Karabiner Elements, iTerm2, TablePlus, Notion, Anybar, LuLu, VEEER, IINA, Tunnelblick, puuush,, Übersicht, yabai, skhd, Discovery.
 
@@ -86,12 +86,13 @@ The [Spicetify](https://github.com/khanhas/spicetify-cli) themes I use are:
 ## Scripts
 
 Scripts are contained in the `$HOME/scripts` folder. Currently these scripts exist:
-- change-theme <dark|light>: toggle between light / dark theme
-- generate-lock-screen: generate a lockscreen based on the `$XDG_CONFIG_HOME/awesome/themes/blue/wallpaper/lockscreen-adjusted.png` file (not commited; **requires betterlockscreen**)
-- idle-lock-screen: start listening for inactivity and after 2 minutes lock the screen (**requires xidlehook, betterlockscreen**)
-- lock-screen <screen-off>?: lock the screen, turns of the screen after 5 seconds if `screen-off` is the first argument (**requires betterlockscreen**)
-- quad-screen-xrandr: configure monitor arrangement for 4-monitor setup (depends on `$HIGH_DPI`-env variable)
-- imgcat <file>: display image file in terminal (**requires ueberzug**)
+- `change-theme <dark|light>`: toggle between light / dark theme
+- `generate-lock-screen`: generate a lockscreen based on the `$XDG_CONFIG_HOME/awesome/themes/blue/wallpaper/lockscreen-adjusted.png` file (not commited; **requires betterlockscreen**)
+- `idle-lock-screen`: start listening for inactivity and after 2 minutes lock the screen (**requires xidlehook, betterlockscreen**)
+- `lock-screen <screen-off>?`: lock the screen, turns of the screen after 5 seconds if `screen-off` is the first argument (**requires betterlockscreen**)
+- `quad-screen-xrandr`: configure monitor arrangement for 4-monitor setup (depends on `$HIGH_DPI`-env variable)
+- `imgcat <file>`: display image file in terminal (**requires ueberzug**)
+- `tex2svg`: compile a tex file into an svg file (using [dvisvgm](https://dvisvgm.de/Downloads/))
 
 ### VS Code
 
