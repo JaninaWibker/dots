@@ -28,9 +28,11 @@
                                         ]
                                     }
                                 },
-                                "to": [{
-                                  "shell_command": "osascript -e 'tell application \"iTerm2\"\ncreate window with default profile\nend tell'"  
-                                }],
+                                "to": [
+                                    {
+                                        "shell_command": "osascript /Users/jannik/.oh-my-zsh/custom/applescript/new_terminal.scpt"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -1149,6 +1151,14 @@
                     },
                     "to": {
                         "key_code": "y"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f20"
+                    },
+                    "to": {
+                        "key_code": "fn"
                     }
                 }
             ],

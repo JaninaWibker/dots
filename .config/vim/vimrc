@@ -3,6 +3,9 @@
 " how many lines of history VIM needs to remember
 set history=500
 
+" disable dumb defaults
+set backspace=indent,eol,start
+
 "use system clipboard
 set clipboard=unnamedplus
 
@@ -160,6 +163,10 @@ nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+" compatibility with mac os (custom) qwerty layout
+nnoremap ö {
+nnoremap ä }
 
 " make d delete and not cut
 nnoremap x "_x

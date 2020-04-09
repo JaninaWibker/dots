@@ -52,3 +52,12 @@
 [submodule ".config/vim/pack/plugins/start/css-color"]
 	path = .config/vim/pack/plugins/start/css-color
 	url = https://github.com/ap/vim-css-color
+[submodule ".config/vim/pack/plugins/start/automkdir"]
+	path = .config/vim/pack/plugins/start/automkdir
+	url = https://github.com/benizi/vim-automkdir
+[submodule ".config/vim/pack/plugins/start/better-whitespace"]
+	path = .config/vim/pack/plugins/start/better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace
+[submodule ".config/vim/pack/plugins/start/vim-matchup"]
+	path = .config/vim/pack/plugins/start/vim-matchup
+	url = https://github.com/andymass/vim-matchup
