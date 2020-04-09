@@ -12,6 +12,18 @@ bindkey '^f' forward-char
 
 bindkey '^r' history-incremental-search-backward
 
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+bindkey "^w" backward-kill-word # Delete word
+
+bindkey -M vicmd "^V" edit-command-line
+
+bindkey '^[[Z' reverse-menu-complete # Shift-Tab support for auto completion
+
+if [[ "$OSTYPE" != "linux-gnu" ]]; then
+  export LANG=en_US.UTF-8
+fi
+
 ### Emacs awesomeness
 #bindkey -e
 
@@ -32,6 +44,7 @@ eval $(luarocks path --bin)
 
 ### RUBY GEMS PATH THINGY
 export PATH="$PATH:$HOME/.gem/ruby/2.6.0"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 ### GO PATH THINGY
 export PATH="$PATH:$HOME/go/bin"

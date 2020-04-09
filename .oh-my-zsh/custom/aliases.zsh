@@ -21,6 +21,9 @@ alias ....="cd ../../.."
 
 alias cdl="clear && cd"
 
+# sane latex behaviour
+alias latex="latex -interaction=nonstopmode"
+
 # git dotfiles config
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias dotss="dots status"
