@@ -29,5 +29,7 @@
     "java.errors.incompleteClasspath.severity": "ignore",
     "files.associations": {
         "*.ne": "bnf"
-    }
+    },
+    "search.smartCase": true,
+    "diffEditor.ignoreTrimWhitespace": false
 }

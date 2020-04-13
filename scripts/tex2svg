@@ -2,7 +2,7 @@
 
 command -v latex > /dev/null 2>&1 || {
   echo "$(tput bold)$(tput setaf 1)latex required$(tput sgr0)"
-  exit 1 
+  exit 1
 }
 
 command -v dvisvgm > /dev/null 2>&1 || {
@@ -17,7 +17,7 @@ command -v dvisvgm > /dev/null 2>&1 || {
 
 no_ending=$(echo $1 | sed "s/.tex//")
 
-latex --interaction=nonstopmode $1 &> "tex2svg-${no_ending}.log" && dvisvgm "${no_ending}.dvi" >/dev/null 2>&1 && {
+latex --interaction=nonstopmode $1 &> "tex2svg-${no_ending}.log" && dvisvgm --font-format=woff "${no_ending}.dvi" -o "${no_ending}.svg" >/dev/null 2>&1 && {
   rm "${no_ending}.dvi"
   rm "tex2svg-${no_ending}.log" # nothing went wrong, can delete self generated log file now
   echo "$(tput bold)$(tput setaf 2)Successfully parsed file \"${no_ending}.tex\"$(tput sgr0)"

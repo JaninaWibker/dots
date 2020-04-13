@@ -67,6 +67,11 @@ if [[ "$OSTYPE" != "linux-gnu" ]]; then
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 fi
 
+### Inkscape on MacOS
+if [[ "$OSTYPE" != "linux-gnu" ]]; then
+  export PATH="$PATH:/Applications/Inkscape.app/Contents/MacOS/"
+fi
+
 # incase .profile does not set these correctly
 export HIGH_DPI=1
 export THEME_VARIANT="dark"

@@ -35,6 +35,7 @@ alias dotsg="dots merge"
 alias dotsdd="dots diff --staged"
 
 alias gdd="git diff --staged"
+alias gg="git grep --ignore-case"
 
 # some random aliases
 alias c="pygmentize -O style=solarizeddark -f console256 -g"
