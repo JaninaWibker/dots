@@ -6,8 +6,15 @@ set history=500
 " disable dumb defaults
 set backspace=indent,eol,start
 
-"use system clipboard
-set clipboard=unnamedplus
+" use system clipboard & os detection
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin\n"
+    set clipboard=unnamed
+  else
+    set clipboard=unnamedplus
+  endif
+endif
 
 " if using alacritty this helps with mouse support
 set ttymouse=sgr
@@ -31,9 +38,6 @@ filetype indent on
 " how many lines of history VIM needs to remember
 set history=500
 
-"use system clipboard
-set clipboard=unnamedplus
-
 " if using alacritty this helps with mouse support
 set ttymouse=sgr
 
@@ -54,6 +58,17 @@ packadd! dracula
 packadd! nerdtree
 packadd! nerdtree-git-plugin
 
+
+function! MyHighlights() abort
+  " I don't want to highlight the whole line, I only want the indicator in the line number column
+  set cursorline
+  highlight clear CursorLine
+endfunction
+
+augroup MyColors
+  autocmd!
+  autocmd ColorScheme * call MyHighlights()
+augroup END
 
 colorscheme dracula
 
