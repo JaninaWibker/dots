@@ -52,6 +52,9 @@ export PATH="$PATH:$HOME/go/bin"
 ### RUST PATH THINGY
 export PATH="$PATH:$HOME/.cargo/bin"
 
+### YARN PATH THINGY
+export PATH="$PATH:$HOME/.yarn/bin"
+
 ### Script thingy
 export PATH="$PATH:$HOME/scripts"
 
@@ -63,7 +66,7 @@ export PATH="$PATH:$HOME/programs:$HOME/programs/links"
 
 ### NVM
 if [[ "$OSTYPE" != "linux-gnu" ]]; then
-  export NVM_DIR="/Users/jannik/.nvm"
+  export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 fi
 

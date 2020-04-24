@@ -128,6 +128,8 @@
     # Markup is allowed
     format = "<b>%a</b>:\n%s\n%b"
 
+    max_fieldlength = 500
+
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
     alignment = left
