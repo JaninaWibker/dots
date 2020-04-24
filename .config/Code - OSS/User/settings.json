@@ -31,6 +31,7 @@
     "colorize.languages": [
         "javascript",
         "lua",
+        "viml"
       ],
       "window.enableMenuBarMnemonics": false
 }

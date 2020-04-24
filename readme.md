@@ -62,6 +62,7 @@ change-theme dark
 In general use `dots` everywhere where you would normally use `git` for dealing with these dotfiles.
 
 When updating use `dots submodule update --recursive --remote` to update all submodules.
+Incase a completely new submodule was added running `dots submodule init` before is required in order to tell git that new submodules exist that need updating.
 
 ## What to install (incl. optional)?
 
