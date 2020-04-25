@@ -37,6 +37,8 @@ alias dotsdd="dots diff --staged"
 alias gdd="git diff --staged"
 alias gg="git grep --ignore-case"
 
+alias gl="git log"
+
 # some random aliases
 alias c="pygmentize -O style=solarizeddark -f console256 -g"
 alias gen_hash="$ZSH/custom/node gen_hash"
