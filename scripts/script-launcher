@@ -4,7 +4,7 @@
 get_choice() {
   title=$1
   shift
-  echo $(printf '%s\n' "$@" | rofi -dmenu -p "$title")
+  echo $(printf '%s\n' "$@" | rofi -dmenu -i -p "$title" -l 10)
 }
 
 get_YN() {
@@ -15,19 +15,23 @@ show_OK() {
   get_choice "$1" "OK"
 }
 
-choice=$(get_choice "Script Launcher" "1) theme" "2) lock screen" "3) generate lock screen" "4) quad screen xrandr" "5) restart awesome" "td - theme dark" "tl - theme light" )
+STUDIUM="/run/user/1000/gvfs/smb-share:server=samba-server,share=files.studium"
+
+choice=$(get_choice "Script Launcher" "1) theme" "2) lock screen" "3) generate lock screen" "4) quad screen xrandr" "5) open file" "6) open file (studium)" "7) restart awesome" "td - theme dark" "tl - theme light" )
 
 case "$choice" in
-  "1) theme")                [ -e $HOME/scripts/change-theme ]         && $HOME/scripts/change-theme $(get_choice "theme?" "dark" "light")     || show_OK "change-theme not found" ;;
-  "td - theme dark")         [ -e $HOME/scripts/change-theme ]         && $HOME/scripts/change-theme dark                                      || show_OK "change-theme not found" ;;
-  "tl - theme light")        [ -e $HOME/scripts/change-theme ]         && $HOME/scripts/change-theme light                                     || show_OK "change-theme not found" ;;
-  "2) lock screen")          [ -e $HOME/scripts/lock-screen ]          && $HOME/scripts/lock-screen                                            || show_OK "lock-screen not found";;
-  "3) generate lock screen") [ -e $HOME/scripts/generate-lock-screen ] && $HOME/scripts/generate-lock-screen                                   || show_OK "generate_lock-screen not found" ;;
-  "4) quad screen xrandr")   [ -e $HOME/scripts/quad-screen-xrandr ] && ( [ $(get_YN) == "Yes" ] && $HOME/scripts/quad-screen-xrandr || true)  || show_OK "quad-screen-xrandr not found" ;; 
-  "5) restart awesome")      echo 'awesome.restart()' | awesome-client ;;
-  "6) go to")                ;; 
+  "1) theme")                 [ -e $HOME/scripts/change-theme ]         && $HOME/scripts/change-theme $(get_choice "theme?" "dark" "light")     || show_OK "change-theme not found" ;;
+  "td - theme dark")          [ -e $HOME/scripts/change-theme ]         && $HOME/scripts/change-theme dark                                      || show_OK "change-theme not found" ;;
+  "tl - theme light")         [ -e $HOME/scripts/change-theme ]         && $HOME/scripts/change-theme light                                     || show_OK "change-theme not found" ;;
+  "2) lock screen")           [ -e $HOME/scripts/lock-screen ]          && $HOME/scripts/lock-screen                                            || show_OK "lock-screen not found";;
+  "3) generate lock screen")  [ -e $HOME/scripts/generate-lock-screen ] && $HOME/scripts/generate-lock-screen                                   || show_OK "generate_lock-screen not found" ;;
+  "4) quad screen xrandr")    [ -e $HOME/scripts/quad-screen-xrandr ] && ( [ $(get_YN) == "Yes" ] && $HOME/scripts/quad-screen-xrandr || true)  || show_OK "quad-screen-xrandr not found" ;;
+  "5) open file")             xdg-open $($HOME/scripts/rofi-file-chooser     ) ;;
+  "6) open file (studium)")   xdg-open $($HOME/scripts/rofi-file-chooser $STUDIUM) ;;
+  "7) restart awesome")       echo 'awesome.restart()' | awesome-client ;;
+  "8) go to")                 ;;
 esac
 
 
 # wmctrl -d | awk '{ printf("%s%s(%d)\n", $9, ($2 == "*") ? "*" : " " , $1); }' # this outputs "<Name><*| (if selected)><Id>"
-# 
+#

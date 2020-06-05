@@ -55,7 +55,7 @@ xkb_symbols "basic"  {
         key <AB07> { [              m,                 M,           dead_greek,           squareroot ] };
         key <AB08> { [          comma,         semicolon,               ograve,               Ograve ] };
         key <AB09> { [         period,             colon,               oacute,               Oacute ] };
-        key <AB10> { [          minus,        underscore,                   at,            0x1002026 ] };
+        key <AB10> { [          minus,        underscore,            backslash,            0x1002026 ] };
 
         include "level3(ralt_switch)"
 };

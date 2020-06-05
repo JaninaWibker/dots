@@ -33,6 +33,7 @@ alias dotsd="dots diff"
 alias dotsf="dots fetch"
 alias dotsg="dots merge"
 alias dotsdd="dots diff --staged"
+alias dotsl="dots log"
 
 alias gdd="git diff --staged"
 alias gg="git grep --ignore-case"
