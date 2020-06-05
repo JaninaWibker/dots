@@ -29,9 +29,11 @@ fi
 
 ### Folders
 export PRJ="${HOME}/Desktop/projects"
+export STD="/run/user/1000/gvfs/smb-share:server=samba-server,share=files.studium"
 
 # incase .profile does not set the editor correctly
 export EDITOR="/usr/bin/vim"
+export BROWSER="/usr/bin/chromium"
 
 ### USB STICK | EXT. VOLUME
 export JANNIK="/Volumes/JANNIK"
@@ -43,7 +45,8 @@ export JANNIK="/Volumes/JANNIK"
 eval $(luarocks path --bin)
 
 ### RUBY GEMS PATH THINGY
-export PATH="$PATH:$HOME/.gem/ruby/2.6.0"
+export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.7.0/bin"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 ### GO PATH THINGY

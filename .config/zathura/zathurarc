@@ -15,6 +15,7 @@ map p print
 
 set adjust-open "width"
 
+set selection-clipboard clipboard
 
 set highlight-color "#ff0080"
 set highlight-active-color "#268bd2"
