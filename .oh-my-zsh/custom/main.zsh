@@ -4,6 +4,7 @@ export KEYTIMEOUT=1 # 0.1s
 bindkey '^P' up-history
 bindkey '^N' down-history
 bindkey '^h' backward-delete-char
+bindkey "^?" backward-delete-char
 bindkey '^w' backward-kill-word # just can't live without w, a and e emacs shortcuts tbh
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
@@ -26,6 +27,17 @@ fi
 
 ### Emacs awesomeness
 #bindkey -e
+
+# fzf stuff
+open_with_fzf() {
+    fd -t f -H -I | fzf -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
+}
+cd_with_fzf() {
+    cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)"
+}
+pacs() {
+    sudo pacman -Syy $(pacman -Ssq | fzf -m --preview="pacman -Si {}" --preview-window=:hidden --bind=space:toggle-preview)
+}
 
 ### Folders
 export PRJ="${HOME}/Desktop/projects"

@@ -61,3 +61,21 @@
 [submodule ".config/vim/pack/plugins/start/vim-matchup"]
 	path = .config/vim/pack/plugins/start/vim-matchup
 	url = https://github.com/andymass/vim-matchup
+[submodule ".config/vim/pack/plugins/start/vim-visual-multi"]
+	path = .config/vim/pack/plugins/start/vim-visual-multi
+	url = https://github.com/mg979/vim-visual-multi
+[submodule ".config/vim/pack/plugins/start/fzf.vim"]
+	path = .config/vim/pack/plugins/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule ".config/vim/pack/plugins/start/coc.nvim"]
+	path = .config/vim/pack/plugins/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
+[submodule ".config/vim/pack/plugins/start/vim-gitgutter"]
+	path = .config/vim/pack/plugins/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule ".config/vim/pack/plugins/start/vim-which-key"]
+	path = .config/vim/pack/plugins/start/vim-which-key
+	url = https://github.com/liuchengxu/vim-which-key
+[submodule ".config/vim/pack/plugins/start/nerdcommenter"]
+	path = .config/vim/pack/plugins/start/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter

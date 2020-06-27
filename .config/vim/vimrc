@@ -1,8 +1,5 @@
 " .vimrc
 
-" how many lines of history VIM needs to remember
-set history=500
-
 " disable dumb defaults
 set backspace=indent,eol,start
 
@@ -38,19 +35,6 @@ filetype indent on
 " how many lines of history VIM needs to remember
 set history=500
 
-" if using alacritty this helps with mouse support
-set ttymouse=sgr
-
-" general mouse stuff
-set mouse=a
-
-" disable timeout for escape sequences
-set timeoutlen=1000 ttimeoutlen=0
-
-" filetype plugins
-filetype plugin on
-filetype indent on
-
 set runtimepath+=$XDG_CONFIG_HOME/vim/
 set packpath+=$XDG_CONFIG_HOME/vim/
 let g:dracula_colorterm = 0
@@ -58,6 +42,7 @@ packadd! dracula
 packadd! nerdtree
 packadd! nerdtree-git-plugin
 
+set rtp+=/usr/bin/fzf
 
 function! MyHighlights() abort
   " I don't want to highlight the whole line, I only want the indicator in the line number column
@@ -150,6 +135,15 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+
+" relative numbers
+set relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
 
 " vim-markdown options
 
@@ -248,9 +242,11 @@ let g:NERDTreeIndicatorMapCustom = {
   \ "Unknown"   : "?",
   \ }
 
+let g:NERDTreeIgnore = ['^node_modules$']
+
 let NERDTreeQuitOnOpen = 1
 
-map <C-n> :NERDTreeToggle<CR>
+map <C-p> :NERDTreeToggle<CR>
 
 " create new file in same directory as current file
 " nmap <C-N> :wincmd w<CR>ma
