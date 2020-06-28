@@ -61,6 +61,11 @@ export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
 export PATH="$PATH:$HOME/.gem/ruby/2.7.0/bin"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
+# homebrew stuff
+if [[ "$OSTYPE" != "linux-gnu" ]]; then
+  export PATH="/usr/local/sbin:$PATH"
+fi
+
 ### GO PATH THINGY
 export PATH="$PATH:$HOME/go/bin"
 
