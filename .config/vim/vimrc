@@ -80,9 +80,6 @@ else
   set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,*.swp
 endif
 
-" show current position and some line number / line stuff
-set ruler
-set number
 
 " height of command bar
 set cmdheight=1
@@ -136,7 +133,9 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-" relative numbers
+" show current position and some line number / line stuff
+set ruler
+set number
 set relativenumber
 
 augroup numbertoggle
@@ -145,8 +144,9 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
 
-" vim-markdown options
+set signcolumn=auto
 
+" vim-markdown options
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_emphasis_multiline = 0
 let g:vim_markdown_fenced_languages = ['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini']
@@ -190,6 +190,10 @@ nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
 
+" toggle comments
+nnoremap <C-7> <plug>NERDCommenterToggle
+vnoremap <C-7> <plug>NERDCommenterToggle
+
 " allow entering spaces when in normal mode
 nnoremap <space> i<space><esc>
 " don't go into insert mode when using o/O to insert newlines (notice that they are swapped)
@@ -222,8 +226,20 @@ map <C-l> <C-W>l
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 
-" apparently fixes something with 
+" apparently fixes something with
 autocmd FileType nerdtree noremap <buffer> <A-q> <nop>
+
+let g:gitgutter_async=1
+let s:grep_available=0
+let g:gitgutter_enabled = 1
+
+" nerdcommenter stuff
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 0
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDToggleCheckAllLines = 1
 
 " nerdtree stuff
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -243,6 +259,7 @@ let g:NERDTreeIndicatorMapCustom = {
   \ }
 
 let g:NERDTreeIgnore = ['^node_modules$']
+let g:NERDTreeRespectWildIgnore = 1
 
 let NERDTreeQuitOnOpen = 1
 
