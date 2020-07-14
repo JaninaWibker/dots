@@ -12,7 +12,7 @@ xkb_symbols "basic"  {
         key <AE03> { [              3,           section,            masculine,        threesuperior ] };
         key <AE04> { [              4,            dollar,             EuroSign,                 cent ] };
         key <AE05> { [              5,           percent,             sterling,                  yen ] };
-        key <AE06> { [              6,         ampersand,      dead_circumflex,           dead_caron ] };
+        key <AE06> { [              6,         ampersand,      dead_circumflex,           dead_caron ] }; // should dead_circumflex, dead_caron and dead_macron remain?
         key <AE07> { [              7,             slash,            backslash,          dead_macron ] };
         key <AE08> { [              8,         parenleft,   doublelowquotemark,   singlelowquotemark ] };
         key <AE09> { [              9,        parenright,  leftdoublequotemark,  leftsinglequotemark ] };
@@ -24,8 +24,8 @@ xkb_symbols "basic"  {
         key <AD02> { [              w,                 W,          Greek_alpha,          Greek_ALPHA ] };
         key <AD03> { [              e,                 E,           ediaeresis,           Ediaeresis ] };
         key <AD04> { [              r,                 R,         Greek_lambda,         Greek_LAMBDA ] };
-        key <AD05> { [              t,                 T,                thorn,                Thorn ] };
-        key <AD06> { [              y,                 Y,           ydiaeresis,           Ydiaeresis ] };
+        key <AD05> { [              t,                 T,       dead_diaeresis,          dead_macron ] };
+        key <AD06> { [              y,                 Y,      dead_circumflex,           dead_caron ] };
         key <AD07> { [              u,                 U,           udiaeresis,           Udiaeresis ] };
         key <AD08> { [              i,                 I,           idiaeresis,           Idiaeresis ] };
         key <AD09> { [              o,                 O,           odiaeresis,           Odiaeresis ] };
@@ -43,7 +43,7 @@ xkb_symbols "basic"  {
         key <AC07> { type="THREE_LEVEL", [             j,                    J,                 Down ] };
         key <AC08> { type="THREE_LEVEL", [             k,                    K,                   Up ] };
         key <AC09> { type="THREE_LEVEL", [             l,                    L,                Right ] };
-        key <AC10> { [           less,               bar,                   at,       periodcentered ] };
+        key <AC10> { [           less,               bar,            0x1002026,       periodcentered ] };
         key <AC11> { [        greater,        asciitilde,               oslash,               Oslash ] };
 
         key <AB01> { [              z,                 Z,               aacute,               Aacute ] };
@@ -55,7 +55,7 @@ xkb_symbols "basic"  {
         key <AB07> { [              m,                 M,           dead_greek,           squareroot ] };
         key <AB08> { [          comma,         semicolon,               ograve,               Ograve ] };
         key <AB09> { [         period,             colon,               oacute,               Oacute ] };
-        key <AB10> { [          minus,        underscore,            backslash,            0x1002026 ] };
+        key <AB10> { [          minus,        underscore,            backslash,                   at ] };
 
         include "level3(ralt_switch)"
 };
