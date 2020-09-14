@@ -17,7 +17,7 @@ elif [[ $1 == "light" ]]; then
   CURSOR_THEME="capitaine-cursors"
   AWESOME_THEME_VARIANT="light"
   ALACRITTY_THEME="light"
-  SPICETIFY_THEME="SpicetifyDefault" 
+  SPICETIFY_THEME="SpicetifyDefault"
   VSCODE_THEME="Activate SCARLET protocol (beta)"
   ROFI_THEME="light"
 else

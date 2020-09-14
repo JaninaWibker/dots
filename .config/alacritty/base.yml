@@ -29,6 +29,9 @@ window:
   #  x: 0
   #  y: 0
 
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is scaled
@@ -192,7 +195,7 @@ schemes:
   # License:    MIT
   # References:
   #   https://github.com/jwilm/alacritty
-  
+
   nord: &nord
     primary:
       background: '0x2E3440'
@@ -221,7 +224,7 @@ schemes:
       magenta: '0xB48EAD'
       cyan: '0x8FBCBB'
       white: '0xECEFF4'
-    
+
 
   dark: &dark
     primary:
@@ -397,8 +400,6 @@ selection:
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: false
 
-# Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
 
 cursor:
   # Cursor style

@@ -79,3 +79,9 @@
 [submodule ".config/vim/pack/plugins/start/nerdcommenter"]
 	path = .config/vim/pack/plugins/start/nerdcommenter
 	url = https://github.com/preservim/nerdcommenter
+[submodule ".config/vim/pack/syntax/start/kotlin"]
+	path = .config/vim/pack/syntax/start/kotlin
+	url = https://github.com/udalov/kotlin-vim.git
+[submodule ".config/vim/pack/themes/start/paramount"]
+	path = .config/vim/pack/themes/start/paramount
+	url = https://github.com/owickstrom/vim-colors-paramount
