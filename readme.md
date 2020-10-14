@@ -125,6 +125,7 @@ VS Code configs are split between linux and mac, the linux files are inside "con
 - Live Share
 - Live Share Chat
 - Remote VSCode
+- change-case
 
 **Syntax Highlighting & Language Support**
 
@@ -133,6 +134,7 @@ VS Code configs are split between linux and mac, the linux files are inside "con
 - checkstyle for java
 - codeLLDB
 - debugger for java
+- java test runner
 - docker
 - **dotenv**
 - gnuplot
