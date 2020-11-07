@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+
+SHOW_NOTIF=false ; [ "$1" == "--show-notification" ] && SHOW_NOTIF=true
+
+function show_notif() {
+  dunstify --appname "kdeconnect" -i $HOME/scripts/smartphone.svg "$1"
+}
+
+# id of phone, may need to adjust this if multiple phones are connected
+ID=$(kdeconnect-cli --list-available --id-only)
+TMPFILE=/tmp/kde-connect-$(date +"%Y_%m_%d_%I_%M_%p").jpg
+
+# paste clipboard content to temp file
+xclip -selection clipboard -t image/png -o > $TMPFILE || {
+  if [[ $SHOW_NOTIF = true ]]; then
+    show_notif "clipboard doesn't contain image"
+  fi
+
+  exit 1
+}
+
+# share file with phone
+kdeconnect-cli -d $ID --share $TMPFILE
+
+sleep 0.25
+
+while [ ! -z "$(wmctrl -l | grep 'Sending to')" ]
+do
+  sleep 0.1
+done
+
+# remove temp file
+rm $TMPFILE
+
+if [[ $SHOW_NOTIF = true ]]; then
+  show_notif "saved to phone"
+fi
+
+exit 0
