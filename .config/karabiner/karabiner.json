@@ -829,6 +829,49 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Change ctrl+mousebutton 4/5 to ctrl+right/left (switch desktop)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    },
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    },
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
@@ -1015,6 +1058,62 @@
                             }
                         }
                     ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 24672,
+                        "vendor_id": 65261
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "grave_accent_and_tilde"
+                            },
+                            "to": {
+                                "key_code": "grave_accent_and_tilde"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "non_us_backslash"
+                            },
+                            "to": {
+                                "key_code": "non_us_backslash"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 24672,
+                        "vendor_id": 65261
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 9505,
+                        "vendor_id": 2362
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
@@ -1123,42 +1222,42 @@
             "simple_modifications": [
                 {
                     "from": {
-                        "key_code": "grave_accent_and_tilde"
-                    },
-                    "to": {
-                        "key_code": "non_us_backslash"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "non_us_backslash"
-                    },
-                    "to": {
-                        "key_code": "grave_accent_and_tilde"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "y"
-                    },
-                    "to": {
-                        "key_code": "z"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "z"
-                    },
-                    "to": {
-                        "key_code": "y"
-                    }
-                },
-                {
-                    "from": {
                         "key_code": "f20"
                     },
                     "to": {
                         "key_code": "fn"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "grave_accent_and_tilde"
+                    },
+                    "to": {
+                        "key_code": "non_us_backslash"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "non_us_backslash"
+                    },
+                    "to": {
+                        "key_code": "grave_accent_and_tilde"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "y"
+                    },
+                    "to": {
+                        "key_code": "z"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "z"
+                    },
+                    "to": {
+                        "key_code": "y"
                     }
                 }
             ],
