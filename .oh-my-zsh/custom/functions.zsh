@@ -17,17 +17,6 @@ function watch() {
   fswatch -0 $1 | xargs -0 -n 1 -I{}
 }
 
-function scan_image() {
-  f=/tmp/kde-connect-$(date +"%Y_%m_%d_%I_%M_%p").jpg
-  kdeconnect-cli -d 34e0e0ec4264adf8 --photo ${f}
-  while [ ! -f ${f} ]
-  do
-    sleep 0.25
-  done
-  convert "${f}" png:- | xclip -sel clip -t image/png
-  rm ${f}
-}
-
 function spotify_now_playing() {
   osascript -e "display notification \"$(spotify info song)\" with title \"$(spotify info state) Spotify - $(spotify info time)\""
 }
