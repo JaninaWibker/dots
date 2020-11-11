@@ -42,6 +42,10 @@ alias gl="git log"
 
 alias woman="man"
 
+# make less have pretty colors
+export LESS="--RAW-CONTROL-CHARS"
+[[ -f $XDG_CONFIG_HOME/less_termcap ]] && . $XDG_CONFIG_HOME/less_termcap
+
 # some random aliases
 alias c="pygmentize -O style=solarizeddark -f console256 -g"
 alias gen_hash="$ZSH/custom/node gen_hash"
@@ -69,7 +73,7 @@ if [[ $OSTYPE == darwin* ]]; then
   # subl
   alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
   # list network interfaces
-  alias interfaces="networksetup -listallhardwareports" 
+  alias interfaces="networksetup -listallhardwareports"
 fi
 
 
@@ -97,3 +101,4 @@ alias unix="curl -sL https://git.io/unix | cat"
 
 # fixing $TERM for ssh since host might not know the specific terminal being used (i.e. alacritty)
 alias ssh="TERM=xterm-256color ssh"
+
