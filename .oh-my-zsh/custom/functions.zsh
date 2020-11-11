@@ -17,33 +17,14 @@ function watch() {
   fswatch -0 $1 | xargs -0 -n 1 -I{}
 }
 
-function spotify_now_playing() {
-  osascript -e "display notification \"$(spotify info song)\" with title \"$(spotify info state) Spotify - $(spotify info time)\""
-}
-function info() {
-  local spotifyPlaying="%{$fg[white]%}none"
-  if [ $(spotify info player) = "playing" ]; then
-    spotifyPlaying="$(spotify info song)"
-  fi
-  print -P "%{$fg[white]%}⚡\t$(batt)% ($(battsrc))"
-  print -P "local\t$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}' )"
-  print -P "v4\t$(ipv4)"
-  print -P "v6\t$(ipv6)"
-  print -P "%{$fg[green]%}▶\t${spotifyPlaying}"
-  print -P "%{$fg[magenta]%}\t$(defaults read loginwindow SystemVersionStampAsString)"
-  print -P "%{$fg[green]%}⬢\t$(node -v)"
-  print -P "%{$fg[red]%}npm\t$(npm -v)"
-  print -P "%{$fg[cyan]%}chrome\t$( /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version | grep -Eo '([0-9]+.[0-9]+.[0-9]+.[0-9]+)')"
-  print -P "%{$fg[blue]%}git\t$(git --version | grep -Eo '([0-9]+.[0-9]+.[0-9]+)')"
-  print -P "%{$fg[white]%}"
-  git status
-}
+if [[ $OSTYPE == darwin* ]]; then
+  function spotify_now_playing() {
+    osascript -e "display notification \"$(spotify info song)\" with title \"$(spotify info state) Spotify - $(spotify info time)\""
+  }
+fi
 
-function server() { # runs a local server with the npm package 'statik'
-  local port="${1:-8000}"
-  local path="${2:-$(pwd)}"
-  open "http://localhost:${port}/" # opens chrome and goes to localhost:$port
-  statik --port "$port" "$path"
+function colortest() {
+  bash $ZSH/custom/scripts/colortest.sh
 }
 
 cdf() {  # short for cdfinder
