@@ -60,7 +60,7 @@ if [[ "$OSTYPE" != "linux-gnu" ]]; then
 fi
 
 ### LUA ROCKS PATH THINGY
-command -v luarocks && eval $(luarocks path --bin)
+command -v luarocks &> /dev/null && eval $(luarocks path --bin)
 
 ### RUBY GEMS PATH THINGY
 export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
