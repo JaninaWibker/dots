@@ -55,7 +55,9 @@ augroup MyColors
   autocmd ColorScheme * call MyHighlights()
 augroup END
 
-colorscheme dracula
+colorscheme paramount
+"colorscheme dracula
+set background=dark
 
 " this may improve the quality of colors or may make it worse, depends. But worth trying out
 " set termguicolors
@@ -167,6 +169,10 @@ function! HasPaste()
   return ''
 endfunction
 
+let g:ycm_filetype_blacklist = {
+            \ 'md': 1,
+            \ }
+
 " editing mapping
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
@@ -272,7 +278,7 @@ map <C-p> :NERDTreeToggle<CR>
 " helper functions
 
 " airline stuff
-let g:airline_theme = 'dracula'
+let g:airline_theme = 'minimalist'" 'dracula'
 let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#branch#enabled = 1
 let g:airline_section_y = ''

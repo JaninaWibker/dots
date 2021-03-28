@@ -42,6 +42,8 @@ alias gl="git log"
 
 alias woman="man"
 
+alias greph="grep --color=always -e \"^\" -e"
+
 # make less have pretty colors
 export LESS="--RAW-CONTROL-CHARS"
 [[ -f $XDG_CONFIG_HOME/less_termcap ]] && . $XDG_CONFIG_HOME/less_termcap

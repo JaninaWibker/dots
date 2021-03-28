@@ -85,3 +85,9 @@
 [submodule ".config/vim/pack/themes/start/paramount"]
 	path = .config/vim/pack/themes/start/paramount
 	url = https://github.com/owickstrom/vim-colors-paramount
+[submodule ".config/vim/pack/themes/start/paige"]
+	path = .config/vim/pack/themes/start/paige
+	url = https://git.sr.ht/~leon_plickat/paige
+[submodule ".config/vim/pack/themes/start/airline-themes"]
+	path = .config/vim/pack/themes/start/airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
