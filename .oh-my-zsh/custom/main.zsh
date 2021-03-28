@@ -53,18 +53,19 @@ export JANNIK="/Volumes/JANNIK"
 ### Path
 #export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/flutter/bin:/usr/local/lib/node_modules/bin:/usr/local/go/bin"
 
+
+# homebrew stuff (macOS only)
+if [[ "$OSTYPE" != "linux-gnu" ]]; then
+  export PATH="/usr/local/sbin:$PATH"
+fi
+
 ### LUA ROCKS PATH THINGY
-eval $(luarocks path --bin)
+command -v luarocks && eval $(luarocks path --bin)
 
 ### RUBY GEMS PATH THINGY
 export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
 export PATH="$PATH:$HOME/.gem/ruby/2.7.0/bin"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-
-# homebrew stuff
-if [[ "$OSTYPE" != "linux-gnu" ]]; then
-  export PATH="/usr/local/sbin:$PATH"
-fi
+export PATH="$PATH:/usr/local/opt/ruby/bin"
 
 ### GO PATH THINGY
 export PATH="$PATH:$HOME/go/bin"
@@ -75,13 +76,16 @@ export PATH="$PATH:$HOME/.cargo/bin"
 ### YARN PATH THINGY
 export PATH="$PATH:$HOME/.yarn/bin"
 
-### Script thingy
-export PATH="$PATH:$HOME/scripts"
+### NPM THINGY
+export PATH="$PATH:$HOME/.local/share/npm-global"
 
-### dvisvgm thingy
+### DVISVGM THINGY
 export PATH="$PATH:/usr/local/dvisvgm/bin"
 
-### Program thingies
+### SCRIPT THINGY
+export PATH="$PATH:$HOME/scripts"
+
+### PROGRAM THINGIES
 export PATH="$PATH:$HOME/programs:$HOME/programs/links"
 
 ### NVM

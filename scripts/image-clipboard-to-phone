@@ -3,7 +3,7 @@
 SHOW_NOTIF=false ; [ "$1" == "--show-notification" ] && SHOW_NOTIF=true
 
 function show_notif() {
-  dunstify --appname "kdeconnect" -i $HOME/scripts/smartphone.svg "$1"
+  dunstify --appname "kdeconnect" -i $HOME/scripts/assets/smartphone.svg "$1"
 }
 
 # id of phone, may need to adjust this if multiple phones are connected

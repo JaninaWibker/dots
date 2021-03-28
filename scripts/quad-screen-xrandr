@@ -20,7 +20,7 @@
 # my old config had another 1080p screen instead of the 4k screen (3)
 # to use this set the high_dpi variable to 0
 
-if [[ $HIGH_DPI -eq 1  ]]; then
+if [[ $HIGH_DPI -eq 1 ]]; then
   high_dpi=true
 else
   high_dpi=false
