@@ -77,7 +77,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.yarn/bin"
 
 ### NPM THINGY
-export PATH="$PATH:$HOME/.local/share/npm-global"
+export PATH="$PATH:$HOME/.local/share/npm-global/bin"
 
 ### DVISVGM THINGY
 export PATH="$PATH:/usr/local/dvisvgm/bin"
