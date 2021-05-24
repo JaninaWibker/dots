@@ -21,4 +21,4 @@ function ueberzug_show {
   join_by $'\t' action "add" identifier "image" x "$1" y "$2" path "$3"
 }
 
-{ ueberzug_show $xoffset $yoffset "$image"; read; } | ueberzug layer --parser simple &>/dev/null
+{ ueberzug_show $xoffset $yoffset "$image"; read; } | ueberzug layer --parser simple

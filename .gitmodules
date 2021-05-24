@@ -91,3 +91,6 @@
 [submodule ".config/vim/pack/themes/start/airline-themes"]
 	path = .config/vim/pack/themes/start/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "programs/sxiv"]
+	path = programs/sxiv
+	url = https://github.com/muennich/sxiv

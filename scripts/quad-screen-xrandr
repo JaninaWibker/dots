@@ -32,15 +32,15 @@ fi
 if "$high_dpi"; then
   echo "setting xrandr conf to high dpi"
   xrandr \
-    --output HDMI-1 --mode 1920x1080 --pos 0x470      --rotate right \
+    --output HDMI-1 --mode 1920x1080 --pos 0x580      --rotate right \
     --output DP-3   --mode 1920x1080 --pos 1080x1080  --rotate normal \
     --output DP-0   --mode 3840x2160 --pos 3000x0     --rotate normal --primary \
-    --output HDMI-0 --mode 1920x1080 --pos 6840x470   --rotate left
+    --output HDMI-0 --mode 1920x1080 --pos 6840x580   --rotate left
 else
   echo "setting xrandr conf to non-high dpi"
   xrandr \
-    --output HDMI-1  --mode 1920x1080 --pos 0x470      --rotate right \
+    --output HDMI-1  --mode 1920x1080 --pos 0x580      --rotate right \
     --output DP-3    --mode 1920x1080 --pos 1080x1080  --rotate normal \
     --output DVI-D-0 --mode 1920x1080 --pos 3000x0     --rotate normal --primary \
-    --output HDMI-0  --mode 1920x1080 --pos 4920x470   --rotate left
+    --output HDMI-0  --mode 1920x1080 --pos 4920x580   --rotate left
 fi
