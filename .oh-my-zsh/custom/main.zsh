@@ -47,8 +47,14 @@ export STD="/run/user/1000/gvfs/smb-share:server=samba-server,share=files.studiu
 export EDITOR="/usr/bin/vim"
 export BROWSER="/usr/bin/chromium"
 
+export IDEA_PROPERTIES="$HOME/.config/idea/idea.properties"
+
 ### USB STICK | EXT. VOLUME
 export JANNIK="/Volumes/JANNIK"
+
+### JQ COLORS
+# it's a shame the field color cannot be set (would have set it to 0;38 or something like that)
+export JQ_COLORS="0;37:0;33:0;33:0;36:0;35:0;37:0;37"
 
 ### Path
 #export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/flutter/bin:/usr/local/lib/node_modules/bin:/usr/local/go/bin"
