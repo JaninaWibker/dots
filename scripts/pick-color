@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
+if ! command -v colorpicker &> /dev/null; then
+  echo "colorpicker not installed, available on the AUR (https://aur.archlinux.org/packages/colorpicker/)"
+  exit
+fi
+
 raw_colors="$(colorpicker --one-shot --preview)"
 colors="$(echo $raw_colors| grep -Po ':\s+#?(\d|[a-fA-F])+' | grep -Po '#?(\d|[a-fA-F])+')"
 
