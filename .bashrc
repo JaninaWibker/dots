@@ -75,7 +75,7 @@ if ${use_color} ; then
 		PS1='\[\033[01;34m\]\u\[\033[01;36m\] \W\[\033[01;34m\]\[\033[00m\] '
 	fi
 
-	alias ls='gls --color=auto'
+	alias ls='ls --color=tty'
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'

@@ -1,0 +1,62 @@
+#!/usr/bin/env python
+import sys
+import colorsys
+
+BOLD   = '\033[1m'
+RESET  = '\033[0m'
+PINK   = '\033[35m'
+WHITE  = '\033[37m'
+
+VERSION = "version: 0.0.1"
+USAGE   = f'''
+{BOLD}Usage{RESET}:
+{PINK}%s{RESET} {WHITE}<hex_color>{RESET}           # hex color (can start with '#')
+{PINK}%s{RESET} {WHITE}<r>{RESET} {WHITE}<g>{RESET} {WHITE}<b>{RESET}           # seperate r, g, b values
+{PINK}%s{RESET} {WHITE}--stdin{RESET}               # read from stdin; only accepts hex values
+
+{PINK}%s{RESET} {WHITE}-v{RESET}, {PINK}%s{RESET} {WHITE}--version{RESET} # print version
+'''.strip()
+
+def usage(prog):
+  prog = "rgb2hsl" # ignoring this value at the moment
+  return USAGE % (prog, prog, prog, prog, prog)
+
+def rgb_to_hsl(r, g, b):
+  # python devs in their infinite wisdom decided
+  # to just swap hsl to hls for some reason
+  h, l, s = colorsys.rgb_to_hls(r / 255.0, g / 255.0, b / 255.0)
+  return (h, s, l)
+
+def hex_to_rgb(value):
+  value = value.lstrip('#')
+  lv = len(value)
+  return tuple(int(value[i:i+lv//3], 16) for i in range(0, lv, lv//3))
+
+def parse_command_line_args(args):
+  if len(args) == 1:
+    print(usage(args[0]), file=sys.stderr)
+    sys.exit(1)
+  if len(args) == 2:
+    if args[1] == "-v" or args[1] == "--version":
+      print(VERSION)
+      sys.exit(0)
+    elif args[1] == "--stdin":
+      return hex_to_rgb(input(""))
+    else:
+      return hex_to_rgb(args[1])
+  elif len(args) == 4:
+    r = int(args[1])
+    g = int(args[2])
+    b = int(args[3])
+    return r, g, b
+  else:
+    print("Error: incorrect argument count", file=sys.stderr)
+    print(usage(args[0]), file=sys.stderr)
+    sys.exit(1)
+
+r, g, b = parse_command_line_args(sys.argv)
+h, s, l = rgb_to_hsl(r, g, b)
+h = round(h * 360)
+s = round(s * 100)
+l = round(l * 100)
+print(f"h: %ddeg, s: %d%%, l: %d%%" % (h, s, l))

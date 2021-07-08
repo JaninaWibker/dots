@@ -41,6 +41,6 @@ cat $XDG_CONFIG_HOME/alacritty/base.yml $XDG_CONFIG_HOME/alacritty/$ALACRITTY_TH
 cat $XDG_CONFIG_HOME/rofi/base-config $XDG_CONFIG_HOME/rofi/$ROFI_THEME-theme-config > $XDG_CONFIG_HOME/rofi/config
 
 # set spicetify theme
-# spicetify config current_theme $SPICETIFY_THEME
-# spicetify apply
+spicetify config current_theme $SPICETIFY_THEME
+spicetify apply
 

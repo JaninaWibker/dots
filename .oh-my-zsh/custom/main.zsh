@@ -69,8 +69,9 @@ fi
 command -v luarocks &> /dev/null && eval $(luarocks path --bin)
 
 ### RUBY GEMS PATH THINGY
-export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
-export PATH="$PATH:$HOME/.gem/ruby/2.7.0/bin"
+#export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
+#export PATH="$PATH:$HOME/.gem/ruby/2.7.0/bin"
+export PATH="$PATH:$HOME/.gem/ruby/3.0.0/bin"
 export PATH="$PATH:/usr/local/opt/ruby/bin"
 
 ### GO PATH THINGY
