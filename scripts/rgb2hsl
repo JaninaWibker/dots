@@ -6,19 +6,35 @@ BOLD   = '\033[1m'
 RESET  = '\033[0m'
 PINK   = '\033[35m'
 WHITE  = '\033[37m'
+RED    = '\033[31m'
 
-VERSION = "version: 0.0.1"
+VERSION = 'version: 0.0.1'
 USAGE   = f'''
 {BOLD}Usage{RESET}:
 {PINK}%s{RESET} {WHITE}<hex_color>{RESET}           # hex color (can start with '#')
 {PINK}%s{RESET} {WHITE}<r>{RESET} {WHITE}<g>{RESET} {WHITE}<b>{RESET}           # seperate r, g, b values
 {PINK}%s{RESET} {WHITE}--stdin{RESET}               # read from stdin; only accepts hex values
+{PINK}%s{RESET} {WHITE}--no-units{RESET}            # output without units ("deg" and "%")
+{PINK}%s{RESET} {WHITE}--multiline{RESET}           # output split over multiple lines
 
 {PINK}%s{RESET} {WHITE}-v{RESET}, {PINK}%s{RESET} {WHITE}--version{RESET} # print version
 '''.strip()
 
+ERROR_ARGUMENT_COUNT = f'{RED}{BOLD}Error{RESET}{RED}: incorrect argument count {RESET}(received {WHITE}%s{RESET} non-flag arguments and {WHITE}%s{RESET} flag arguments){RESET}'
+ERROR_INVALID_FLAGS = f'{RED}{BOLD}Error{RESET}{RED}: invalid flags {RESET}(the following were supplied: {WHITE}%s{RESET}){RESET}'
+
+flags_dict = {
+  'h':       'help',
+  'help':    'help',
+  'v':       'version',
+  'version': 'version',
+  'stdin':   'stdin',
+  'no-units': 'no-units',
+  'multiline': 'multiline'
+}
+
 def usage(prog):
-  prog = "rgb2hsl" # ignoring this value at the moment
+  prog = 'rgb2hsl' # ignoring this value at the moment
   return USAGE % (prog, prog, prog, prog, prog)
 
 def rgb_to_hsl(r, g, b):
@@ -32,31 +48,81 @@ def hex_to_rgb(value):
   lv = len(value)
   return tuple(int(value[i:i+lv//3], 16) for i in range(0, lv, lv//3))
 
-def parse_command_line_args(args):
-  if len(args) == 1:
-    print(usage(args[0]), file=sys.stderr)
+def flatten(arr):
+  return [item for sublist in arr for item in sublist]
+
+def parse_command_line_args(all_args):
+
+  # when not passing any arguments no error message is printed; only the usage
+  if len(all_args) == 1:
+    print(usage(all_args[0]), file=sys.stderr)
     sys.exit(1)
-  if len(args) == 2:
-    if args[1] == "-v" or args[1] == "--version":
+
+  # determine if given argument contains a flag (like '-v' or '--help')
+  is_flags   = lambda arg: arg.startswith('-')
+  # determine if given argument does NOT contain a flag (like '#f0f0f0')
+  isnt_flags = lambda arg: not arg.startswith('-')
+  # normalize flag argument (remove leading dashes; turn multiple shorthand flags into list of flags)
+  get_flags  = lambda arg: arg.startswith('--') and [arg[2:]] or [char for char in arg[1:]]
+  # get the long name for each flag
+  to_long_flag = lambda flag: flags_dict[flag] if flag in flags_dict.values() else None
+
+  # raw_flags are flags before getting the long name
+  raw_flags = flatten(map(get_flags, filter(is_flags, all_args)))
+  flags = list(map(to_long_flag, raw_flags))
+  args = list(filter(isnt_flags, all_args))
+
+  # flags containing None must mean that an unknown flag was used
+  if None in flags:
+    print(ERROR_INVALID_FLAGS % (f'{RESET}, {WHITE}'.join(raw_flags)), file=sys.stderr)
+    sys.exit(1)
+
+  opts = {
+    'no-units':  'no-units' in flags,
+    'multiline': 'multiline' in flags
+  }
+
+  if len(flags) > 0:
+
+    if flags[0] == 'version':
       print(VERSION)
       sys.exit(0)
-    elif args[1] == "--stdin":
-      return hex_to_rgb(input(""))
-    else:
-      return hex_to_rgb(args[1])
-  elif len(args) == 4:
+
+    if flags[0] == 'help':
+      print(usage(other_args[0]))
+      sys.exit(0)
+
+    if 'stdin' in flags:
+      return hex_to_rgb(input('')), opts
+
+  # hex argument supplied
+  if len(args) == 2:
+    r, g, b = hex_to_rgb(args[1])
+    return r, g, b, opts
+
+  # args[0] is the program name so everything seems off-by-one
+  if len(args) == 4:
     r = int(args[1])
     g = int(args[2])
     b = int(args[3])
-    return r, g, b
-  else:
-    print("Error: incorrect argument count", file=sys.stderr)
-    print(usage(args[0]), file=sys.stderr)
-    sys.exit(1)
+    return r, g, b, opts
 
-r, g, b = parse_command_line_args(sys.argv)
+  # offset len(args) by one because args[0] always contains the program name and this should be hidden from the user
+  print(ERROR_ARGUMENT_COUNT % (len(args) - 1, len(raw_flags)), file=sys.stderr)
+  sys.exit(1)
+
+r, g, b, opts = parse_command_line_args(sys.argv)
 h, s, l = rgb_to_hsl(r, g, b)
 h = round(h * 360)
 s = round(s * 100)
 l = round(l * 100)
-print(f"h: %ddeg, s: %d%%, l: %d%%" % (h, s, l))
+
+if opts['multiline'] and opts['no-units']:
+  print(f'%ddeg\n%d%%\n%d%%' % (h, s, l))
+elif opts['multiline'] and not opts['no-units']:
+  print(f'%d\n%d\n%d' % (h, s, l))
+elif not opts['multiline'] and opts['no-units']:
+  print(f'h: %d, s: %d, l: %d' % (h, s, l))
+elif not opts['multiline'] and not opts['no-units']:
+  print(f'h: %ddeg, s: %d%%, l: %d%%' % (h, s, l))
+
