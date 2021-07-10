@@ -5,16 +5,23 @@ if ! command -v colorpicker &> /dev/null; then
   exit
 fi
 
-output="$(colorpicker --one-shot --preview)"
-colors="$(echo $output | grep -Po ':\s+#?(\d|[a-fA-F])+' | grep -Po '#?(\d|[a-fA-F])+')"
+LOGFILE="$XDG_CONFIG_HOME/pick-color/recent"
+LOGFILETMP="$XDG_CONFIG_HOME/pick-color/recent-tmp"
+LOGCOUNT=10
 
-rgb_array=(${colors//$'\n'/ })
-r=${rgb_array[0]}
-g=${rgb_array[1]}
-b=${rgb_array[2]}
-# hex=${rgb_array[3]}
+log_to_recents() {
+  echo $1 >> $LOGFILE
+  cat $LOGFILE | awk '!x[$0]++' | tail -n $LOGCOUNT > $LOGFILETMP
+  mv $LOGFILETMP $LOGFILE
+}
+
 # i prefer lowercase hex numbers
-hex=$(echo ${rgb_array[3]} | tr '[:upper:]' '[:lower:]')
+[[ "$#" -eq 0 ]] && hex="$(colorpicker --one-shot --short --preview)" || hex=$1
+hex=$(echo $hex | tr '[:upper:]' '[:lower:]')
+r=$(printf "%d" 0x${hex:1:2})
+g=$(printf "%d" 0x${hex:3:2})
+b=$(printf "%d" 0x${hex:5:2})
+
 hsl=$(rgb2hsl --short $hex)
 hsl_array=(${hsl//$' '/ })
 h=${hsl_array[0]}
@@ -46,13 +53,12 @@ lighten() {
   echo $(hsl2rgb --hex $h $s $l)
 }
 
+
 bgcolor=${hex}
 [[ $l -ge 70 ]] && fgcolor="#000000" || fgcolor="#ffffff"
 [[ $l -ge 50 ]] && frcolor=$(darken $h $s $l) || frcolor=$(lighten $h $s $l)
 
 # for debugging purposes
-echo $output
-# echo $colors
 # echo $h $s $l
 # echo bg $bgcolor
 # echo fg $fgcolor
@@ -60,6 +66,8 @@ echo $output
 
 # copy hex color to clipboard
 echo $hex | xclip -sel clip
+
+[[ "$#" -eq 0 ]] && log_to_recents $hex
 
 # send notification (using hex color as background color and without using an icon)
 notify-send \
