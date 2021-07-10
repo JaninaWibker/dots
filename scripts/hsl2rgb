@@ -11,11 +11,10 @@ RED    = '\033[31m'
 VERSION = 'version: 0.0.1'
 USAGE   = f'''
 {BOLD}Usage{RESET}:
-{PINK}%s{RESET} {WHITE}<hex_color>{RESET}           # hex color (can start with '#')
-{PINK}%s{RESET} {WHITE}<r>{RESET} {WHITE}<g>{RESET} {WHITE}<b>{RESET}           # seperate r, g, b values
-{PINK}%s{RESET} {WHITE}--stdin{RESET}               # read from stdin; only accepts hex values
-{PINK}%s{RESET} {WHITE}--short{RESET}               # output without units ("deg" and "%%") and labels ("h: " etc.)
-{PINK}%s{RESET} {WHITE}--multiline{RESET}           # output split over multiple lines
+{PINK}%s{RESET} {WHITE}<h>{RESET} {WHITE}<s>{RESET} {WHITE}<l>{RESET}           # seperate h, s, l values
+{PINK}%s{RESET} {WHITE}--stdin{RESET}               # read from stdin, values must be space seperated
+{PINK}%s{RESET} {WHITE}--hex{RESET}                 # output as hex color
+{PINK}%s{RESET} {WHITE}--short{RESET}               # output without labels ("r: " etc.; omits "#" for hex colors)
 
 {PINK}%s{RESET} {WHITE}-v{RESET}, {PINK}%s{RESET} {WHITE}--version{RESET} # print version
 {PINK}%s{RESET} {WHITE}-h{RESET}, {PINK}%s{RESET} {WHITE}--help{RESET}    # print help
@@ -23,6 +22,7 @@ USAGE   = f'''
 
 ERROR_ARGUMENT_COUNT = f'{RED}{BOLD}Error{RESET}{RED}: incorrect argument count {RESET}(received {WHITE}%s{RESET} non-flag arguments and {WHITE}%s{RESET} flag arguments){RESET}'
 ERROR_INVALID_FLAGS = f'{RED}{BOLD}Error{RESET}{RED}: invalid flags {RESET}(the following were supplied: {WHITE}%s{RESET}){RESET}'
+ERROR_INVALID_STDIN = f'{RED}{BOLD}Error{RESET}{RED}: invalid stdin {RESET}(received {WHITE}%s{RESET})'
 
 flags_dict = {
   'h':       'help',
@@ -30,24 +30,19 @@ flags_dict = {
   'v':       'version',
   'version': 'version',
   'stdin':   'stdin',
-  'short': 'short',
-  'multiline': 'multiline'
+  'hex':     'hex',
+  'short':   'short'
 }
 
 def usage(prog):
-  prog = 'rgb2hsl' # ignoring this value at the moment
-  return USAGE % (prog, prog, prog, prog, prog, prog, prog, prog, prog)
+  prog = 'hsl2rgb' # ignoring this value at the moment
+  return USAGE % (prog, prog, prog, prog, prog, prog, prog, prog)
 
-def rgb_to_hsl(r, g, b):
+def hsl_to_rgb(h, s, l):
   # python devs in their infinite wisdom decided
   # to just swap hsl to hls for some reason
-  h, l, s = colorsys.rgb_to_hls(r / 255.0, g / 255.0, b / 255.0)
-  return (h, s, l)
-
-def hex_to_rgb(value):
-  value = value.lstrip('#')
-  lv = len(value)
-  return tuple(int(value[i:i+lv//3], 16) for i in range(0, lv, lv//3))
+  r, g, b = colorsys.hls_to_rgb(h / 360, l / 100, s / 100)
+  return (round(r * 255), round(g * 255), round(b * 255))
 
 def flatten(arr):
   return [item for sublist in arr for item in sublist]
@@ -79,8 +74,8 @@ def parse_command_line_args(all_args):
     sys.exit(1)
 
   opts = {
-    'short':  'short' in flags,
-    'multiline': 'multiline' in flags
+    'hex': 'hex' in flags,
+    'short': 'short' in flags,
   }
 
   if len(flags) > 0:
@@ -94,36 +89,35 @@ def parse_command_line_args(all_args):
       sys.exit(0)
 
     if 'stdin' in flags:
-      r, g, b = hex_to_rgb(input(''))
-      return r, g, b, opts
-
-  # hex argument supplied
-  if len(args) == 2:
-    r, g, b = hex_to_rgb(args[1])
-    return r, g, b, opts
+      values = input('').split(' ')
+      if len(values) != 3:
+        print(ERROR_INVALID_STDIN % (f'{RESET} {WHITE}'.join(values)), file=sys.stderr)
+        sys.exit(0)
+      h = int(values[0])
+      s = int(values[1])
+      l = int(values[2])
+      return h, s, l, opts
 
   # args[0] is the program name so everything seems off-by-one
   if len(args) == 4:
-    r = int(args[1])
-    g = int(args[2])
-    b = int(args[3])
-    return r, g, b, opts
+    h = int(args[1])
+    s = int(args[2])
+    l = int(args[3])
+    return h, s, l, opts
 
   # offset len(args) by one because args[0] always contains the program name and this should be hidden from the user
   print(ERROR_ARGUMENT_COUNT % (len(args) - 1, len(raw_flags)), file=sys.stderr)
   sys.exit(1)
 
-r, g, b, opts = parse_command_line_args(sys.argv)
-h, s, l = rgb_to_hsl(r, g, b)
-h = round(h * 360)
-s = round(s * 100)
-l = round(l * 100)
+h, s, l, opts = parse_command_line_args(sys.argv)
+r, g, b = hsl_to_rgb(h, s, l)
 
-if opts['multiline'] and opts['short']:
-  print(f'%d\n%d\n%d' % (h, s, l))
-elif opts['multiline'] and not opts['short']:
-  print(f'%ddeg\n%d%%\n%d%%' % (h, s, l))
-elif not opts['multiline'] and opts['short']:
-  print(f'%d %d %d' % (h, s, l))
-elif not opts['multiline'] and not opts['short']:
-  print(f'h: %ddeg, s: %d%%, l: %d%%' % (h, s, l))
+if opts['hex'] and opts['short']:
+  print(f'{r:02x}{g:02x}{b:02x}')
+elif opts['hex'] and not opts['short']:
+  print(f'#{r:02x}{g:02x}{b:02x}')
+elif not opts['hex'] and opts['short']:
+  print(f'%d %d %d' % (r, g, b))
+elif not opts['hex'] and not opts['short']:
+  print(f'r: %d, g: %d, b: %d' % (r, g, b))
+
