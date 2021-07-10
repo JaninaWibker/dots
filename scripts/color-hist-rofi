@@ -1,0 +1,34 @@
+#!/usr/bin/env sh
+
+LOGFILE="$XDG_CONFIG_HOME/pick-color/recent"
+LOGFILETMP="$XDG_CONFIG_HOME/pick-color/recent-tmp"
+
+row() {
+  color=$1
+  text=$2
+
+  echo "<span size=\"larger\" background=\"$color\">$text</span>"
+}
+
+
+if [ "$@" ]
+then
+  color=$(echo $1 | grep -Po '#[\d|a-fA-F]+' | head -1)
+  if [ "$ROFI_RETV" -eq 10 ] ; then
+    cat $LOGFILE | grep -vE $color > $LOGFILETMP
+    mv $LOGFILETMP $LOGFILE
+    echo -en "\0markup-rows\x1ftrue\n"
+
+    cat $LOGFILE | while read line ; do row $line $line ; done
+  elif [ "$ROFI_RETV" -eq 11 ]; then
+    exit 0
+  else
+    pick-color $color &> /dev/null
+    exit 0
+  fi
+else
+  echo -en "\0markup-rows\x1ftrue\n"
+
+  cat $LOGFILE | while read line ; do row $line $line ; done
+fi
+

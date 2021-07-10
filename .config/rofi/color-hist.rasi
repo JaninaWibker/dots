@@ -1,0 +1,62 @@
+configuration {
+  disable-history: false;
+  fullscreen:      false;
+	hide-scrollbar:  true;
+	sidebar-mode:    false;
+}
+
+* {
+  accent:           #000000;
+  background:       #FFFFFF;
+  background-light: #E7E8EB;
+  foreground:       #333333;
+}
+
+* {
+  background-color: @background;
+  text-color:       @foreground;
+}
+
+window {
+  transparency:     "real";
+  border-radius:    12px;
+  width:            200px;
+  location:         west;
+  x-offset:         15px;
+  y-offset:         0px;
+}
+
+listview {
+  // lines:   10;
+  margin:  8px;
+  spacing: 8px;
+  cycle:   true;
+  dynamic: true;
+  layout:  vertical;
+}
+
+mainbox {
+  background-color: @background;
+  children:         [ listview ];
+}
+
+element {
+  background-color: @background-light;
+  text-color:       @foreground;
+  orientation:      vertical;
+}
+
+element-text {
+	font:							"Menlo 26";
+  expand:           false;
+  horizontal-align: 0.5;
+  vertical-align:   0;
+  margin:          5px 0px 15px 0px;
+}
+
+element selected {
+  background-color: @accent;
+  text-color:       @background;
+  border:           0px;
+  border-color:     @border;
+}

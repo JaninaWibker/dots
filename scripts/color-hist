@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+rofi -show ch -modi "ch:color-hist-rofi" \
+     -kb-custom-1 "d" \
+     -kb-custom-2 "q" \
+     -kb-row-down "Down,j" \
+     -kb-row-up   "Up,k"   \
+     -theme "$XDG_CONFIG_HOME/rofi/color-hist.rasi"
