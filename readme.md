@@ -25,6 +25,7 @@ These dotfiles are a mixture of dotfiles across both Linux and Mac OS systems, s
 - iterm2 config / theme (Default, Snazzy, Cyberpunk; currently using Default)
 - alacritty config
 - neofetch config & [custom build](https://github.com/JannikWibker/neofetch) ([überzug](https://github.com/seebye/ueberzug) support)
+- pick-color script as a fancy color picker (using [colorpicker](https://aur.archlinux.org/packages/colorpicker/))
 - vscode settings (and list of installed packages)
 - [yabai](https://github.com/koekeishiya/yabai) & [skhd](https://github.com/koekeishiya/skhd) config
 - [karabiner elements](https://pqrs.org/osx/karabiner/) config
@@ -70,9 +71,10 @@ Incase a completely new submodule was added running `dots submodule init` before
 
 **In general** install tmux, zsh, oh-my-zsh, zsh-completions, vim (newest version), git (newest version), VS-Code, SublimeText, Atom, Spotify, Chrome/Chromium, Vivaldi, Firefox, Insomnia, Discord, Typora, KDE-Connect, cloc, ffmpeg, gcc, gdb, gnuplot, jq, lua, nodejs, ruby, python, nano, curl, wget, sqlite, neofetch, mitm-proxy, some latex distribution, dvisvgm.
 
+**On Linux** specifically install dunst, xsiv, rofi, zathura, alacritty, überzug, betterlockscreen (-git on arch as the other version is pretty outdated and doesn't support "--off"), xidlehook, maybe awesome wm, xclip (and similar), spicetify, Flameshot, Notion (using Lotion or some other method), Font Manager, colorpicker, InkScape, Gimp, Krita, Thunar, widevine related stuff (for chrome/chromium/vivaldi).
+
 **On Mac OS** specifically install Karabiner Elements, iTerm2, TablePlus, Notion, Anybar, LuLu, VEEER, IINA, Tunnelblick, puuush, Übersicht, yabai, skhd, Discovery.
 
-**On Linux** specifically install dunst, xsiv, rofi, zathura, alacritty, überzug, betterlockscreen (-git on arch as the other version is pretty outdated and doesn't support "--off"), xidlehook, maybe awesome wm, xclip (and similar), spicetify, Flameshot, Notion (using Lotion or some other method), Font Manager, Color Picker, InkScape, Gimp, Krita, Thunar, widevine related stuff (for chrome/chromium/vivaldi).
 
 ## Other notes
 
