@@ -4,6 +4,11 @@ LOGFILE="$XDG_CONFIG_HOME/pick-color/recent"
 LOGFILETMP="$XDG_CONFIG_HOME/pick-color/recent-tmp"
 LOGCOUNT=10
 
+DELETE_ACTION=10
+QUIT_ACTION=11
+PASTE_ACTION=12
+PICK_ACTION=13
+
 log_to_recents() {
   echo $1 >> $LOGFILE
   cat $LOGFILE | awk '!x[$0]++' | tail -n $LOGCOUNT > $LOGFILETMP
@@ -23,6 +28,52 @@ colorless_row() {
   echo "<span size=\"larger\">$text</span>"
 }
 
+action_delete() {
+  color=$1
+  cat $LOGFILE | grep -vE $color > $LOGFILETMP
+  mv $LOGFILETMP $LOGFILE
+  echo -en "\0markup-rows\x1ftrue\n"
+
+  cat $LOGFILE | while read line ; do row $line $line ; done
+  colorless_row "paste"
+  colorless_row "pick"
+}
+
+action_quit() {
+  exit 0
+}
+
+action_paste() {
+  color=$(xclip -out -sel clip 2> /dev/null | grep -Po '#[\d|a-fa-f]+' | head -1)
+  if [ -n "$color" ] ; then
+    log_to_recents $color
+  fi
+  cat $LOGFILE | while read line ; do row $line $line ; done
+  colorless_row "paste"
+  colorless_row "pick"
+}
+
+action_pick() {
+  # cannot start pick-color while rofi is still running, need to start a seperate process,
+  # redirect stdout and stderr to /dev/null, background it and then make it ignore SIGHUP
+  # (which is called when the parent exits)
+  # directly after that exit rofi so that pick-color can work properly
+
+  # this is quite a difficult thing to get to work & debug :/
+  nohup sh -c "pick-color && color-hist" &> /dev/null &
+  exit 0
+}
+
+action_default() {
+  color=$1
+  if [ -n "$color" ] ; then
+    pick-color $color &> /dev/null
+  else
+    colorless_row "error"
+  fi
+  exit 0
+}
+
 
 if [ "$@" ]
 then
@@ -30,55 +81,41 @@ then
   btn=$(echo $1 | grep -Po '#[\d|a-fA-F]+|paste|pick|error')
   color=$(echo $btn | grep -Po '#[\d|a-fA-F]+' | head -1)
 
+  # need to handle buttons AFTER handling keypresses because keypresses also trigger the button action and this may not be the wanted behavior:
+  # when pressing p for paste (from clipboard) the selected button should be ignored; same for pressing i for pick
+  # solution: handle keypresses first, after that handle button presses
+
   # error
   if [ "$btn" = "error" ] ; then
     exit 1
 
+  # deleting something (keypress "d")
+  elif [ "$ROFI_RETV" -eq "$DELETE_ACTION" ] ; then
+    action_delete $color
+
+  # exiting (keypress "q")
+  elif [ "$ROFI_RETV" -eq "$QUIT_ACTION" ]; then
+    action_quit
+
+  # paste (keypress 'p')
+  elif [ "$ROFI_RETV" -eq "$PASTE_ACTION" ] ; then
+    action_paste
+
+  # pick (keypress "i")
+  elif [ "$ROFI_RETV" -eq "$PICK_ACTION" ] ; then
+    action_pick
+
   # paste button
   elif [ "$btn" = "paste" ] ; then
-    color=$(xclip -out -sel clip 2> /dev/null | grep -Po '#[\d|a-fa-f]+' | head -1)
-    if [ -n "$color" ] ; then
-      log_to_recents $color
-    fi
-    cat $LOGFILE | while read line ; do row $line $line ; done
-    colorless_row "paste"
-    colorless_row "pick"
+    action_paste
 
   # pick button
   elif [ "$btn" = "pick" ] ; then
+    action_pick
 
-    # cannot start pick-color while rofi is still running, need to start a seperate process,
-    # redirect stdout and stderr to /dev/null, background it and then make it ignore SIGHUP
-    # (which is called when the parent exits)
-    # directly after that exit rofi so that pick-color can work properly
-
-    # this is quite a difficult thing to get to work & debug :/
-    nohup sh -c "pick-color && color-hist" &> /dev/null &
-    exit 0
-
-  # deleting something ("d")
-  elif [ "$ROFI_RETV" -eq 10 ] ; then
-
-    cat $LOGFILE | grep -vE $color > $LOGFILETMP
-    mv $LOGFILETMP $LOGFILE
-    echo -en "\0markup-rows\x1ftrue\n"
-
-    cat $LOGFILE | while read line ; do row $line $line ; done
-    colorless_row "paste"
-    colorless_row "pick"
-
-  # exiting ("q)
-  elif [ "$ROFI_RETV" -eq 11 ]; then
-    exit 0
-
-  # other (picked a color)
+  # other (selected a color)
   else
-    if [ -n "$color" ] ; then
-      pick-color $color &> /dev/null
-    else
-      colorless_row "error"
-    fi
-    exit 0
+    action_default $color
   fi
 else
   echo -en "\0markup-rows\x1ftrue\n"
