@@ -27,7 +27,7 @@ colorless_row() {
 if [ "$@" ]
 then
   # clicked button; this includes all kinds of nasty html stuff; filter it out
-  btn=$(echo $1 | grep -Po '#[\d|a-fA-F]+|paste|error')
+  btn=$(echo $1 | grep -Po '#[\d|a-fA-F]+|paste|pick|error')
   color=$(echo $btn | grep -Po '#[\d|a-fA-F]+' | head -1)
 
   # error
@@ -42,6 +42,19 @@ then
     fi
     cat $LOGFILE | while read line ; do row $line $line ; done
     colorless_row "paste"
+    colorless_row "pick"
+
+  # pick button
+  elif [ "$btn" = "pick" ] ; then
+
+    # cannot start pick-color while rofi is still running, need to start a seperate process,
+    # redirect stdout and stderr to /dev/null, background it and then make it ignore SIGHUP
+    # (which is called when the parent exits)
+    # directly after that exit rofi so that pick-color can work properly
+
+    # this is quite a difficult thing to get to work & debug :/
+    nohup sh -c "pick-color && color-hist" &> /dev/null &
+    exit 0
 
   # deleting something ("d")
   elif [ "$ROFI_RETV" -eq 10 ] ; then
@@ -52,6 +65,7 @@ then
 
     cat $LOGFILE | while read line ; do row $line $line ; done
     colorless_row "paste"
+    colorless_row "pick"
 
   # exiting ("q)
   elif [ "$ROFI_RETV" -eq 11 ]; then
@@ -71,5 +85,6 @@ else
 
   cat $LOGFILE | while read line ; do row $line $line ; done
   colorless_row "paste"
+  colorless_row "pick"
 fi
 
