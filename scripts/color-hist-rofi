@@ -2,6 +2,13 @@
 
 LOGFILE="$XDG_CONFIG_HOME/pick-color/recent"
 LOGFILETMP="$XDG_CONFIG_HOME/pick-color/recent-tmp"
+LOGCOUNT=10
+
+log_to_recents() {
+  echo $1 >> $LOGFILE
+  cat $LOGFILE | awk '!x[$0]++' | tail -n $LOGCOUNT > $LOGFILETMP
+  mv $LOGFILETMP $LOGFILE
+}
 
 row() {
   color=$1
@@ -10,25 +17,59 @@ row() {
   echo "<span size=\"larger\" background=\"$color\">$text</span>"
 }
 
+colorless_row() {
+  text=$1
+
+  echo "<span size=\"larger\">$text</span>"
+}
+
 
 if [ "$@" ]
 then
-  color=$(echo $1 | grep -Po '#[\d|a-fA-F]+' | head -1)
-  if [ "$ROFI_RETV" -eq 10 ] ; then
+  # clicked button; this includes all kinds of nasty html stuff; filter it out
+  btn=$(echo $1 | grep -Po '#[\d|a-fA-F]+|paste|error')
+  color=$(echo $btn | grep -Po '#[\d|a-fA-F]+' | head -1)
+
+  # error
+  if [ "$btn" = "error" ] ; then
+    exit 1
+
+  # paste button
+  elif [ "$btn" = "paste" ] ; then
+    color=$(xclip -out -sel clip 2> /dev/null | grep -Po '#[\d|a-fa-f]+' | head -1)
+    if [ -n "$color" ] ; then
+      log_to_recents $color
+    fi
+    cat $LOGFILE | while read line ; do row $line $line ; done
+    colorless_row "paste"
+
+  # deleting something ("d")
+  elif [ "$ROFI_RETV" -eq 10 ] ; then
+
     cat $LOGFILE | grep -vE $color > $LOGFILETMP
     mv $LOGFILETMP $LOGFILE
     echo -en "\0markup-rows\x1ftrue\n"
 
     cat $LOGFILE | while read line ; do row $line $line ; done
+    colorless_row "paste"
+
+  # exiting ("q)
   elif [ "$ROFI_RETV" -eq 11 ]; then
     exit 0
+
+  # other (picked a color)
   else
-    pick-color $color &> /dev/null
+    if [ -n "$color" ] ; then
+      pick-color $color &> /dev/null
+    else
+      colorless_row "error"
+    fi
     exit 0
   fi
 else
   echo -en "\0markup-rows\x1ftrue\n"
 
   cat $LOGFILE | while read line ; do row $line $line ; done
+  colorless_row "paste"
 fi
 
