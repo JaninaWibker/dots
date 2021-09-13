@@ -31,10 +31,6 @@
     "command": "editor.action.transformToUppercase"
   },
   {
-    "key": "ctrl+k ctrl+l",
-    "command": "editor.action.transformToLowercase"
-  },
-  {
     "key": "ctrl+k ctrl+d",
     "command": "editor.action.revealDefinition",
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
@@ -103,22 +99,6 @@
   {
     "key": "ctrl+k ctrl+left",
     "command": "-workbench.action.focusLeftGroup"
-  },
-  {
-    "key": "ctrl+k ctrl+down",
-    "command": "workbench.action.splitEditorDown"
-  },
-  {
-    "key": "ctrl+k ctrl+left",
-    "command": "workbench.action.splitEditorLeft"
-  },
-  {
-    "key": "ctrl+k ctrl+right",
-    "command": "workbench.action.splitEditorRight"
-  },
-  {
-    "key": "ctrl+k ctrl+up",
-    "command": "workbench.action.splitEditorUp"
   },
   {
     "key": "ctrl+k ctrl+j",
@@ -306,5 +286,97 @@
     "key": "alt+q",
     "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
     "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+k l",
+    "command": "workbench.action.focusRightGroup"
+  },
+  {
+    "key": "ctrl+k h",
+    "command": "workbench.action.focusLeftGroup"
+  },
+  {
+    "key": "ctrl+k k",
+    "command": "workbench.action.focusAboveGroup"
+  },
+  {
+    "key": "ctrl+k j",
+    "command": "workbench.action.focusBelowGroup"
+  },
+  {
+    "key": "ctrl+k u",
+    "command": "editor.action.transformToUppercase"
+  },
+  {
+    "key": "ctrl+k ctrl+l",
+    "command": "editor.action.transformToLowercase"
+  },
+  {
+    "key": "ctrl+k ctrl+l",
+    "command": "-editor.toggleFold",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+k ctrl+h",
+    "command": "-workbench.action.output.toggleOutput"
+  },
+  {
+    "key": "ctrl+k ctrl+j",
+    "command": "-editor.unfoldAll",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+k ctrl+k",
+    "command": "-editor.action.defineKeybinding",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'jsonc'"
+  },
+  {
+    "key": "ctrl+k ctrl+k",
+    "command": "-keybindings.editor.defineKeybinding",
+    "when": "inKeybindings && keybindingFocus"
+  },
+  {
+    "key": "ctrl+k g",
+    "command": "editor.action.selectFromAnchorToCursor",
+    "when": "editorTextFocus && selectionAnchorSet"
+  },
+  {
+    "key": "ctrl+k ctrl+k",
+    "command": "-editor.action.selectFromAnchorToCursor",
+    "when": "editorTextFocus && selectionAnchorSet"
+  },
+  {
+    "key": "ctrl+k ctrl+g",
+    "command": "editor.action.setSelectionAnchor",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+b",
+    "command": "-editor.action.setSelectionAnchor",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k left",
+    "command": "-workbench.action.splitEditor"
+  },
+  {
+    "key": "ctrl+k ctrl+down",
+    "command": "workbench.action.splitEditorDown"
+  },
+  {
+    "key": "ctrl+k ctrl+left",
+    "command": "workbench.action.splitEditorLeft"
+  },
+  {
+    "key": "ctrl+k ctrl+right",
+    "command": "workbench.action.splitEditorRight"
+  },
+  {
+    "key": "ctrl+j ctrl+up",
+    "command": "workbench.action.splitEditorUp"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quit"
   }
 ]
