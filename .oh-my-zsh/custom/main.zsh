@@ -95,6 +95,14 @@ export PATH="$PATH:$HOME/scripts"
 ### PROGRAM THINGIES
 export PATH="$PATH:$HOME/programs:$HOME/programs/links"
 
+### ANDROID THINGIES
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools/
+export PATH=$PATH:$ANDROID_HOME/tools/bin/
+export PATH=$PATH:$ANDROID_HOME/tools/
+PATH=$ANDROID_HOME/emulator:$PATH
+
 ### NVM
 if [[ "$OSTYPE" != "linux-gnu" ]]; then
   export NVM_DIR="$HOME/.nvm"

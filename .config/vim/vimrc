@@ -1,5 +1,8 @@
 " .vimrc
 
+" use vim-matchup instead of default matchit & matchparen (% key)
+let g:loaded_matchit = 1
+
 " disable dumb defaults
 set backspace=indent,eol,start
 
@@ -44,6 +47,8 @@ packadd! nerdtree-git-plugin
 
 set rtp+=/usr/bin/fzf
 
+autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
 function! MyHighlights() abort
   " I don't want to highlight the whole line, I only want the indicator in the line number column
   set cursorline
@@ -54,6 +59,7 @@ augroup MyColors
   autocmd!
   autocmd ColorScheme * call MyHighlights()
 augroup END
+
 
 colorscheme paramount
 "colorscheme dracula
