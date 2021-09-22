@@ -97,3 +97,6 @@
 [submodule "programs/boomer"]
 	path = programs/boomer
 	url = https://github.com/tsoding/boomer
+[submodule ".config/vim/pack/plugins/start/vim-airline-themes"]
+	path = .config/vim/pack/plugins/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
