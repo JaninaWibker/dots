@@ -63,6 +63,8 @@ export JQ_COLORS="0;37:0;33:0;33:0;36:0;35:0;37:0;37"
 # homebrew stuff (macOS only)
 if [[ "$OSTYPE" != "linux-gnu" ]]; then
   export PATH="/usr/local/sbin:$PATH"
+  # stop homebrew from being stuck for 5 minutes ("Updating Homebrew...") when trying to install something
+  export HOMEBREW_NO_AUTO_UPDATE=1
 fi
 
 ### LUA ROCKS PATH THINGY
@@ -93,7 +95,7 @@ export PATH="$PATH:/usr/local/dvisvgm/bin"
 export PATH="$PATH:$HOME/scripts"
 
 ### PROGRAM THINGIES
-export PATH="$PATH:$HOME/programs:$HOME/programs/links"
+export PATH="$PATH:$HOME/programs:$HOME/programs/links:$HOME/programs/cm/release_target/"
 
 ### ANDROID THINGIES
 export ANDROID_HOME=/opt/android-sdk
@@ -102,6 +104,9 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools/
 export PATH=$PATH:$ANDROID_HOME/tools/bin/
 export PATH=$PATH:$ANDROID_HOME/tools/
 PATH=$ANDROID_HOME/emulator:$PATH
+
+### RUST
+export PATH="$PATH:$HOME/.cargo/bin"
 
 ### NVM
 if [[ "$OSTYPE" != "linux-gnu" ]]; then
@@ -112,6 +117,15 @@ fi
 ### Inkscape on MacOS
 if [[ "$OSTYPE" != "linux-gnu" ]]; then
   export PATH="$PATH:/Applications/Inkscape.app/Contents/MacOS/"
+fi
+
+### standard C/C++ compiler
+if [[ "$OSTYPE" != "linux-gnu" ]]; then
+  export CC=gcc-11
+  export CXX=g++-11
+else
+  export CC=gcc
+  export CXX=g++
 fi
 
 # incase .profile does not set these correctly

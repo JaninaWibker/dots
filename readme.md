@@ -69,11 +69,11 @@ Incase a completely new submodule was added running `dots submodule init` before
 
 > These are lists of applications I often use, some of these have config files in this repo, some don’t.
 
-**In general** install tmux, zsh, oh-my-zsh, zsh-completions, vim (newest version), git (newest version), VS-Code, SublimeText, Atom, Spotify, Chrome/Chromium, Vivaldi, Firefox, Insomnia, Discord, Typora, KDE-Connect, cloc, ffmpeg, gcc, gdb, gnuplot, jq, lua, nodejs, ruby, python, nano, curl, wget, sqlite, neofetch, mitm-proxy, some latex distribution, dvisvgm.
+**In general** install tmux, zsh, oh-my-zsh, zsh-completions, vim (newest version), git (newest version), VS-Code, SublimeText, Atom, Spotify, Chrome/Chromium, Vivaldi, Firefox, Insomnia, Discord, Typora, KDE-Connect, cloc, ffmpeg, gcc, gdb, gnuplot, jq, lua, nodejs, ruby, python, nano, curl, wget, sqlite, neofetch, mitm-proxy, some latex distribution, dvisvgm, rust, cm.
 
-**On Linux** specifically install dunst, xsiv, rofi, zathura, alacritty, überzug, betterlockscreen (-git on arch as the other version is pretty outdated and doesn't support "--off"), xidlehook, maybe awesome wm, xclip (and similar), spicetify, Flameshot, Notion (using Lotion or some other method), Font Manager, colorpicker, InkScape, Gimp, Krita, Thunar, widevine related stuff (for chrome/chromium/vivaldi).
+**On Linux** specifically install dunst, sxiv, rofi, zathura, alacritty, überzug, betterlockscreen (-git on arch as the other version is pretty outdated and doesn't support "--off"), xidlehook, maybe awesome wm, xclip (and similar), spicetify, zoomer, Flameshot, Notion (using Lotion or some other method), Font Manager, colorpicker, InkScape, Gimp, Krita, Thunar, widevine related stuff (for chrome/chromium/vivaldi).
 
-**On Mac OS** specifically install Karabiner Elements, iTerm2, TablePlus, Notion, Anybar, LuLu, VEEER, IINA, Tunnelblick, puuush, Übersicht, yabai, skhd, Discovery.
+**On Mac OS** specifically install Karabiner Elements, iTerm2, TablePlus, Notion, Anybar, LuLu, Rectangle, IINA, Tunnelblick, puush, Übersicht, yabai, skhd, Discovery, Witch, ScrollReverser, DiscreteScroll.
 
 
 ## Other notes
