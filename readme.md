@@ -75,6 +75,19 @@ Incase a completely new submodule was added running `dots submodule init` before
 
 **On Mac OS** specifically install Karabiner Elements, iTerm2, TablePlus, Notion, Anybar, LuLu, Rectangle, IINA, Tunnelblick, puush, Übersicht, yabai, skhd, Discovery, Witch, ScrollReverser, DiscreteScroll.
 
+**Browser extensions**:
+alt-q (private personal fork),
+[auto scroll](https://chrome.google.com/webstore/detail/autoscroll/occjjkgifpmdgodlplnacmkejpdionan),
+[html5 video keyboard shortcuts](https://chrome.google.com/webstore/detail/html5-video-keyboard-shor/llhmaciggnibnbdokidmbilklceaobae),
+[ublock origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm),
+[enhancer for youtube](https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle),
+[betterttv](https://chrome.google.com/webstore/detail/betterttv/ajopnjidmegmdimjlfnijceegpefgped),
+[frankerfacez](https://chrome.google.com/webstore/detail/frankerfacez/fadndhdgpmmaapbmfcknlfgcflmmmieb),
+[unwanted twitch](https://chrome.google.com/webstore/detail/unwanted-twitch/egbpddkgpjmliolmpjenjomflclekjld),
+[bitwarden](https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb),
+[cookie autodelete](https://chrome.google.com/webstore/detail/cookie-autodelete/fhcgjolkccmbidfldomjliifgaodjagh),
+[dark reader](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh),
+[zhongwen chinese english dictionary](https://chrome.google.com/webstore/detail/zhongwen-chinese-english/kkmlkkjojmombglmlpbpapmhcaljjkde)
 
 ## Other notes
 
