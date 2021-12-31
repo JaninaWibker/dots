@@ -100,3 +100,6 @@
 [submodule ".config/vim/pack/plugins/start/vim-airline-themes"]
 	path = .config/vim/pack/plugins/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "programs/limelight"]
+	path = programs/limelight
+	url = https://github.com/koekeishiya/limelight
