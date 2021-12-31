@@ -99,7 +99,10 @@
 	url = https://github.com/tsoding/boomer
 [submodule ".config/vim/pack/plugins/start/vim-airline-themes"]
 	path = .config/vim/pack/plugins/start/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
+  url = https://github.com/vim-airline/vim-airline-themes
+[submodule "programs/ux_play"]
+	path = programs/ux_play
+	url = https://github.com/antimof/UxPlay
 [submodule "programs/limelight"]
 	path = programs/limelight
-	url = https://github.com/koekeishiya/limelight
+  url = https://github.com/koekeishiya/limelight
