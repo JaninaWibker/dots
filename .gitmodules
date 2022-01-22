@@ -91,9 +91,6 @@
 [submodule ".config/vim/pack/themes/start/airline-themes"]
 	path = .config/vim/pack/themes/start/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
-[submodule "programs/sxiv"]
-	path = programs/sxiv
-	url = https://github.com/muennich/sxiv
 [submodule "programs/boomer"]
 	path = programs/boomer
 	url = https://github.com/tsoding/boomer
@@ -106,3 +103,6 @@
 [submodule "programs/limelight"]
 	path = programs/limelight
   url = https://github.com/koekeishiya/limelight
+[submodule "programs/nsxiv"]
+	path = programs/nsxiv
+	url = https://github.com/nsxiv/nsxiv

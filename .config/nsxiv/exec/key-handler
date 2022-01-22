@@ -1,0 +1,16 @@
+#!/bin/sh
+
+while read file; do
+
+  b_file=$(basename "$file")
+
+  case "$1" in
+    "y")
+      echo -n "$file" | xclip -selection clipboard &&
+        dunstify --appname="awesomewm" --icon="$HOME/scripts/assets/clipboard.svg" "\"$file\" copied to clipboard" & ;;
+    "Y")
+      echo -n "$b_file" | xclip -selection clipboard &&
+        dunstify --appname="awesomewm" --icon="$HOME/scripts/assets/clipboard.svg" "\"$b_file\" copied to clipboard" & ;;
+  esac
+
+done
