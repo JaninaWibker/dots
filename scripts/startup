@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# this script runs at start up after the desktop manager is loaded.
+# this runs before logging in.
+HIGH_DPI=1 $HOME/scripts/quad-screen-xrandr
+
+dunst &
+numlockx &
+setxkbmap ed
+fcitx &
+
+# mouse settings
+logid -c $HOME/.config/logid.cfg
+
+# Multi_key for XCompose (right super/mod)
+xmodmap -e "keysym Super_R = Multi_key"
+
+xsetwacom set "Wacom Intuos PT S Pen stylus" MapToOutput "HEAD-0"
+xsetwacom set "Wacom Intuos PT S Pen eraser" MapToOutput "HEAD-0"
+
