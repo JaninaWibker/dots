@@ -1,16 +1,25 @@
 #!/bin/sh
 
+create_notification() {
+  dunstify --appname="awesomewm" --icon="$HOME/scripts/assets/clipboard.svg" $1 &
+}
+
 while read file; do
 
-  b_file=$(basename "$file")
+  # nsxiv prepends the path with multiple slashes for some reason
+  path="$(realpath $file)"
+  filename="$(basename $file)"
 
   case "$1" in
     "y")
-      echo -n "$file" | xclip -selection clipboard &&
-        dunstify --appname="awesomewm" --icon="$HOME/scripts/assets/clipboard.svg" "\"$file\" copied to clipboard" & ;;
+      echo -n "$path" | xclip -selection clipboard &&
+        create_notification "\"$path\" copied" ;;
+    "C-y")
+      echo -n "$filename" | xclip -selection clipboard &&
+        create_notification "\"$filename\" copied" ;;
     "Y")
-      echo -n "$b_file" | xclip -selection clipboard &&
-        dunstify --appname="awesomewm" --icon="$HOME/scripts/assets/clipboard.svg" "\"$b_file\" copied to clipboard" & ;;
+      xclip -selection clipboard -target image/png -i "$path" &&
+        create_notification "copied image to clipboard ($filename)" ;;
   esac
 
 done
