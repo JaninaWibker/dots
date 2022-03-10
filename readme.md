@@ -33,7 +33,7 @@ Configurations for:
 
 Other things
 - XCompose file
-- custom xkb keymap (called ed as it’s a mixture of the “de” (german) layout and the [eurkey](https://eurkey.steffen.bruentjen.eu/) layout)
+- custom xkb keymap (called ed as it’s a mixture of the “de” (german) layout and the [eurkey](https://eurkey.steffen.bruentjen.eu/) layout; mac OS equivalent can be found in `.config/mac-xkb-adaptation.bundle`)
 - a custom color picker (with history functionality) called pick-color (using [colorpicker](https://aur.archlinux.org/packages/colorpicker/))
 - scripts for
   - controlling spotify (applescript)
@@ -98,6 +98,13 @@ It is important to run `$HOME/scripts/change-theme dark` once after installation
 The logiops config file comes with the following mappings:
 
 ![logoips button mapping](https://i.imgur.com/PLvz6mR.png)
+
+
+The custom xkb layout (as well as my own custom keyboard - [jdkbd](https://github.com/JannikWibker/jdkbd)) look like this currently:
+
+![custom keyboard layout](https://i.imgur.com/2JjFp4k.png)
+
+> http://www.keyboard-layout-editor.com/#/gists/153a860001da7b2fd4cc9ee0bf72accb
 
 
 ## Scripts
