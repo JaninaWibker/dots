@@ -317,6 +317,6 @@
 <Multi_key> <Multi_key> <t> <r> <a> <n> <s> : "🏳️‍⚧️"
 
 # Misc
-<Multi_key> <n> <t> : "n’t "
-<Multi_key> <i> <m> : "I’m "
-<Multi_key> <v> <e> : "’ve "
+<Multi_key> <n> <t> : "n’t"
+<Multi_key> <i> <m> : "I’m"
+<Multi_key> <v> <e> : "’ve"
