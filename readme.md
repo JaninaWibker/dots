@@ -97,7 +97,7 @@ It is important to run `$HOME/scripts/change-theme dark` once after installation
 
 The logiops config file comes with the following mappings:
 
-![logoips button mapping(https://i.imgur.com/PLvz6mR.png)
+![logoips button mapping](https://i.imgur.com/PLvz6mR.png)
 
 
 ## Scripts
