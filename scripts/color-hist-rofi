@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-LOGFILE="$XDG_CONFIG_HOME/pick-color/recent"
-LOGFILETMP="$XDG_CONFIG_HOME/pick-color/recent-tmp"
-LOGCOUNT=10
+HISTFILE="$XDG_CONFIG_HOME/pick-color/recent"
+HISTFILETMP="$XDG_CONFIG_HOME/pick-color/recent-tmp"
+HISTCOUNT=10
 
 DELETE_ACTION=10
 QUIT_ACTION=11
@@ -10,9 +10,9 @@ PASTE_ACTION=12
 PICK_ACTION=13
 
 log_to_recents() {
-  echo $1 >> $LOGFILE
-  cat $LOGFILE | awk '!x[$0]++' | tail -n $LOGCOUNT > $LOGFILETMP
-  mv $LOGFILETMP $LOGFILE
+  echo $1 >> $HISTFILE
+  cat $HISTFILE | awk '!x[$0]++' | tail -n $HISTCOUNT > $HISTFILETMP
+  mv $HISTFILETMP $HISTFILE
 }
 
 row() {
@@ -30,13 +30,9 @@ colorless_row() {
 
 action_delete() {
   color=$1
-  cat $LOGFILE | grep -vE $color > $LOGFILETMP
-  mv $LOGFILETMP $LOGFILE
-  echo -en "\0markup-rows\x1ftrue\n"
-
-  cat $LOGFILE | while read line ; do row $line $line ; done
-  colorless_row "paste"
-  colorless_row "pick"
+  cat $HISTFILE | grep -vE $color > $HISTFILETMP
+  mv $HISTFILETMP $HISTFILE
+  print_colors
 }
 
 action_quit() {
@@ -48,9 +44,7 @@ action_paste() {
   if [ -n "$color" ] ; then
     log_to_recents $color
   fi
-  cat $LOGFILE | while read line ; do row $line $line ; done
-  colorless_row "paste"
-  colorless_row "pick"
+  print_colors
 }
 
 action_pick() {
@@ -74,11 +68,16 @@ action_default() {
   exit 0
 }
 
+handle_actions() {
+  # the return value of rofi; this is an integer which indicates what happened while rofi was open:
+  # - 0: initial call of script
+  # - 1: selected an entry
+  # - 2: selected a custom entry
+  # - 10-28: custom keybinding 1-19 (specified by command line flags; this requires use-hot-keys to be on; which is done in setup)
+  retv="$1"
 
-if [ "$@" ]
-then
   # clicked button; this includes all kinds of nasty html stuff; filter it out
-  btn=$(echo $1 | grep -Po '#[\d|a-fA-F]+|paste|pick|error')
+  btn=$(echo $2 | grep -Po '#[\d|a-fA-F]+|paste|pick|error')
   color=$(echo $btn | grep -Po '#[\d|a-fA-F]+' | head -1)
 
   # need to handle buttons AFTER handling keypresses because keypresses also trigger the button action and this may not be the wanted behavior:
@@ -90,19 +89,19 @@ then
     exit 1
 
   # deleting something (keypress "d")
-  elif [ "$ROFI_RETV" -eq "$DELETE_ACTION" ] ; then
+  elif [ "$retv" -eq "$DELETE_ACTION" ] ; then
     action_delete $color
 
   # exiting (keypress "q")
-  elif [ "$ROFI_RETV" -eq "$QUIT_ACTION" ]; then
+  elif [ "$retv" -eq "$QUIT_ACTION" ]; then
     action_quit
 
   # paste (keypress 'p')
-  elif [ "$ROFI_RETV" -eq "$PASTE_ACTION" ] ; then
+  elif [ "$retv" -eq "$PASTE_ACTION" ] ; then
     action_paste
 
   # pick (keypress "i")
-  elif [ "$ROFI_RETV" -eq "$PICK_ACTION" ] ; then
+  elif [ "$retv" -eq "$PICK_ACTION" ] ; then
     action_pick
 
   # paste button
@@ -117,11 +116,24 @@ then
   else
     action_default $color
   fi
-else
-  echo -en "\0markup-rows\x1ftrue\n"
+}
 
-  cat $LOGFILE | while read line ; do row $line $line ; done
+setup() {
+  echo -en "\0markup-rows\x1ftrue\n"
+  echo -en "\x00use-hot-keys\x1ftrue\n"
+}
+
+print_colors() {
+  cat $HISTFILE | while read line ; do row $line $line ; done
   colorless_row "paste"
   colorless_row "pick"
+}
+
+if [ "$@" ]
+then
+  handle_actions "$ROFI_RETV" "$1"
+else
+  setup
+  print_colors
 fi
 

@@ -6,11 +6,11 @@
 # i - pick
 
 rofi -show ch -modi "ch:color-hist-rofi" \
-     -kb-custom-1 "d" \
-     -kb-custom-2 "q" \
-     -kb-custom-3 "p" \
-     -kb-custom-4 "i" \
-     -kb-row-down "Down,j" \
-     -kb-row-up   "Up,k"   \
-     -theme "$XDG_CONFIG_HOME/rofi/color-hist.rasi"
+  -kb-custom-1 "d" \
+  -kb-custom-2 "q" \
+  -kb-custom-3 "p" \
+  -kb-custom-4 "i" \
+  -kb-row-down "Down,j" \
+  -kb-row-up   "Up,k"   \
+  -theme "$XDG_CONFIG_HOME/rofi/color-hist.rasi"
 
