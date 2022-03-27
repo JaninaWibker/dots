@@ -1,2 +1,1 @@
-rofi.theme: colors-rofi-dark.rasi
-
+@theme "colors-rofi-dark";

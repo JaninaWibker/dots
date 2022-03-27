@@ -10,11 +10,12 @@ configuration {
   background:       #FFFFFF;
   background-light: #E7E8EB;
   foreground:       #333333;
+  border:           red; /* TODO: what is this used for? */
 }
 
 * {
-  background-color: @background;
-  text-color:       @foreground;
+  background-color: var(background);
+  text-color:       var(foreground);
 }
 
 window {
@@ -27,7 +28,7 @@ window {
 }
 
 listview {
-  // lines:   10;
+  lines:   8;
   margin:  8px;
   spacing: 8px;
   cycle:   true;
@@ -36,13 +37,13 @@ listview {
 }
 
 mainbox {
-  background-color: @background;
+  background-color: var(background);
   children:         [ listview ];
 }
 
 element {
-  background-color: @background-light;
-  text-color:       @foreground;
+  background-color: var(background-light);
+  text-color:       var(foreground);
   orientation:      vertical;
 }
 
@@ -54,9 +55,9 @@ element-text {
   margin:          5px 0px 15px 0px;
 }
 
-element selected {
-  background-color: @accent;
-  text-color:       @background;
+element.selected {
+  background-color: var(accent);
+  text-color:       var(background);
   border:           0px;
-  border-color:     @border;
+  border-color:     var(border);
 }
