@@ -19,7 +19,10 @@ listfiles() {
 is_img() {
   case "${1##*.}" in
     "jpg"|"jpeg"|"png"|"gif"|"webp"|"tiff"|"bmp"|"avif"|"heif") return 0 ;;
-    *) return 1 ;;
+    "JPG"|"JPEG"|"PNG"|"GIF"|"WEBP"|"TIFF"|"BMP"|"AVIF"|"HEIF") return 0 ;;
+    *)
+      echo "unsupported file format: ${1##*.}"
+      return 1 ;;
   esac
 }
 
