@@ -1,11 +1,12 @@
-rofi.lines: 8
-rofi.width: 48
-rofi.hide-scrollbar: true
-rofi.scroll-method: 1
-rofi.display-drun:
-rofi.display-window: Swap
-rofi.font: Menlo 14
-rofi.show-icons: true
-rofi.display-combi: Go  
-rofi.display-ssh: "ssh"
-rofi.combi-modi: "window,drun
+configuration {
+  lines: 8;
+  width: 48;
+  scroll-method: 1;
+  display-drun: "";
+  display-window: Snap;
+  font: "Menlo 14";
+  show-icons: true;
+  display-combi: "Go";
+  display-ssh: "ssh";
+  combi-modi: "window,drun";
+}
