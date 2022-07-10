@@ -1,0 +1,7 @@
+# linux specific git config
+[credential]
+  helper = libsecret
+
+[includeIf "gitdir:/Users/jannik/Desktop/projects/quantco/"]
+  path = ~/Desktop/projects/quantco/.gitconfig
+

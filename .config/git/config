@@ -1,0 +1,33 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Jannik Wibker
+  email = jannikwibker@gmail.com
+
+[init]
+  defaultBranch = main
+
+[includeIf "gitdir:/Users/"]
+  path = ~/.config/git/macos-config
+
+[includeIf "gitdir:/home/"]
+  path = ~/.config/git/linux-config
+
+[delta]
+  features = decorations
+  # line-numbers = true
+  paging = always
+  zero-style = dim syntax
+
+[delta "interactive"]
+  keep-plus-minus-markers = false
+
+[delta "decorations"]
+  commit-decoration-style = blue ol
+  commit-style = raw
+  file-style = omit
+  hunk-header-decoration-style = blue box
+  hunk-header-file-style = white bold
+  hunk-header-line-number-style = "#067a00"
+  hunk-header-decoration-style = ul
+  hunk-header-style = file line-number
+
