@@ -6,11 +6,17 @@
 [init]
   defaultBranch = main
 
+# if on macos load macos specific config
 [includeIf "gitdir:/Users/"]
   path = ~/.config/git/macos-config
 
+# if on linux load linux specific config
 [includeIf "gitdir:/home/"]
   path = ~/.config/git/linux-config
+
+# load custom config when working on quantco projects
+[includeIf "gitdir:~/Desktop/projects/quantco/"]
+  path = ~/Desktop/projects/quantco/.gitconfig
 
 [delta]
   features = decorations
