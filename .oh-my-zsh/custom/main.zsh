@@ -11,8 +11,6 @@ bindkey '^e' end-of-line
 bindkey '^b' backward-char
 bindkey '^f' forward-char
 
-bindkey '^r' history-incremental-search-backward
-
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 bindkey "^w" backward-kill-word # Delete word
@@ -127,6 +125,9 @@ else
   export CC=gcc
   export CXX=g++
 fi
+
+# MINICONDA THINGY
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
 # incase .profile does not set these correctly
 export HIGH_DPI=1

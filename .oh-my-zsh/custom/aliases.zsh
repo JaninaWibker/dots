@@ -44,6 +44,11 @@ alias woman="man"
 
 alias greph="grep --color=always -e \"^\" -e"
 
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  alias identity="/usr/bin/flatpak run --file-forwarding org.gnome.gitlab.YaLTeR.Identity @@"
+  alias gimp="/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=gimp-2.10 --file-forwarding org.gimp.GIMP @@"
+fi
+
 # make less have pretty colors
 export LESS="--RAW-CONTROL-CHARS"
 [[ -f $XDG_CONFIG_HOME/less_termcap ]] && . $XDG_CONFIG_HOME/less_termcap

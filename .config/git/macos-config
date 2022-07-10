@@ -2,7 +2,3 @@
 [credential]
 	helper = osxkeychain
   UseHttpPath = true
-
-[includeIf "gitdir:/Users/jannik/Desktop/projects/quantco/"]
-  path = ~/Desktop/projects/quantco/.gitconfig
-
