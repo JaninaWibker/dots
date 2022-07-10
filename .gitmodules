@@ -106,3 +106,6 @@
 [submodule ".config/awesome"]
 	path = .config/awesome
 	url = https://github.com/JannikWibker/awesome-config
+[submodule "/home/jannik/.oh-my-zsh/custom/plugins/fzf-zsh-plugin"]
+	path = /home/jannik/.oh-my-zsh/custom/plugins/fzf-zsh-plugin
+	url = https://github.com/unixorn/fzf-zsh-plugin.git

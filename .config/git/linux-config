@@ -2,6 +2,6 @@
 [credential]
   helper = libsecret
 
-[includeIf "gitdir:/Users/jannik/Desktop/projects/quantco/"]
+[includeIf "gitdir:/home/jannik/Desktop/projects/quantco/"]
   path = ~/Desktop/projects/quantco/.gitconfig
 
