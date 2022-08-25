@@ -23,9 +23,6 @@ if [[ "$OSTYPE" != "linux-gnu" ]]; then
   export LANG=en_US.UTF-8
 fi
 
-### Emacs awesomeness
-#bindkey -e
-
 # fzf stuff
 open_with_fzf() {
     fd -t f -H -I | fzf -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
@@ -41,22 +38,20 @@ pacs() {
 export PRJ="${HOME}/Desktop/projects"
 export STD="/run/user/1000/gvfs/smb-share:server=samba-server,share=files.studium"
 
-# incase .profile does not set the editor correctly
+# in case .profile does not set the editor correctly
 export EDITOR="/usr/bin/vim"
-export BROWSER="/usr/bin/chromium"
+
+if [[ "$OSTYPE" != "linux-gnu" ]]; then
+  export BROWSER="'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'"
+else
+  export BROWSER="/usr/bin/vivaldi"
+fi
 
 export IDEA_PROPERTIES="$HOME/.config/idea/idea.properties"
-
-### USB STICK | EXT. VOLUME
-export JANNIK="/Volumes/JANNIK"
 
 ### JQ COLORS
 # it's a shame the field color cannot be set (would have set it to 0;38 or something like that)
 export JQ_COLORS="0;37:0;33:0;33:0;36:0;35:0;37:0;37"
-
-### Path
-#export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/flutter/bin:/usr/local/lib/node_modules/bin:/usr/local/go/bin"
-
 
 # homebrew stuff (macOS only)
 if [[ "$OSTYPE" != "linux-gnu" ]]; then
@@ -67,44 +62,6 @@ fi
 
 ### LUA ROCKS PATH THINGY
 command -v luarocks &> /dev/null && eval $(luarocks path --bin)
-
-### RUBY GEMS PATH THINGY
-#export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
-#export PATH="$PATH:$HOME/.gem/ruby/2.7.0/bin"
-export PATH="$PATH:$HOME/.gem/ruby/3.0.0/bin"
-export PATH="$PATH:/usr/local/opt/ruby/bin"
-
-### GO PATH THINGY
-export PATH="$PATH:$HOME/go/bin"
-
-### RUST PATH THINGY
-export PATH="$PATH:$HOME/.cargo/bin"
-
-### YARN PATH THINGY
-export PATH="$PATH:$HOME/.yarn/bin"
-
-### NPM THINGY
-export PATH="$PATH:$HOME/.local/share/npm-global/bin"
-
-### DVISVGM THINGY
-export PATH="$PATH:/usr/local/dvisvgm/bin"
-
-### SCRIPT THINGY
-export PATH="$PATH:$HOME/scripts"
-
-### PROGRAM THINGIES
-export PATH="$PATH:$HOME/programs:$HOME/programs/links:$HOME/programs/cm/release_target/"
-
-### ANDROID THINGIES
-export ANDROID_HOME=/opt/android-sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools/
-export PATH=$PATH:$ANDROID_HOME/tools/bin/
-export PATH=$PATH:$ANDROID_HOME/tools/
-PATH=$ANDROID_HOME/emulator:$PATH
-
-### RUST
-export PATH="$PATH:$HOME/.cargo/bin"
 
 ### NVM
 if [[ "$OSTYPE" != "linux-gnu" ]]; then
@@ -119,8 +76,8 @@ fi
 
 ### standard C/C++ compiler
 if [[ "$OSTYPE" != "linux-gnu" ]]; then
-  export CC=gcc-11
-  export CXX=g++-11
+  export CC=gcc-12
+  export CXX=g++-12
 else
   export CC=gcc
   export CXX=g++
@@ -132,9 +89,6 @@ fi
 # incase .profile does not set these correctly
 export HIGH_DPI=1
 export THEME_VARIANT="dark"
-
-### NPM FOLDER PREFIX; used by dependency of markdown-preview-enhanced (which searches for the install location of global npm packages
-export PREFIX="/usr/local/"
 
 ### ZSH Syntax Highlighting
 source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
