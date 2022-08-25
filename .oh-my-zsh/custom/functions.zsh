@@ -39,20 +39,9 @@ function whois() {
 	echo "Getting whois record for: $domain …"
 
 	# avoid recursion
-					# this is the best whois server
-													# strip extra fluff
+	# this is the best whois server
+	# strip extra fluff
 	/usr/bin/whois -h whois.internic.net $domain | sed '/NOTICE:/q'
-}
-
-function localip(){
-	function _localip(){ echo "📶  "$(ipconfig getifaddr "$1"); }
-	export -f _localip
-	local purple="\x1B\[35m" reset="\x1B\[m"
-	networksetup -listallhardwareports | \
-		sed -E "s/Hardware Port: (.*)/${purple}\1${reset}/g" | \
-		sed -E "s/Device: (en.*)$/_localip \1/e" | \
-		sed -E "s/Ethernet Address:/📘 /g" | \
-		sed -E "s/(VLAN Configurations)|==*//g"
 }
 
 function vol() {
@@ -91,12 +80,4 @@ function fs() {
   else
     echo $size
   fi
-}
-
-function jannik() {
-  open "http://www.google.com/search?q=$1"
-}
-
-function postjson() {
-  curl -s -H "Content-Type: application/json" -X POST -d $2 $1 | lynx -dump -stdin
 }

@@ -54,11 +54,9 @@ export LESS="--RAW-CONTROL-CHARS"
 [[ -f $XDG_CONFIG_HOME/less_termcap ]] && . $XDG_CONFIG_HOME/less_termcap
 
 # some random aliases
-alias c="pygmentize -O style=solarizeddark -f console256 -g"
 alias gen_hash="$ZSH/custom/node gen_hash"
 alias gs="git status"
 alias gitstat='git log --shortstat | awk "/^ [0-9]/ { f += \$1; i += \$4; d+= \$6 } END { printf(\"%d files changed, %d insertions(+), %d deletions(-)\n\", f, i, d) }"'
-alias sp="$HOME/programs/sp/sp"
 
 # battery stuff on Mac OS
 if [[ $OSTYPE == darwin* ]]; then
@@ -79,13 +77,7 @@ if [[ $OSTYPE == darwin* ]]; then
   alias typora="open -a typora"
   # subl
   alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-  # list network interfaces
-  alias interfaces="networksetup -listallhardwareports"
 fi
-
-
-export NODE_ICU_DATA=/usr/local/lib/node_modules/full-icu
-
 
 # enforcing $XDG_CONFIG_HOME and similar
 export ATOM_HOME="$XDG_DATA_HOME/atom"
@@ -97,15 +89,8 @@ alias sqlite3="sqlite3 -init \"$XDG_CONFIG_HOME/sqlite3/sqliterc\""
 alias mc="mc --config-dir \"$XDG_CONFIG_HOME/mc\""
 alias tmux="tmux -f \"$XDG_CONFIG_HOME/tmux/tmux.conf\""
 
-function lolban() {
-  if [[ -x "$(command -v toilet)" ]] && [[ "$(command -v lolcat)" ]]; then
-    toilet -d $HOME/programs/toilet/fonts -f 3d "$1" | lolcat
-  fi
-}
-
 # don't ask
 alias unix="curl -sL https://git.io/unix | cat"
 
 # fixing $TERM for ssh since host might not know the specific terminal being used (i.e. alacritty)
 alias ssh="TERM=xterm-256color ssh"
-

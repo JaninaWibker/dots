@@ -50,7 +50,7 @@ The installation is as follows:
 
 ```shell
 # this is only needed temporarily, the ZSH config includes this line as well, no need to manually add this somewhere.
-alias dots=/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME
+alias dots="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME"
 echo ".cfg" >> .gitignore # this is to avoid weird recursion problems
 git clone --bare --recurse-submodules https://www.github.com/JannikWibker/dots $HOME/.cfg
 dots checkout
