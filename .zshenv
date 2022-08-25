@@ -3,7 +3,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export ANDROID_HOME=/opt/android-sdk
-export FZF_PATH=".config/fzf"
+export FZF_PATH="$HOME/.config/fzf"
 
 # setting path variable
 path+=('$PATH:/usr/local/sbin')
