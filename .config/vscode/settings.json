@@ -5,7 +5,6 @@
     "markdown-preview-enhanced.enableTypographer": true,
     "markdown-preview-enhanced.frontMatterRenderingOption": "code block",
     "markdown-preview-enhanced.printBackground": true,
-    "workbench.colorTheme": "Activate SCARLET protocol (beta)",
     "clock.dateFormat": "HH:MM (dd.mm)",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "markdown-preview-enhanced.enableExtendedTableSyntax": true,
@@ -31,5 +30,15 @@
         "*.ne": "bnf"
     },
     "search.smartCase": true,
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.colorTheme": "Activate SCARLET protocol (beta)",
+    "editor.bracketPairColorization.enabled": false,
+    "workbench.editor.untitled.hint": "hidden",
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": false,
+        "markdown": false
+    }
 }
