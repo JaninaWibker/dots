@@ -13,10 +13,6 @@ function ipv6() {
   echo
 }
 
-function watch() {
-  fswatch -0 $1 | xargs -0 -n 1 -I{}
-}
-
 if [[ $OSTYPE == darwin* ]]; then
   function spotify_now_playing() {
     osascript -e "display notification \"$(spotify info song)\" with title \"$(spotify info state) Spotify - $(spotify info time)\""
@@ -60,24 +56,5 @@ function vol() {
     osascript -e "set volume output muted false";
   else
     osascript -e "set volume ${1}"
-  fi
-}
-
-function fs() {
-  size=$(stat -f "%z" $1)
-  kb=1024
-  mb=1048576
-  gb=1073741824
-  tb=1099511627776
-  if [ $size -gt $tb ]; then
-    echo "$(bc -l <<< "scale=2; ${size} / ${tb}")tb"
-  elif [ $size -gt $gb ]; then
-    echo "$(bc -l <<< "scale=2; ${size} / ${gb}")gb"
-  elif [ $size -gt $mb ]; then
-    echo "$(bc -l <<< "scale=2; ${size} / ${mb}")mb"
-  elif [ $size -gt $kb ]; then
-    echo "$(bc -l <<< "scale=2; ${size} / ${kb}")kb"
-  else
-    echo $size
   fi
 }
