@@ -92,5 +92,10 @@ alias tmux="tmux -f \"$XDG_CONFIG_HOME/tmux/tmux.conf\""
 # don't ask
 alias unix="curl -sL https://git.io/unix | cat"
 
+alias mm="micromamba"
+
+alias d="docker"
+alias dc="docker-compose"
+
 # fixing $TERM for ssh since host might not know the specific terminal being used (i.e. alacritty)
 alias ssh="TERM=xterm-256color ssh"

@@ -92,6 +92,18 @@
     "when": "editorTextFocus && inDebugMode"
   },
   {
+    "key": "cmd+k cmd+u",
+    "command": "toggle",
+    "when": "editorTextFocus",
+    "args": {
+      "id": "colorize",
+      "value": [
+        { "colorize.colorized_colors": ["ARGB", "RGB", "HSL" ] },
+        { "colorize.colorized_colors": [] }
+      ]
+    }
+  },
+  {
     "key": "cmd+k cmd+i",
     "command": "toggle",
     "when": "editorTextFocus",
