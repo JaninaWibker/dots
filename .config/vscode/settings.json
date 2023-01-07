@@ -1,5 +1,4 @@
 {
-    "atomKeymap.promptV3Features": true,
     "editor.tabSize": 2,
     "editor.multiCursorModifier": "ctrlCmd",
     "markdown-preview-enhanced.enableTypographer": true,
@@ -9,8 +8,6 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "markdown-preview-enhanced.enableExtendedTableSyntax": true,
     "markdown-preview-enhanced.scrollSync": false,
-    "window.zoomLevel": 0,
-    "workbench.statusBar.feedback.visible": false,
     "git.inputValidationLength": 88,
     "liveshare.featureSet": "insiders",
     "editor.suggest.maxVisibleSuggestions": 6,
@@ -38,7 +35,53 @@
     "github.copilot.enable": {
         "*": true,
         "yaml": true,
-        "plaintext": false,
-        "markdown": false
-    }
+        "plaintext": true,
+        "markdown": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow": "/.github/workflows/**/*.yml"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "twind.styles": [
+        "style",
+        "styled",
+        "css",
+        "apply"
+    ],
+    "colorize.languages": [
+        "css",
+        "sass",
+        "scss",
+        "less",
+        "postcss",
+        "sss",
+        "stylus",
+        "xml",
+        "svg",
+        "json",
+        "typescript",
+        "javascript",
+        "typescriptreact",
+        "javascriptreact"
+    ],
+    "colorize.colorized_colors": [
+        "ARGB",
+        "RGB",
+        "HSL"
+    ],
+    
 }
