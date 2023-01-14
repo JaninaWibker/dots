@@ -103,18 +103,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/mambaforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="/opt/homebrew/bin/micromamba";
+export MAMBA_ROOT_PREFIX="$XDG_DATA_HOME/micromamba";
+__mamba_setup="$('/opt/homebrew/bin/micromamba' shell hook --shell zsh --prefix '$XDG_DATA_HOME/micromamba' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+    eval "$__mamba_setup"
 else
-    if [ -f "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/conda.sh" ]; then
-        . "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/conda.sh"
+    if [ -f "$XDG_DATA_HOME/micromamba/etc/profile.d/micromamba.sh" ]; then
+        . "$XDG_DATA_HOME/micromamba/etc/profile.d/micromamba.sh"
     else
-        export PATH="/opt/homebrew/Caskroom/mambaforge/base/bin:$PATH"
+        export  PATH="$XDG_DATA_HOME/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
     fi
 fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+unset __mamba_setup
+# <<< mamba initialize <<<
