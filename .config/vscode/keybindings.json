@@ -92,7 +92,7 @@
     "when": "editorTextFocus && inDebugMode"
   },
   {
-    "key": "cmd+k cmd+u",
+    "key": "cmd+k cmd+y",
     "command": "toggle",
     "when": "editorTextFocus",
     "args": {
