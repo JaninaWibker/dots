@@ -4,6 +4,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export ANDROID_HOME=/opt/android-sdk
 export FZF_PATH="$HOME/.config/fzf"
+export MAMBARC="$XDG_CONFIG_HOME/mamba/mambarc"
 
 # setting path variable
 path+=('/usr/local/sbin')
