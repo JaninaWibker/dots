@@ -37,6 +37,7 @@ alias dotsl="dots log"
 
 alias gdd="git diff --staged"
 alias gg="git grep --ignore-case"
+alias grss="git restore --staged"
 
 alias gl="git log"
 

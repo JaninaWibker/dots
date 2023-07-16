@@ -177,5 +177,10 @@
   {
     "key": "cmd+k left",
     "command": "-workbench.action.splitEditor"
+  },
+  {
+    "key": "shift+alt+u",
+    "command": "-java.projectConfiguration.update",
+    "when": "editorFocus"
   }
 ]

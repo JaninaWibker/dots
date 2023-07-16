@@ -1,5 +1,5 @@
 {
-  "$schema" : "https:\/\/app.linearmouse.org\/schema\/0.7.3",
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.1",
   "schemes" : [
     {
       "pointer" : {
@@ -39,6 +39,54 @@
       "scrolling" : {
         "reverse" : {
           "vertical" : true
+        }
+      }
+    },
+    {
+      "pointer" : {
+        "acceleration" : 0,
+        "speed" : 0.65,
+        "disableAcceleration" : true
+      },
+      "if" : {
+        "device" : {
+          "productName" : "USB Receiver",
+          "productID" : "0xc52b",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
+        }
+      },
+      "scrolling" : {
+        "acceleration" : 1,
+        "distance" : 3,
+        "speed" : 0
+      }
+    },
+    {
+      "pointer" : {
+        "disableAcceleration" : true
+      },
+      "if" : {
+        "device" : {
+          "productName" : "Advanced Corded Mouse M500s",
+          "serialNumber" : "208137625943",
+          "productID" : "0xc093",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
+        }
+      },
+      "scrolling" : {
+        "speed" : {
+          "vertical" : 0
+        },
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "reverse" : {
+          "vertical" : true
+        },
+        "distance" : {
+          "vertical" : 3
         }
       }
     }
