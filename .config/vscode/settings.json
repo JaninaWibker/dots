@@ -11,6 +11,7 @@
     "git.inputValidationLength": 88,
     "liveshare.featureSet": "insiders",
     "editor.suggest.maxVisibleSuggestions": 6,
+    "editor.gotoLocation.multipleDefinitions": "goto",
     "editor.suggestOnTriggerCharacters": false,
     "editor.quickSuggestionsDelay": 100,
     "editor.parameterHints.enabled": true,
@@ -28,7 +29,6 @@
     },
     "search.smartCase": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "workbench.colorTheme": "Activate SCARLET protocol (beta)",
     "editor.bracketPairColorization.enabled": false,
     "workbench.editor.untitled.hint": "hidden",
     "editor.inlineSuggest.enabled": true,
@@ -76,12 +76,14 @@
         "typescript",
         "javascript",
         "typescriptreact",
-        "javascriptreact"
+        "javascriptreact",
+        "markdown"
     ],
     "colorize.colorized_colors": [
         "ARGB",
         "RGB",
         "HSL"
     ],
+    "workbench.colorTheme": "Activate SCARLET protocol (beta)",
     
 }
