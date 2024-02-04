@@ -97,9 +97,6 @@
 [submodule "programs/ux_play"]
 	path = programs/ux_play
 	url = https://github.com/antimof/UxPlay
-[submodule "programs/limelight"]
-	path = programs/limelight
-  url = https://github.com/koekeishiya/limelight
 [submodule "programs/nsxiv"]
 	path = programs/nsxiv
 	url = https://github.com/nsxiv/nsxiv
