@@ -30,7 +30,6 @@
     "search.smartCase": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.bracketPairColorization.enabled": false,
-    "workbench.editor.untitled.hint": "hidden",
     "editor.inlineSuggest.enabled": true,
     "github.copilot.enable": {
         "*": true,
@@ -85,5 +84,9 @@
         "HSL"
     ],
     "workbench.colorTheme": "Activate SCARLET protocol (beta)",
+    "lldb.suppressUpdateNotifications": true,
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.editor.tabActionLocation": "left",
+    "workbench.editor.highlightModifiedTabs": true,
     
 }

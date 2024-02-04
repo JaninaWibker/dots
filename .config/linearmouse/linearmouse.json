@@ -3,26 +3,37 @@
   "schemes" : [
     {
       "pointer" : {
-        "acceleration" : 0,
+        "disableAcceleration" : true,
         "speed" : 0.4,
-        "disableAcceleration" : true
+        "acceleration" : 0
       },
       "if" : {
         "device" : {
-          "productName" : "USB Receiver",
-          "productID" : "0xc548",
           "category" : "mouse",
-          "vendorID" : "0x46d"
+          "productName" : "USB Receiver",
+          "vendorID" : "0x46d",
+          "productID" : "0xc548"
         }
       },
       "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
         "reverse" : {
           "vertical" : true
+        },
+        "speed" : {
+          "vertical" : 0
         },
         "distance" : 3
       }
     },
     {
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        }
+      },
       "pointer" : {
         "acceleration" : 0,
         "speed" : 0.3,
@@ -30,36 +41,167 @@
       },
       "if" : {
         "device" : {
-          "productName" : "USB Optical Mouse",
           "productID" : "0xc077",
           "category" : "mouse",
-          "vendorID" : "0x46d"
+          "vendorID" : "0x46d",
+          "productName" : "USB Optical Mouse"
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "productName" : "USB Receiver",
+          "vendorID" : "0x46d",
+          "productID" : "0xc52b",
+          "category" : "mouse"
+        }
+      },
+      "scrolling" : {
+        "distance" : 3,
+        "acceleration" : 1,
+        "speed" : 0
+      },
+      "pointer" : {
+        "acceleration" : 0,
+        "speed" : 0.65,
+        "disableAcceleration" : true
+      }
+    },
+    {
+      "scrolling" : {
+        "distance" : {
+          "vertical" : 3
+        },
+        "speed" : {
+          "vertical" : 0
+        },
+        "reverse" : {
+          "vertical" : true
+        },
+        "acceleration" : {
+          "vertical" : 1
+        }
+      },
+      "pointer" : {
+        "disableAcceleration" : true
+      },
+      "if" : {
+        "device" : {
+          "productName" : "Advanced Corded Mouse M500s",
+          "productID" : "0xc093",
+          "vendorID" : "0x46d",
+          "category" : "mouse",
+          "serialNumber" : "208137625943"
+        }
+      }
+    },
+    {
+      "scrolling" : {
+        "distance" : {
+          "vertical" : 3
+        },
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "reverse" : {
+          "vertical" : true
+        },
+        "speed" : {
+          "vertical" : 0
+        }
+      },
+      "pointer" : {
+        "disableAcceleration" : true
+      },
+      "if" : {
+        "device" : {
+          "productID" : "0xb034",
+          "serialNumber" : "FCA73C1D",
+          "category" : "mouse",
+          "vendorID" : "0x46d",
+          "productName" : "MX Master 3S M"
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "serialNumber" : "02077A72",
+          "vendorID" : "0x46d",
+          "productName" : "MX Master 3S",
+          "category" : "mouse",
+          "productID" : "0xb034"
         }
       },
       "scrolling" : {
         "reverse" : {
           "vertical" : true
-        }
+        },
+        "acceleration" : 1,
+        "distance" : 3,
+        "speed" : 0
+      },
+      "pointer" : {
+        "disableAcceleration" : true
       }
     },
     {
       "pointer" : {
         "acceleration" : 0,
-        "speed" : 0.65,
+        "speed" : 0.2,
+        "disableAcceleration" : false
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        },
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "distance" : {
+          "vertical" : 3
+        },
+        "speed" : {
+          "vertical" : 0
+        }
+      },
+      "if" : {
+        "device" : {
+          "productID" : "0xb034",
+          "serialNumber" : "33534B5F",
+          "productName" : "MX Master 3S",
+          "vendorID" : "0x46d",
+          "category" : "mouse"
+        }
+      }
+    },
+    {
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "speed" : {
+          "vertical" : 0
+        },
+        "distance" : {
+          "vertical" : 3
+        },
+        "reverse" : {
+          "vertical" : true
+        }
+      },
+      "pointer" : {
         "disableAcceleration" : true
       },
       "if" : {
         "device" : {
-          "productName" : "USB Receiver",
-          "productID" : "0xc52b",
+          "productName" : "Advanced Corded Mouse M500s",
+          "serialNumber" : "206B315A5546",
+          "productID" : "0xc093",
           "category" : "mouse",
           "vendorID" : "0x46d"
         }
-      },
-      "scrolling" : {
-        "acceleration" : 1,
-        "distance" : 3,
-        "speed" : 0
       }
     },
     {
@@ -69,24 +211,45 @@
       "if" : {
         "device" : {
           "productName" : "Advanced Corded Mouse M500s",
-          "serialNumber" : "208137625943",
-          "productID" : "0xc093",
           "category" : "mouse",
-          "vendorID" : "0x46d"
+          "vendorID" : "0x46d",
+          "serialNumber" : "206A37605943",
+          "productID" : "0xc093"
         }
       },
       "scrolling" : {
         "speed" : {
           "vertical" : 0
         },
-        "acceleration" : {
-          "vertical" : 1
+        "distance" : {
+          "vertical" : 3
         },
         "reverse" : {
           "vertical" : true
         },
+        "acceleration" : {
+          "vertical" : 1
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "productID" : "0x342",
+          "vendorID" : "0x5ac",
+          "category" : "trackpad",
+          "productName" : "Apple Internal Keyboard \/ Trackpad"
+        }
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
         "distance" : {
-          "vertical" : 3
+          "vertical" : "auto"
+        },
+        "speed" : {
+          "vertical" : 0
         }
       }
     }
