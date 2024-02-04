@@ -7,8 +7,9 @@ export FZF_PATH="$HOME/.config/fzf"
 export MAMBARC="$XDG_CONFIG_HOME/mamba/mambarc"
 
 # setting path variable
-path+=('/usr/local/sbin')
 path+=('/opt/homebrew/bin')
+path+=('/opt/homebrew/sbin')
+path+=('/usr/local/sbin')
 path+=('$HOME/.gem/ruby/3.0.0/bin')
 path+=('/usr/local/opt/ruby/bin')
 path+=('/usr/local/dvisvgm/bin')

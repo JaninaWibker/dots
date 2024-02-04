@@ -53,12 +53,6 @@ export IDEA_PROPERTIES="$HOME/.config/idea/idea.properties"
 # it's a shame the field color cannot be set (would have set it to 0;38 or something like that)
 export JQ_COLORS="0;37:0;33:0;33:0;36:0;35:0;37:0;37"
 
-# homebrew stuff (macOS only)
-if [[ "$OSTYPE" != "linux-gnu" ]]; then
-  export PATH="/usr/local/sbin:$PATH"
-  # stop homebrew from being stuck for 5 minutes ("Updating Homebrew...") when trying to install something
-  export HOMEBREW_NO_AUTO_UPDATE=1
-fi
 
 ### LUA ROCKS PATH THINGY
 command -v luarocks &> /dev/null && eval $(luarocks path --bin)
