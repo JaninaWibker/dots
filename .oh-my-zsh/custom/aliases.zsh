@@ -40,6 +40,7 @@ alias gg="git grep --ignore-case"
 alias grss="git restore --staged"
 
 alias gl="git log"
+alias gf="git fix"
 
 alias woman="man"
 

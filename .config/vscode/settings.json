@@ -20,7 +20,6 @@
     "breadcrumbs.enabled": false,
     "hexdump.littleEndian": false,
     "hexdump.nibbles": 4,
-    "workbench.activityBar.visible": true,
     "extensions.ignoreRecommendations": true,
     "java.configuration.checkProjectSettingsExclusions": false,
     "java.errors.incompleteClasspath.severity": "ignore",
@@ -37,6 +36,7 @@
         "plaintext": true,
         "markdown": true
     },
+    "github.copilot.editor.enableCodeActions": false,
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
@@ -55,12 +55,6 @@
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
-    "twind.styles": [
-        "style",
-        "styled",
-        "css",
-        "apply"
-    ],
     "colorize.languages": [
         "css",
         "sass",
@@ -88,5 +82,8 @@
     "workbench.editor.empty.hint": "hidden",
     "workbench.editor.tabActionLocation": "left",
     "workbench.editor.highlightModifiedTabs": true,
-    
+    "terminal.integrated.inheritEnv": false,
+    "accessibility.verbosity.inlineChat": false,
+    "inlineChat.holdToSpeech": false,
+    "editor.stickyScroll.enabled": false,
 }
