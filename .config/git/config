@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
-	name = Jannik Wibker
-  email = jannikwibker@gmail.com
+	name = Janina Wibker
+  email = me@janina.lol
 
 [init]
   defaultBranch = main
@@ -37,3 +37,7 @@
   hunk-header-decoration-style = ul
   hunk-header-style = file line-number
 
+[rerere]
+	enabled = true
+[alias]
+	fix = commit --amend --no-edit

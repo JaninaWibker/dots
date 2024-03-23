@@ -182,5 +182,20 @@
     "key": "shift+alt+u",
     "command": "-java.projectConfiguration.update",
     "when": "editorFocus"
+  },
+  {
+    "key": "cmd+g",
+    "command": "editor.action.moveSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+k cmd+d",
+    "command": "-editor.action.moveSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+k cmd+2",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   }
 ]
