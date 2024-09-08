@@ -32,9 +32,10 @@
     "editor.inlineSuggest.enabled": true,
     "github.copilot.enable": {
         "*": true,
-        "yaml": true,
         "plaintext": true,
-        "markdown": true
+        "markdown": true,
+        "scminput": false,
+        "yaml": true
     },
     "github.copilot.editor.enableCodeActions": false,
     "[json]": {
@@ -86,4 +87,8 @@
     "accessibility.verbosity.inlineChat": false,
     "inlineChat.holdToSpeech": false,
     "editor.stickyScroll.enabled": false,
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "markdown.editor.pasteUrlAsFormattedLink.enabled": "never",
+    "github.copilot.editor.enableAutoCompletions": true,
+    "breadcrumbs.enabled": false,
 }

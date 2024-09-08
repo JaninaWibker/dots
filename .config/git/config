@@ -6,6 +6,10 @@
 [init]
   defaultBranch = main
 
+[core]
+  ignorecase = false
+
+
 # if on macos load macos specific config
 [includeIf "gitdir:/Users/"]
   path = ~/.config/git/macos-config
@@ -38,6 +42,11 @@
   hunk-header-style = file line-number
 
 [rerere]
-	enabled = true
+  enabled = true
 [alias]
-	fix = commit --amend --no-edit
+  fix = commit --amend --no-edit
+
+[maintenance]
+	repo = /Users/janina/Desktop/projects/quantco/ui-components
+[safe]
+	directory = /Users/janina/Desktop/projects/quantco/ci-test

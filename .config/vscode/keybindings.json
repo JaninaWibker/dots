@@ -197,5 +197,9 @@
     "key": "cmd+k cmd+2",
     "command": "editor.action.rename",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+k [Period]",
+    "command": "eslint.executeAutofix"
   }
 ]
