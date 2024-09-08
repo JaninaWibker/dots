@@ -1,6 +1,4 @@
-// Based on <http://eurkey.steffen.bruentjen.eu/>
-// Copyright 2020-2021 Jannik Wibker
-// Copyright 2012 Steffen Bruentjen (eurkey (at) steffen dot bruentjen dot de)
+// Copyright 2020-2024 Janina Wibker
 
 default  partial alphanumeric_keys modifier_keys
 xkb_symbols "basic"  {
@@ -8,7 +6,7 @@ xkb_symbols "basic"  {
         // TODO:
         // make quote variations more easily accessible
 
-        name[Group1] = "EurKEY DE (US/DE based layout with European letters)";
+        name[Group1] = "Janina's Layout";
 
         key <TLDE> { [    asciicircum,            degree,             NoSymbol,             NoSymbol ] }; // ^ °
         key <AE01> { [              1,            exclam,           exclamdown,          onesuperior ] }; // ¡ ¹
