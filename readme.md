@@ -33,7 +33,7 @@ Configurations for:
 
 Other things
 - XCompose file
-- custom xkb keymap (called ed as it’s a mixture of the “de” (german) layout and the [eurkey](https://eurkey.steffen.bruentjen.eu/) layout; mac OS equivalent can be found in `.config/mac-xkb-adaptation.bundle`)
+- custom xkb keymap (mac OS equivalent can be found in `.config/mac-xkb-adaptation.bundle`)
 - a custom color picker (with history functionality) called pick-color (using [colorpicker](https://aur.archlinux.org/packages/colorpicker/))
 - scripts for
   - controlling spotify (applescript)

@@ -8,14 +8,14 @@
 	<string>mac-xkb-adaptation</string>
 	<key>CFBundleVersion</key>
 	<string></string>
-	<key>KLInfo_ED layout</key>
+	<key>KLInfo_janina's layout</key>
 	<dict>
 		<key>TICapsLockLanguageSwitchCapable</key>
 		<false/>
 		<key>TISIconIsTemplate</key>
 		<false/>
 		<key>TISInputSourceID</key>
-		<string>org.sil.ukelele.keyboardlayout.mac-xkb-adaptation.edlayout</string>
+		<string>org.sil.ukelele.keyboardlayout.mac-xkb-adaptation.janina'slayout</string>
 		<key>TISIntendedLanguage</key>
 		<string>de</string>
 	</dict>
