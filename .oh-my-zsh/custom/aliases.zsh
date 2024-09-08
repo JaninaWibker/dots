@@ -36,15 +36,13 @@ alias dotsdd="dots diff --staged"
 alias dotsl="dots log"
 
 alias gdd="git diff --staged"
-alias gg="git grep --ignore-case"
 alias grss="git restore --staged"
 
 alias gl="git log"
 alias gf="git fix"
-
-alias woman="man"
-
-alias greph="grep --color=always -e \"^\" -e"
+alias gr="git rebase"
+alias gra="git rebase --abort"
+alias grc="git rebase --continue"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   alias identity="/usr/bin/flatpak run --file-forwarding org.gnome.gitlab.YaLTeR.Identity @@"

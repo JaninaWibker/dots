@@ -22,4 +22,3 @@ path+=('$ANDROID_HOME/tools/')
 path+=('${FZF_PATH}/bin')
 path+=('$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin')
 path+=('/opt/homebrew/opt/node@16/bin')
-
