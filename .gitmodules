@@ -36,7 +36,7 @@
 	url = https://github.com/wellle/targets.vim
 [submodule "programs/neofetch"]
 	path = programs/neofetch
-	url = https://github.com/JannikWibker/neofetch
+	url = https://github.com/JaninaWibker/neofetch
 [submodule ".config/vim/pack/plugins/start/vim-goyo"]
 	path = .config/vim/pack/plugins/start/vim-goyo
 	url = https://github.com/junegunn/goyo.vim
@@ -102,7 +102,7 @@
 	url = https://github.com/nsxiv/nsxiv
 [submodule ".config/awesome"]
 	path = .config/awesome
-	url = https://github.com/JannikWibker/awesome-config
+	url = https://github.com/JaninaWibker/awesome-config
 [submodule ".oh-my-zsh/custom/plugins/zsh-completions"]
 	path = .oh-my-zsh/custom/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions

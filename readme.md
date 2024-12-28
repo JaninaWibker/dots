@@ -24,7 +24,7 @@ Configurations for:
 - vimrc (and plugins)
 - zathura
 - zsh ([oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh))
-- neofetch ([custom build](https://github.com/JannikWibker/neofetch) with ([überzug](https://github.com/seebye/ueberzug) support)
+- neofetch ([custom build](https://github.com/JaninaWibker/neofetch) with ([überzug](https://github.com/seebye/ueberzug) support)
 - vscode (and list of installed packages)
 - [yabai](https://github.com/koekeishiya/yabai) & [skhd](https://github.com/koekeishiya/skhd)
 - [karabiner elements](https://pqrs.org/osx/karabiner/)
@@ -52,7 +52,7 @@ The installation is as follows:
 # this is only needed temporarily, the ZSH config includes this line as well, no need to manually add this somewhere.
 alias dots="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME"
 echo ".cfg" >> .gitignore # this is to avoid weird recursion problems
-git clone --bare --recurse-submodules https://www.github.com/JannikWibker/dots $HOME/.cfg
+git clone --bare --recurse-submodules https://www.github.com/JaninaWibker/dots $HOME/.cfg
 dots checkout
 # this avoids having git status polluted with random files
 dots config --local status.showUntrackedFiles no
@@ -100,7 +100,7 @@ The logiops config file comes with the following mappings:
 ![logoips button mapping](https://i.imgur.com/PLvz6mR.png)
 
 
-The custom xkb layout (as well as my own custom keyboard - [jdkbd](https://github.com/JannikWibker/jdkbd)) look like this currently:
+The custom xkb layout (as well as my own custom keyboard - [jdkbd](https://github.com/JaninaWibker/jdkbd)) look like this currently:
 
 ![custom keyboard layout](https://i.imgur.com/2JjFp4k.png)
 
