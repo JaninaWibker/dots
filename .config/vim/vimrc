@@ -3,6 +3,10 @@
 " use vim-matchup instead of default matchit & matchparen (% key)
 let g:loaded_matchit = 1
 
+" set regex engine to the NFA engine which doesn't crash when using backtracking 🤡
+" see https://vi.stackexchange.com/questions/25086/vim-hangs-when-i-open-a-typescript-file
+set re=2
+
 " disable dumb defaults
 set backspace=indent,eol,start
 
@@ -62,7 +66,7 @@ augroup END
 
 
 colorscheme paramount
-"colorscheme dracula
+" colorscheme dracula
 set background=dark
 
 " this may improve the quality of colors or may make it worse, depends. But worth trying out
