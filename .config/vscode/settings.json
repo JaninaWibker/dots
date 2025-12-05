@@ -14,10 +14,9 @@
     "editor.gotoLocation.multipleDefinitions": "goto",
     "editor.suggestOnTriggerCharacters": false,
     "editor.quickSuggestionsDelay": 100,
-    "editor.parameterHints.enabled": true,
+    "editor.parameterHints.enabled": false,
     "editor.acceptSuggestionOnCommitCharacter": false,
-    "editor.minimap.enabled": true,
-    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
     "hexdump.littleEndian": false,
     "hexdump.nibbles": 4,
     "extensions.ignoreRecommendations": true,
@@ -33,28 +32,13 @@
     "github.copilot.enable": {
         "*": true,
         "plaintext": true,
-        "markdown": true,
+        "markdown": false,
         "scminput": false,
         "yaml": true
     },
     "github.copilot.editor.enableCodeActions": false,
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
     "yaml.schemas": {
         "https://json.schemastore.org/github-workflow": "/.github/workflows/**/*.yml"
-    },
-    "[css]": {
-        "editor.defaultFormatter": "vscode.css-language-features"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
     },
     "colorize.languages": [
         "css",
@@ -78,7 +62,15 @@
         "RGB",
         "HSL"
     ],
-    "workbench.colorTheme": "Activate SCARLET protocol (beta)",
+    "workbench.colorTheme": "Light Pink",
+    "workbench.colorCustomizations": {
+        "[Light Pink]": {
+            "editor.wordHighlightBackground": "#de77b720",
+            "editor.wordHighlightStrongBackground": "#de77b770",
+            "editor.selectionHighlightBackground": "#ADD6FF36",
+            "editor.selectionBackground": "#ffc1dc80",
+        }
+    },
     "lldb.suppressUpdateNotifications": true,
     "workbench.editor.empty.hint": "hidden",
     "workbench.editor.tabActionLocation": "left",
@@ -90,5 +82,78 @@
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "markdown.editor.pasteUrlAsFormattedLink.enabled": "never",
     "github.copilot.editor.enableAutoCompletions": true,
-    "breadcrumbs.enabled": false,
+    "breadcrumbs.enabled": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.accessibilitySupport": "off",
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "workbench.editor.pinnedTabSizing": "shrink",
+    "githubPullRequests.pullBranch": "never",
+    "biome.requireConfiguration": true,
+    "biome.suggestInstallingGlobally": false,
+    "docker.extension.enableComposeLanguageServer": false,
+    "ltex.additionalRules.motherTongue": "de",
+    "ltex.additionalRules.languageModel": "/Users/janina/Downloads/languagetool-ngrams",
+    "ltex.additionalRules.enablePickyRules": true,
+    "ltex.enabledRules": {},
+    "ltex.enabled": [
+        "typst",
+        "bibtex",
+        "context",
+        "context.tex",
+        // "html",
+        "latex",
+        // "markdown",
+        // "mdx",
+    ],
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "github.copilot.chat.startDebugging.enabled": false,
+    "github.copilot.chat.reviewSelection.enabled": false,
+    "github.copilot.chat.copilotDebugCommand.enabled": false,
+    "githubPullRequests.experimental.chat": false,
+    "chat.commandCenter.enabled": false,
+    "chat.agent.enabled": false,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "github.copilot.chat.agent.currentEditorContext.enabled": false,
+    "github.copilot.chat.reviewAgent.enabled": false,
+    "github.copilot.chat.edits.suggestRelatedFilesForTests": false,
+    "github.copilot.chat.edits.suggestRelatedFilesFromGitHistory": false,
+    "github.copilot.chat.newWorkspaceCreation.enabled": false,
+    "github.copilot.chat.setupTests.enabled": false,
+    "github.copilot.chat.summarizeAgentConversationHistory.enabled": false,
+    "github.copilot.chat.useResponsesApi": false,
+    "chat.checkpoints.enabled": false,
+    "chat.detectParticipant.enabled": false,
+    "chat.extensionTools.enabled": false,
+    "chat.implicitContext.suggestedContext": false,
+    "chat.promptFiles": false,
+    "chat.sendElementsToChat.enabled": false,
+    "chat.sendElementsToChat.attachImages": false,
+    "chat.sendElementsToChat.attachCSS": false,
+    "chat.showAgentSessionsViewDescription": false,
+    "chat.todoListTool.enabled": false,
+    "chat.tools.terminal.enableAutoApprove": false,
+    "chat.useAgentsMdFile": false,
+    "chat.useFileStorage": false,
+    "inlineChat.lineNaturalLanguageHint": false,
+    "workbench.editor.doubleClickTabToToggleEditorGroupSizes": "maximize",
+    "[typescript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "githubPullRequests.hideViewedFiles": true
 }
