@@ -8,6 +8,8 @@
 
 [core]
   ignorecase = false
+  excludesfile = ~/.config/git/global-gitignore
+  whitespace = warn
 
 
 # if on macos load macos specific config
@@ -50,3 +52,8 @@
 	repo = /Users/janina/Desktop/projects/quantco/ui-components
 [safe]
 	directory = /Users/janina/Desktop/projects/quantco/ci-test
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
