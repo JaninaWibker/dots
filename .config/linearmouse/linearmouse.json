@@ -19,7 +19,9 @@
         "acceleration" : {
           "vertical" : 1
         },
-        "distance" : 3,
+        "distance" : {
+          "vertical" : 3
+        },
         "reverse" : {
           "vertical" : true
         },
@@ -32,57 +34,18 @@
       "if" : {
         "device" : {
           "category" : "mouse",
-          "productID" : "0xc077",
-          "productName" : "USB Optical Mouse",
-          "vendorID" : "0x46d"
-        }
-      },
-      "pointer" : {
-        "acceleration" : 0,
-        "disableAcceleration" : true,
-        "speed" : 0.3
-      },
-      "scrolling" : {
-        "reverse" : {
-          "vertical" : true
-        }
-      }
-    },
-    {
-      "buttons" : {
-        "universalBackForward" : true
-      },
-      "if" : {
-        "device" : {
-          "category" : "mouse",
           "productID" : "0xc52b",
           "productName" : "USB Receiver",
           "vendorID" : "0x46d"
         }
       },
+      "buttons": {
+        "universalBackForward": true
+      },
       "pointer" : {
-        "acceleration" : 0,
+        "acceleration" : 1,
         "disableAcceleration" : true,
         "speed" : 0.65
-      },
-      "scrolling" : {
-        "acceleration" : 1,
-        "distance" : 3,
-        "speed" : 0
-      }
-    },
-    {
-      "if" : {
-        "device" : {
-          "category" : "mouse",
-          "productID" : "0xc093",
-          "productName" : "Advanced Corded Mouse M500s",
-          "serialNumber" : "208137625943",
-          "vendorID" : "0x46d"
-        }
-      },
-      "pointer" : {
-        "disableAcceleration" : true
       },
       "scrolling" : {
         "acceleration" : {
@@ -92,7 +55,7 @@
           "vertical" : 3
         },
         "reverse" : {
-          "vertical" : true
+          "vertical" : false
         },
         "speed" : {
           "vertical" : 0
@@ -110,7 +73,9 @@
         }
       },
       "pointer" : {
-        "disableAcceleration" : true
+        "acceleration" : 1,
+        "disableAcceleration" : true,
+        "speed" : 0.4
       },
       "scrolling" : {
         "acceleration" : {
@@ -138,15 +103,23 @@
         }
       },
       "pointer" : {
-        "disableAcceleration" : true
+        "acceleration" : 1,
+        "disableAcceleration" : true,
+        "speed" : 0.4
       },
       "scrolling" : {
-        "acceleration" : 1,
-        "distance" : 3,
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "distance" : {
+          "vertical" : 3
+        },
         "reverse" : {
           "vertical" : true
         },
-        "speed" : 0
+        "speed" : {
+          "vertical" : 0
+        }
       }
     },
     {
@@ -162,7 +135,7 @@
       "pointer" : {
         "acceleration" : 0,
         "disableAcceleration" : false,
-        "speed" : 0.2
+        "speed" : 0.4
       },
       "scrolling" : {
         "acceleration" : {
@@ -183,42 +156,16 @@
       "if" : {
         "device" : {
           "category" : "mouse",
-          "productID" : "0xc093",
-          "productName" : "Advanced Corded Mouse M500s",
-          "serialNumber" : "206B315A5546",
+          "productID" : "0xb023",
+          "productName" : "MX Master 3",
+          "serialNumber" : "8CBAE2CC3CA6B25D",
           "vendorID" : "0x46d"
         }
       },
       "pointer" : {
-        "disableAcceleration" : true
-      },
-      "scrolling" : {
-        "acceleration" : {
-          "vertical" : 1
-        },
-        "distance" : {
-          "vertical" : 3
-        },
-        "reverse" : {
-          "vertical" : true
-        },
-        "speed" : {
-          "vertical" : 0
-        }
-      }
-    },
-    {
-      "if" : {
-        "device" : {
-          "category" : "mouse",
-          "productID" : "0xc093",
-          "productName" : "Advanced Corded Mouse M500s",
-          "serialNumber" : "206A37605943",
-          "vendorID" : "0x46d"
-        }
-      },
-      "pointer" : {
-        "disableAcceleration" : true
+        "acceleration" : 0,
+        "disableAcceleration" : true,
+        "speed" : 0.4
       },
       "scrolling" : {
         "acceleration" : {
@@ -250,33 +197,6 @@
         },
         "distance" : {
           "vertical" : "auto"
-        },
-        "speed" : {
-          "vertical" : 0
-        }
-      }
-    },
-    {
-      "if" : {
-        "device" : {
-          "category" : "mouse",
-          "productID" : "0xb023",
-          "productName" : "MX Master 3",
-          "serialNumber" : "8CBAE2CC3CA6B25D",
-          "vendorID" : "0x46d"
-        }
-      },
-      "pointer" : {
-        "acceleration" : 0,
-        "disableAcceleration" : true,
-        "speed" : 0.4
-      },
-      "scrolling" : {
-        "acceleration" : {
-          "vertical" : 1
-        },
-        "distance" : {
-          "vertical" : 3
         },
         "speed" : {
           "vertical" : 0
