@@ -62,7 +62,6 @@
         "RGB",
         "HSL"
     ],
-    "workbench.colorTheme": "Light Pink",
     "workbench.colorCustomizations": {
         "[Light Pink]": {
             "editor.wordHighlightBackground": "#de77b720",
@@ -155,5 +154,8 @@
     "[typescriptreact]": {
         "editor.defaultFormatter": "biomejs.biome"
     },
-    "githubPullRequests.hideViewedFiles": true
+    "githubPullRequests.hideViewedFiles": true,
+    "workbench.colorTheme": "Light Pink",
+    "workbench.preferredLightColorTheme": "Light Pink",
+    "workbench.preferredDarkColorTheme": "Activate SCARLET protocol (beta)"
 }
