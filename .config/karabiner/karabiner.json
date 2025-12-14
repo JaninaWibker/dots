@@ -595,6 +595,14 @@
                         "vendor_id": 2362
                     },
                     "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 50475,
+                        "vendor_id": 1133
+                    },
+                    "ignore": true
                 }
             ],
             "fn_function_keys": [
