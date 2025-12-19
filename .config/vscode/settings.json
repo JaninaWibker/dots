@@ -157,5 +157,10 @@
     "githubPullRequests.hideViewedFiles": true,
     "workbench.colorTheme": "Light Pink",
     "workbench.preferredLightColorTheme": "Light Pink",
-    "workbench.preferredDarkColorTheme": "Activate SCARLET protocol (beta)"
+    "workbench.preferredDarkColorTheme": "Activate SCARLET protocol (beta)",
+    "github.copilot.nextEditSuggestions.fixes": false,
+    "editor.inlineSuggest.edits.showLongDistanceHint": false,
+    "github.copilot.nextEditSuggestions.allowWhitespaceOnlyChanges": false,
+    "editor.inlineSuggest.edits.allowCodeShifting": "never",
+    "github.copilot.nextEditSuggestions.enabled": false
 }
