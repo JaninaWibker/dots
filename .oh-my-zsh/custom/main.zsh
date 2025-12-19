@@ -62,15 +62,6 @@ if [[ "$OSTYPE" != "linux-gnu" ]]; then
   export PATH="$PATH:/Applications/Inkscape.app/Contents/MacOS/"
 fi
 
-### standard C/C++ compiler
-if [[ "$OSTYPE" != "linux-gnu" ]]; then
-  export CC=gcc-12
-  export CXX=g++-12
-else
-  export CC=gcc
-  export CXX=g++
-fi
-
 # MINICONDA THINGY
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
