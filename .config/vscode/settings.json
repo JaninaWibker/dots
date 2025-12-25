@@ -162,5 +162,6 @@
     "editor.inlineSuggest.edits.showLongDistanceHint": false,
     "github.copilot.nextEditSuggestions.allowWhitespaceOnlyChanges": false,
     "editor.inlineSuggest.edits.allowCodeShifting": "never",
-    "github.copilot.nextEditSuggestions.enabled": false
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "workbench.settings.showAISearchToggle": false
 }
