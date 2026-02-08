@@ -22,7 +22,10 @@
         "distance" : {
           "vertical" : 3
         },
-        "reverse" : true,
+        "reverse" : {
+          "horizontal" : false,
+          "vertical" : true
+        },
         "speed" : {
           "vertical" : 0
         }
@@ -53,7 +56,8 @@
           "vertical" : 3
         },
         "reverse" : {
-          "vertical" : false
+          "horizontal" : false,
+          "vertical" : true
         },
         "speed" : {
           "vertical" : 0
