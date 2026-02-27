@@ -254,5 +254,28 @@
   {
     "key": "cmd+k cmd+3",
     "command": "git.openFile"
+  },
+  {
+    "key": "cmd+k alt+cmd+s",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "cmd+k cmd+s",
+    "command": "-workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "cmd+k cmd+s",
+    "command": "git.stageSelectedRanges",
+    "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
+  },
+  {
+    "key": "cmd+k alt+cmd+s",
+    "command": "-git.stageSelectedRanges",
+    "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
+  },
+  {
+    "key": "cmd+k cmd+r",
+    "command": "-github.copilot.nes.captureExpected.start",
+    "when": "editorTextFocus && github.copilot.inlineEditsEnabled"
   }
 ]
