@@ -136,7 +136,7 @@
                         ]
                     },
                     {
-                        "description": "caps_lock -> escape if pressed alone; if not pressed alone ctrl",
+                        "description": "caps_lock -> \\ (shift-alt-7) if pressed alone; if not pressed alone ctrl",
                         "manipulators": [
                             {
                                 "from": { "key_code": "caps_lock" },
@@ -148,7 +148,8 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "escape"
+                                        "key_code": "7",
+                                        "modifiers": ["left_shift", "right_option"]
                                     }
                                 ],
                                 "type": "basic"
