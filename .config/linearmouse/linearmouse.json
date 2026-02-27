@@ -187,6 +187,35 @@
     {
       "if" : {
         "device" : {
+          "category" : "mouse",
+          "productID" : "0xb042",
+          "productName" : "MX Master 4",
+          "serialNumber" : "72833CDC",
+          "vendorID" : "0x46d"
+        }
+      },
+      "pointer" : {
+        "acceleration" : 1,
+        "disableAcceleration" : true
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "distance" : {
+          "vertical" : 3
+        },
+        "reverse" : {
+          "vertical" : true
+        },
+        "speed" : {
+          "vertical" : 0
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
           "category" : "trackpad",
           "productID" : "0x342",
           "productName" : "Apple Internal Keyboard \/ Trackpad",
@@ -200,63 +229,6 @@
         "distance" : {
           "vertical" : "auto"
         },
-        "speed" : {
-          "vertical" : 0
-        }
-      }
-    },
-    {
-      "if" : {
-        "device" : {
-          "category" : "mouse",
-          "productID" : "0xb042",
-          "productName" : "MX Master 4",
-          "serialNumber" : "72833CDC",
-          "vendorID" : "0x46d"
-        }
-      },
-      "pointer" : {
-        "acceleration" : 1,
-        "disableAcceleration" : true
-      },
-      "scrolling" : {
-        "acceleration" : {
-          "vertical" : 1
-        },
-        "distance" : {
-          "vertical" : 3
-        },
-        "reverse" : true,
-        "speed" : {
-          "vertical" : 0
-        }
-      }
-    },
-    {
-      "buttons" : {
-        "universalBackForward" : true
-      },
-      "if" : {
-        "device" : {
-          "category" : "mouse",
-          "productID" : "0xb042",
-          "productName" : "MX Master 4",
-          "serialNumber" : "72833CDC",
-          "vendorID" : "0x46d"
-        }
-      },
-      "pointer" : {
-        "acceleration" : 1,
-        "disableAcceleration" : true
-      },
-      "scrolling" : {
-        "acceleration" : {
-          "vertical" : 1
-        },
-        "distance" : {
-          "vertical" : 3
-        },
-        "reverse" : true,
         "speed" : {
           "vertical" : 0
         }
