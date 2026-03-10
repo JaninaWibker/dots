@@ -10,7 +10,37 @@
   ignorecase = false
   excludesfile = ~/.config/git/global-gitignore
   whitespace = warn
+  compression = 9
 
+[status]
+  # also show branch for git status --short
+  branch = true
+
+[rerere]
+  enabled = true
+
+[alias]
+  fix = commit --amend --no-edit
+
+[diff]
+  context = 3
+  renames = copies
+  interHunkContext = 10
+
+[commit]
+  verbose = true
+
+[diff]
+  algorithm = histogram
+
+[branch]
+  sort = -committerdate
+
+[tag]
+  sort = -taggerdate
+
+[color "status"]
+  branch = 7
 
 # if on macos load macos specific config
 [includeIf "gitdir:/Users/"]
@@ -23,6 +53,34 @@
 # load custom config when working on quantco projects
 [includeIf "gitdir:~/Desktop/projects/quantco/"]
   path = ~/Desktop/projects/quantco/.gitconfig
+
+
+# github (no username included)
+# syntax: git clone gh:<org>/<repo>
+[url "https://github.com/"]
+  insteadOf = "gh:"
+
+# personal repos (note included username)
+# syntax: git clone jw:<repo>
+[url "https://JaninaWibker@github.com/JaninaWibker"]
+  insteadOf = "jw:"
+
+# quantco repos (note included username)
+# syntax: git clone qc:<repo>
+[url "https://JaninaWibkerQC@github.com/Quantco/"]
+  insteadOf = "qc:"
+
+
+# hide beginner advice in most common commands
+[advice]
+  statusHints = false
+  commitBeforeMerge = false
+  resolveConflict = false
+  pushNonFastForward = false
+  addEmptyPathspec = false
+  addIgnoredFile = false
+  mergeConflict = false
+
 
 [delta]
   features = decorations
@@ -43,17 +101,14 @@
   hunk-header-decoration-style = ul
   hunk-header-style = file line-number
 
-[rerere]
-  enabled = true
-[alias]
-  fix = commit --amend --no-edit
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 
 [maintenance]
 	repo = /Users/janina/Desktop/projects/quantco/ui-components
 [safe]
-	directory = /Users/janina/Desktop/projects/quantco/ci-test
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  directory = /Users/janina/Desktop/projects/quantco/ci-test
