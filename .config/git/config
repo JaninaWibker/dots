@@ -21,6 +21,16 @@
 
 [alias]
   fix = commit --amend --no-edit
+  # split last commit up into multiple
+  # soft reset, recreates (msg + author) previous commit but empty
+  # workflow: unstage files, do git fix, stage files, commit again
+  # rebase: use via `x git split` (no need for `b / break` as this modifies the working directory)
+  split = "!s() { \
+    git reset --soft HEAD~1 && \
+    _author=$(git show -s --format=\"%an <%ae>\" ORIG_HEAD) && \
+    git commit --allow-empty --only --reuse-message=ORIG_HEAD --author=\"$_author\" && \
+    unset _author ; \
+  }; s"
 
 [diff]
   context = 3
