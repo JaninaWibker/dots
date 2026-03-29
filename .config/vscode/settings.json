@@ -7,6 +7,7 @@
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": false,
+  "editor.find.seedSearchStringFromSelection": "selection",
   "editor.gotoLocation.multipleDefinitions": "goto",
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -26,7 +27,7 @@
   "hexdump.littleEndian": false,
   "hexdump.nibbles": 4,
   "java.errors.incompleteClasspath.severity": "ignore",
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "liveshare.featureSet": "insiders",
   "lldb.suppressUpdateNotifications": true,
   "markdown-preview-enhanced.enableExtendedTableSyntax": true,
@@ -38,7 +39,6 @@
   "markdown.preview.doubleClickToSwitchToEditor": false,
   "search.smartCase": true,
   "terminal.integrated.inheritEnv": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Light Pink",
   "workbench.editor.doubleClickTabToToggleEditorGroupSizes": "maximize",
   "workbench.editor.empty.hint": "hidden",
@@ -77,8 +77,11 @@
     "javascriptreact",
     "markdown"
   ],
-  "colorize.colorized_colors": ["ARGB", "RGB", "HSL"],
-
+  "colorize.colorized_colors": [
+    "ARGB",
+    "RGB",
+    "HSL"
+  ],
   // disable most AI "features" (except regular Copilot suggestions)
   "chat.agent.enabled": false,
   "chat.agentsControl.enabled": false,
@@ -116,7 +119,7 @@
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.settings.showAISearchToggle": false,
   "accessibility.verbosity.inlineChat": false,
-  "inlineChat.holdToSpeech": false,
+  "inlineChat.affordance": "off",
 
   // formatters, linters, etc.
   "ltex.additionalRules.motherTongue": "de",
@@ -133,6 +136,20 @@
     // "markdown",
     // "mdx",
   ],
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://ui.shadcn.com/schema.json": true,
+    "https://turbo.build/schema.json": true,
+    "https://schema.linearmouse.app": true,
+    "https://biomejs.dev": true
+  },
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow": "/.github/workflows/**/*.yml"
   },
@@ -157,24 +174,32 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome",
-    "editor.codeActionsOnSave": { "source.organizeImports.biome": "explicit" }
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.biome": "explicit"
+    }
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "biomejs.biome",
-    "editor.codeActionsOnSave": { "source.organizeImports.biome": "explicit" }
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.biome": "explicit"
+    }
   },
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome",
-    "editor.codeActionsOnSave": { "source.organizeImports.biome": "explicit" }
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.biome": "explicit"
+    }
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "biomejs.biome",
-    "editor.codeActionsOnSave": { "source.organizeImports.biome": "explicit" }
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.biome": "explicit"
+    }
   },
   "[plaintext]": {
     "editor.acceptSuggestionOnEnter": "off"
   },
-
+  "": "",
   // unrelated settings
   // (added by VSCode through the UI and therefore added at the end, this is just a divider line to be able to easily distinguish them from the settings above and move them to the correct group)
 }
