@@ -261,7 +261,7 @@ let g:NERDToggleCheckAllLines = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsable = '▾'
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
   \ "Modified"  : "*",
   \ "Staged"    : "+",
   \ "Untracked" : "-",
