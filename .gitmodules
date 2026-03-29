@@ -106,10 +106,6 @@
   path = .config/vim/pack/themes/start/paramount
   url = https://github.com/owickstrom/vim-colors-paramount
 	ignore = all
-[submodule ".config/vim/pack/themes/start/paige"] # repo was deleted :c
-  path = .config/vim/pack/themes/start/paige
-  url = https://git.sr.ht/~leon_plickat/paige
-	ignore = all
 [submodule ".config/vim/pack/themes/start/airline-themes"]
   path = .config/vim/pack/themes/start/airline-themes
   url = https://github.com/vim-airline/vim-airline-themes
