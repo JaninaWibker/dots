@@ -49,8 +49,6 @@ packadd! dracula
 packadd! nerdtree
 packadd! nerdtree-git-plugin
 
-set rtp+=/usr/bin/fzf
-
 autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 function! MyHighlights() abort
@@ -66,7 +64,7 @@ augroup END
 
 
 colorscheme paramount
-" colorscheme dracula
+" colorscheme paige
 set background=dark
 
 " this may improve the quality of colors or may make it worse, depends. But worth trying out
