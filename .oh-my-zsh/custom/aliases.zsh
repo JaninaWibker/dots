@@ -37,6 +37,8 @@ alias gft='git fixto'
 alias gd='git diff'
 alias gdd='git diff --staged'
 alias gl='git log'
+alias gll='git statlog'
+alias glf='git statlogfull'
 
 alias gco='git checkout'
 alias gb='git branch'

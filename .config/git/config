@@ -39,6 +39,17 @@
     }; s"
   empty = commit --allow-empty --only --no-edit --message="(empty)"
 
+  statlog = log \
+    --stat \
+    --decorate \
+    --date=format:'%Y-%m-%d %H:%M:%S' \
+    --pretty=format:'%C(bold yellow)%h%C(reset) %C(white)%s%C(reset)%C(bold 4)%d%C(reset)%n by %C(white)%an%C(reset) on %C(white)%ad (%ar)%C(reset)%n'
+  statlogfull = log \
+    --stat \
+    --decorate \
+    --date=format:'%Y-%m-%d %H:%M:%S' \
+    --pretty=format:'%C(bold yellow)%H%C(reset)%C(bold 4)%d%C(reset)%n    %C(white)%s%C(reset)%n by %C(white)%an <%ae>%C(reset)%n on %C(white)%ad (%ar)%C(reset)%n'
+
 [diff]
   context = 3
   renames = copies
