@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+
+gui:
+  tabWidth: 2
+  showRootItemInFileTree: false
+  sidePanelWidth: 0.3
+  commitHashLength: 6
+  theme:
+    activeBorderColor: ["#e32791", "bold"]
+    inactiveBorderColor: ["#4e4e4e"]
+    searchingActiveBorderColor: ["#ebbcba", "bold"]
+    optionsTextColor: ["#9ccfd8"]
+    selectedLineBgColor: ["#c30771"]
+    inactiveViewSelectedLineBgColor: ["#26233a", "bold"]
+    cherryPickedCommitFgColor: ["#1f1d2e"]
+    cherryPickedCommitBgColor: ["#ebbcba"]
+    markedBaseCommitFgColor: ["#9ccfd8"]
+    markedBaseCommitBgColor: ["#f6c177"]
+    unstagedChangesColor: ["#eb6f92"]
+    defaultFgColor: ["#e0def4"]
+
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never
+  branchLogCmd: 'git statlog --color=always {{branchName}} --'

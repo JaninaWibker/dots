@@ -13,6 +13,11 @@
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.parameterHints.enabled": false,
   "editor.quickSuggestionsDelay": 100,
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "off",
+    "strings": "off"
+  },
   "editor.stickyScroll.enabled": false,
   "editor.suggestOnTriggerCharacters": false,
   "editor.tabSize": 2,
@@ -58,7 +63,8 @@
     }
   },
   "files.associations": {
-    "*.ne": "bnf"
+    "*.ne": "bnf",
+    "*.just": "just",
   },
   "colorize.languages": [
     "css",
@@ -89,9 +95,6 @@
   "chat.detectParticipant.enabled": false,
   "chat.extensionTools.enabled": false,
   "chat.implicitContext.suggestedContext": false,
-  "chat.sendElementsToChat.attachCSS": false,
-  "chat.sendElementsToChat.attachImages": false,
-  "chat.sendElementsToChat.enabled": false,
   "chat.tools.terminal.enableAutoApprove": false,
   "chat.useAgentsMdFile": false,
   "editor.inlineSuggest.edits.allowCodeShifting": "never",
@@ -120,6 +123,8 @@
   "workbench.settings.showAISearchToggle": false,
   "accessibility.verbosity.inlineChat": false,
   "inlineChat.affordance": "off",
+  "inlineChat.fixDiagnostics": false,
+  "C_Cpp.copilotHover": "disabled",
 
   // formatters, linters, etc.
   "ltex.additionalRules.motherTongue": "de",
@@ -137,18 +142,19 @@
     // "mdx",
   ],
   "json.schemaDownload.trustedDomains": {
-    "https://schemastore.azurewebsites.net/": true,
-    "https://raw.githubusercontent.com/microsoft/vscode/": true,
-    "https://raw.githubusercontent.com/devcontainers/spec/": true,
-    "https://www.schemastore.org/": true,
-    "https://json.schemastore.org/": true,
-    "https://json-schema.org/": true,
+    "https://biomejs.dev": true,
     "https://developer.microsoft.com/json-schemas/": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
     "https://raw.githubusercontent.com/": true,
-    "https://ui.shadcn.com/schema.json": true,
-    "https://turbo.build/schema.json": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
     "https://schema.linearmouse.app": true,
-    "https://biomejs.dev": true
+    "https://schemastore.azurewebsites.net/": true,
+    "https://turbo.build/schema.json": true,
+    "https://ui.shadcn.com/schema.json": true,
+    "https://unpkg.com": true,
+    "https://www.schemastore.org/": true
   },
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow": "/.github/workflows/**/*.yml"
@@ -199,7 +205,15 @@
   "[plaintext]": {
     "editor.acceptSuggestionOnEnter": "off"
   },
+  "[c]": {
+    "editor.formatOnPaste": false
+  },
+  "[cpp]": {
+    "editor.formatOnPaste": false
+  },
   "": "",
+  "workbench.browser.sendElementsToChat.attachImages": false,
   // unrelated settings
-  // (added by VSCode through the UI and therefore added at the end, this is just a divider line to be able to easily distinguish them from the settings above and move them to the correct group)
+  // (added by VSCode through the UI and therefore added at the end, this is just a divider line to
+  // be able to easily distinguish them from the settings above and move them to the correct group)
 }

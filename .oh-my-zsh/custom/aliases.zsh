@@ -21,6 +21,7 @@ alias dotsd="dots diff"
 alias dotsdd="dots diff --staged"
 alias dotsl="dots log"
 
+alias ldots="lazygit --git-dir $HOME/.cfg --work-tree $HOME"
 
 # git aliases
 alias g="git"
@@ -45,6 +46,8 @@ alias gb='git branch'
 alias gr='git rebase'
 alias gra='git rebase --abort'
 alias grc='git rebase --continue'
+
+alias lg="lazygit"
 
 # make less have pretty colors
 export LESS="--RAW-CONTROL-CHARS"
