@@ -8,7 +8,7 @@
 
 [core]
   ignorecase = false
-  excludesfile = ~/.config/git/global-gitignore
+  excludesfile = ~/.config/git/ignore
   whitespace = warn
   compression = 9
 
@@ -18,6 +18,9 @@
 
 [rerere]
   enabled = true
+
+[rebase]
+  updateRefs = true
 
 [alias]
   fix = commit --amend --no-edit
