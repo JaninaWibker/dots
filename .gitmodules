@@ -137,15 +137,11 @@
   url = https://github.com/JaninaWibker/awesome-config
 	ignore = all
 
-[submodule ".oh-my-zsh/custom/plugins/zsh-completions"]
-  path = .oh-my-zsh/custom/plugins/zsh-completions
+[submodule ".config/zsh/plugins/zsh-completions"]
+  path = .config/zsh/plugins/zsh-completions
   url = https://github.com/zsh-users/zsh-completions
 	ignore = all
-[submodule ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
-  path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+[submodule ".config/zsh/plugins/zsh-syntax-highlighting"]
+  path = .config/zsh/plugins/zsh-syntax-highlighting
   url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-	ignore = all
-[submodule ".oh-my-zsh/custom/plugins/fzf-zsh-plugin"]
-  path = .oh-my-zsh/custom/plugins/fzf-zsh-plugin
-  url = https://github.com/unixorn/fzf-zsh-plugin
 	ignore = all

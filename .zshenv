@@ -2,14 +2,12 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-export MAMBARC="$XDG_CONFIG_HOME/mamba/mambarc"
+
+export PRJ="$HOME/Desktop/projects"
+export EDITOR="vim"
+
 
 # setting path variable
-path+=('/opt/homebrew/bin')
-path+=('/opt/homebrew/sbin')
+# homebrew first so it wins over the macOS versions in /usr/bin
+path=('/opt/homebrew/bin' '/opt/homebrew/sbin' $path)
 path+=('/usr/local/sbin')
-path+=('/usr/local/opt/ruby/bin')
-path+=('/usr/local/dvisvgm/bin')
-path+=('$HOME/.gem/ruby/3.0.0/bin')
-path+=('$HOME/scripts')
-path+=('$HOME/.yarn/bin:$XDG_CONFIG_HOME/yarn/global/node_modules/.bin')

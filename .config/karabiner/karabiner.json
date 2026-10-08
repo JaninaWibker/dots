@@ -12,7 +12,7 @@
                                     "key_code": "return_or_enter",
                                     "modifiers": { "mandatory": ["left_gui", "left_shift"] }
                                 },
-                                "to": [{ "shell_command": "osascript $HOME/.oh-my-zsh/custom/applescript/new_terminal.scpt" }],
+                                "to": [{ "shell_command": "osascript $HOME/.config/zsh/scripts/new_terminal.scpt" }],
                                 "type": "basic"
                             }
                         ]
