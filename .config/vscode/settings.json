@@ -1,7 +1,6 @@
 {
   // general settings
   "breadcrumbs.enabled": true,
-  "clock.dateFormat": "HH:MM (dd.mm)",
   "comments.visible": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
@@ -52,6 +51,8 @@
   "workbench.editor.pinnedTabSizing": "shrink",
   "workbench.editor.preferHistoryBasedLanguageDetection": true,
   "workbench.editor.tabActionLocation": "left",
+  "workbench.editor.useModal": "off",
+  "workbench.experimental.modernUI": false,
   "workbench.preferredDarkColorTheme": "Activate SCARLET protocol (beta)",
   "workbench.preferredLightColorTheme": "Light Pink",
   "workbench.colorCustomizations": {
@@ -89,6 +90,7 @@
     "HSL"
   ],
   // disable most AI "features" (except regular Copilot suggestions)
+  "chat.disableAIFeatures": true,
   "chat.agent.enabled": false,
   "chat.agentsControl.enabled": false,
   "chat.checkpoints.enabled": false,
@@ -109,18 +111,24 @@
   "github.copilot.chat.summarizeAgentConversationHistory.enabled": false,
   "github.copilot.editor.enableCodeActions": false,
   "github.copilot.enable": {
-    "*": true,
     "plaintext": false,
     "markdown": false,
     "scminput": false,
-    "yaml": true
+    "*": false
   },
+  "github.copilot.chat.backgroundAgent.enabled": false,
+  "github.copilot.chat.cloudAgent.enabled": false,
+  "github.copilot.chat.exploreAgent.enabled": false,
+  "github.copilot.chat.languageContext.typescript.enabled": false,
   "github.copilot.nextEditSuggestions.allowWhitespaceOnlyChanges": false,
   "github.copilot.nextEditSuggestions.enabled": false,
+  "github.copilot.nextEditSuggestions.extendedRange": false,
   "github.copilot.nextEditSuggestions.fixes": false,
+  "chat.extensionUnification.enabled": false,
   "githubPullRequests.experimental.chat": false,
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.settings.showAISearchToggle": false,
+  "workbench.browser.sendElementsToChat.attachImages": false,
   "accessibility.verbosity.inlineChat": false,
   "inlineChat.affordance": "off",
   "inlineChat.fixDiagnostics": false,
@@ -159,6 +167,14 @@
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow": "/.github/workflows/**/*.yml"
   },
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ],
   "yaml.format.enable": false,
   "[dockercompose]": {
     "editor.insertSpaces": true,
@@ -211,9 +227,9 @@
   "[cpp]": {
     "editor.formatOnPaste": false
   },
+
   "": "",
-  "workbench.browser.sendElementsToChat.attachImages": false,
   // unrelated settings
   // (added by VSCode through the UI and therefore added at the end, this is just a divider line to
-  // be able to easily distinguish them from the settings above and move them to the correct group)
+  // be able to easily distinguish them from the settings above and move them to the correct group),
 }

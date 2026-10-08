@@ -18,9 +18,8 @@ gui:
     markedBaseCommitBgColor: ["#f6c177"]
     unstagedChangesColor: ["#eb6f92"]
     defaultFgColor: ["#e0def4"]
-
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --paging=never
+      command: delta --paging=never
   branchLogCmd: 'git statlog --color=always {{branchName}} --'
