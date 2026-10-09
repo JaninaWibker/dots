@@ -31,7 +31,7 @@ Configurations for both:
 Configurations for macOS:
 - iterm2
 - karabiner elements
-- custom keyboard layout (`.config/mac-xkb-adaptation.bundle`)
+- custom keyboard layout (`.config/janina-layout-mac.bundle`)
 - linearmouse
 
 Configurations for linux:
@@ -40,7 +40,7 @@ Configurations for linux:
 - dunst
 - zathura
 - rofi (light & dark variants)
-- custom xkb keymap (`.config/janina-layout`)
+- custom xkb keymap (`.config/janina-layout-xkb`)
 - [logiops](https://github.com/PixlOne/logiops/)
 - cool little custom color picker (with history functionality) called pick-color
 
