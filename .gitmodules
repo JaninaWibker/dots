@@ -115,23 +115,6 @@
   url = https://github.com/vim-airline/vim-airline-themes
 	ignore = all
 
-[submodule "programs/boomer"]
-  path = programs/boomer
-  url = https://github.com/tsoding/boomer
-	ignore = all
-[submodule "programs/ux_play"]
-  path = programs/ux_play
-  url = https://github.com/antimof/UxPlay
-	ignore = all
-[submodule "programs/nsxiv"]
-  path = programs/nsxiv
-  url = https://github.com/nsxiv/nsxiv
-	ignore = all
-[submodule "programs/neofetch"]
-  path = programs/neofetch
-  url = https://github.com/JaninaWibker/neofetch
-	ignore = all
-
 [submodule ".config/awesome"]
   path = .config/awesome
   url = https://github.com/JaninaWibker/awesome-config
