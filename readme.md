@@ -1,6 +1,13 @@
 # Dotfiles
 
-These dotfiles are a mixture of dotfiles across both Linux and Mac OS systems, some things only work on one but not the other. This repository is best used as a git bare repository ([see this](https://www.atlassian.com/git/tutorials/dotfiles)).
+These dotfiles have evolved over over a decade of use.
+Initially for both Linux and macOS, but now mostly focussed on macOS with apple silicon.
+Most linux-related configs have been extracted to the `linux` branch to not pollute the macOS setup.
+
+This repository is best used as a git bare repository ([see this](https://www.atlassian.com/git/tutorials/dotfiles)).
+
+![Screenshot - macOS](https://i.imgur.com/masH4AS.png)
+<!--suppress HtmlDeprecatedAttribute --><p align="center">macOS</p>
 
 ![Screenshot - Linux](https://i.imgur.com/6j6H7Yd.png)
 <!--suppress HtmlDeprecatedAttribute --><p align="center">Linux (dark theme)</p>
@@ -9,47 +16,47 @@ These dotfiles are a mixture of dotfiles across both Linux and Mac OS systems, s
 <!--suppress HtmlDeprecatedAttribute --><p align="center">Linux (light theme)</p>
 
 
-![Screenshot - macOS](https://i.imgur.com/yJMfISd.png)
-<!--suppress HtmlDeprecatedAttribute --><p align="center">macOS</p>
-
 ## What’s included?
 
-Configurations for:
-- awesomewm
+Configurations for both:
+- zsh
+- bash (fallback; kept rather minimal and self-contained)
 - tmux
-- iterm2 (themes: Default, Snazzy, Cyberpunk; currently using Default)
+- vim
+- vscode
+- git and lazygit
+- bat
+- smol things like gh, sqlite and neofetch
+
+Configurations for macOS:
+- iterm2
+- karabiner elements
+- custom keyboard layout (`.config/mac-xkb-adaptation.bundle`)
+- linearmouse
+
+Configurations for linux:
+- awesomewm
 - alacritty
 - dunst
-- rofi (light & dark variants)
-- vimrc (and plugins)
 - zathura
-- zsh ([oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh))
-- neofetch ([custom build](https://github.com/JaninaWibker/neofetch) with ([überzug](https://github.com/seebye/ueberzug) support)
-- vscode (and list of installed packages)
-- [yabai](https://github.com/koekeishiya/yabai) & [skhd](https://github.com/koekeishiya/skhd)
-- [karabiner elements](https://pqrs.org/osx/karabiner/)
-- [logiops](https://github.com/PixlOne/logiops/) (MX Master 3)
-- lot’s of smaller config files like sqliterc, inputrc, …
-
-Other things
-- XCompose file
-- custom xkb keymap (mac OS equivalent can be found in `.config/mac-xkb-adaptation.bundle`)
-- a custom color picker (with history functionality) called pick-color (using [colorpicker](https://aur.archlinux.org/packages/colorpicker/))
-- scripts for
-  - controlling spotify (applescript)
-  - changing theme,
-  - lock-screen related things and
-  - xrandr
+- rofi (light & dark variants)
+- custom xkb keymap (`.config/janina-layout`)
+- [logiops](https://github.com/PixlOne/logiops/)
+- cool little custom color picker (with history functionality) called pick-color
 
 
 ## How to install
 
-The installation differs a bit from just normally cloning the repo and using it as the files belong in vastly different locations and not in a single folder, that is the reason I use a [git bare repository](https://www.atlassian.com/git/tutorials/dotfiles) for my dotfiles.
+As dotfiles can go into different places but are almost always found in `$HOME` the installation differs a bit from a regular repository.
+Using a [bare repository](https://www.atlassian.com/git/tutorials/dotfiles) located in the home directory is nice because:
+- experimentation with configs is easy, just edit the files (no templating system involved, unlike in some ansible or nix/home-manager setups)
+- you can easily make changes, commit, and push them. mirrors what you know from all other projects
+- you can view diffs and see what changed (this is a huge improvement)
 
 The installation is as follows:
 
 ```shell
-# this is only needed temporarily, the ZSH config includes this line as well, no need to manually add this somewhere.
+# only needed once, afterwards the zsh config sets this
 alias dots="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME"
 echo ".cfg" >> .gitignore # this is to avoid weird recursion problems
 git clone --bare --recurse-submodules https://www.github.com/JaninaWibker/dots $HOME/.cfg
@@ -58,42 +65,34 @@ dots checkout
 dots config --local status.showUntrackedFiles no
 # source the newly added files
 zsh
-# this initializes a lot of config files like explained in "Other notes"
-change-theme dark
 ```
 
 In general use `dots` everywhere where you would normally use `git` for dealing with these dotfiles.
 
-When updating use `dots submodule update --recursive --remote` to update all submodules.
-Incase a completely new submodule was added running `dots submodule init` before is required in order to tell git that new submodules exist that need updating.
+- `dots submodule update --recursive --remote` to update all submodules.
+- `dots submodule init` when a completely new submodule got added
 
-## What to install (incl. optional)?
+## What to install as well?
 
-> These are lists of applications I often use, some of these have config files in this repo, some don’t.
+> isn't up-to-date, this changes too often and it is too easy to forget to update this
 
-**In general** install tmux, zsh, oh-my-zsh, zsh-completions, vim (newest version), git (newest version), VS-Code, SublimeText, Atom, Spotify, Chrome/Chromium, Vivaldi, Firefox, Insomnia, Discord, Typora, KDE-Connect, cloc, ffmpeg, gcc, gdb, gnuplot, jq, lua, nodejs, ruby, python, nano, curl, wget, sqlite, neofetch, mitm-proxy, some latex distribution, dvisvgm, rust, cm.
+**Both**: tmux, zsh, vim, git, vscode, spotify, browser, discord, cloc, ffmpeg, jq, node, python, sqlite, typst, inkscape, tailscale, obsidian
 
-**On Linux** specifically install dunst, sxiv, rofi, zathura, alacritty, überzug, betterlockscreen (-git on arch as the other version is pretty outdated and doesn't support "--off"), xidlehook, maybe awesome wm, xclip (and similar), spicetify, zoomer, Flameshot, Notion (using Lotion or some other method), Font Manager, colorpicker, InkScape, Gimp, Krita, Thunar, widevine related stuff (for chrome/chromium/vivaldi).
+**macOS** karabiner-elements, iterm2, rectangle, linearmouse, shottr, figma, busycal, orion
 
-**On Mac OS** specifically install Karabiner Elements, iTerm2, TablePlus, Notion, Anybar, LuLu, Rectangle, IINA, Tunnelblick, puush, Übersicht, yabai, skhd, Discovery, Witch, ScrollReverser, DiscreteScroll.
+**Linux** dunst, nsxiv, rofi, zathura, alacritty, überzug, betterlockscreen, xidlehook, awesome wm, xclip (and similar), spicetify, zoomer, flameshot, font manager, colorpicker, krita, thunar
+
 
 **Browser extensions**:
-alt-q (private personal fork),
-[auto scroll](https://chrome.google.com/webstore/detail/autoscroll/occjjkgifpmdgodlplnacmkejpdionan),
-[html5 video keyboard shortcuts](https://chrome.google.com/webstore/detail/html5-video-keyboard-shor/llhmaciggnibnbdokidmbilklceaobae),
-[ublock origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm),
-[enhancer for youtube](https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle),
-[betterttv](https://chrome.google.com/webstore/detail/betterttv/ajopnjidmegmdimjlfnijceegpefgped),
-[frankerfacez](https://chrome.google.com/webstore/detail/frankerfacez/fadndhdgpmmaapbmfcknlfgcflmmmieb),
-[unwanted twitch](https://chrome.google.com/webstore/detail/unwanted-twitch/egbpddkgpjmliolmpjenjomflclekjld),
-[bitwarden](https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb),
-[cookie autodelete](https://chrome.google.com/webstore/detail/cookie-autodelete/fhcgjolkccmbidfldomjliifgaodjagh),
-[dark reader](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh),
-[zhongwen chinese english dictionary](https://chrome.google.com/webstore/detail/zhongwen-chinese-english/kkmlkkjojmombglmlpbpapmhcaljjkde)
+- ublock origin
+- bitwarden
+- refined github
+- extension to switch to previously active tab via shortcut (there are multiple of those)
+- sponsorblock
+- html5 video keyboard shortcuts
+- custom playback speed for youtube (there are multiple of those)
 
 ## Other notes
-
-It is important to run `$HOME/scripts/change-theme dark` once after installation, as the many config files are generated by switching the theme (the base file and a specific file only containing the config for a theme are concatinated into the complete config file which is not in the repo).
 
 The logiops config file comes with the following mappings:
 
@@ -107,7 +106,49 @@ The custom xkb layout (as well as my own custom keyboard - [jdkbd](https://githu
 > http://www.keyboard-layout-editor.com/#/gists/153a860001da7b2fd4cc9ee0bf72accb
 
 
-## Scripts
+### VS Code
+
+For vscode to use the files under `.config/vscode` you have to do a bit of symlink hackery to link the ones from the vscode installation directory to the ones in `.config`.
+
+**Utilities**
+
+- atom keymap
+- toggle
+- hexdump for vscode
+- better comments
+- colorize
+- unique lines
+- vscode-pdf
+
+**Themes**
+
+- light pink
+- rosé pine
+- city lights
+- cyberpunk
+
+**Syntax Highlighting & Language Support**
+
+- web dev
+  - mdx
+  - tailwind intellisense
+  - biome
+  - eslint
+  - prettier
+  - pretty typescript errors
+  - svg
+- typst: tinymist, ltex+
+- bnf & ebnf highlighting
+- c/c++, codeLLDB
+- java related (debugger for java, java test runner)
+- python related (pylance, ruff, etc.)
+- container tools, docker
+- github actions
+- nix ide
+- configuration languages, etc.: dotenv, yaml, just
+
+
+## Scripts (linux)
 
 Scripts are contained in the `$HOME/scripts` folder. Currently these scripts exist:
 - `change-theme <dark|light>`: toggle between light / dark theme
@@ -117,53 +158,3 @@ Scripts are contained in the `$HOME/scripts` folder. Currently these scripts exi
 - `quad-screen-xrandr`: configure monitor arrangement for 4-monitor setup (depends on `$HIGH_DPI`-env variable)
 - `imgcat <file>`: display image file in terminal (**requires ueberzug**)
 - `tex2svg`: compile a tex file into an svg file (using [dvisvgm](https://dvisvgm.de/Downloads/))
-
-### VS Code
-
-VS Code configs are split between linux and mac, the linux files are inside "config/Code - OSS/User/" while the mac files are inside ".vscode-symlink/" (this is because of how the settings are implemented on my mac installation). The files may be somewhat out of sync, also the reason behind the split is different keybinds (because mac os has an extra modifier with the cmd key), so they are different by design.
-
-> important packages are in bold
-
-**Settings / Keyboard Shortcuts / ...**
-
-- **atom keymap**
-- **block travel**
-- **clock in status bar** 
-- **Toggle**
-
-**Themes**
-
-- city lights icon package
-- city lights theme
-- **cyberpunk (SCARLET; active theme)**
-
-**Other**
-
-- **Markdown Preview Enhanced**
-- **hexdump for VSCode**
-- **better comments**
-- **colorize**
-- Unique Lines
-- LaTeX Workshop
-- Live Share
-- Live Share Chat
-- Remote VSCode
-- change-case
-
-**Syntax Highlighting & Language Support**
-
-- bnf & ebnf highlighting
-- c/c++
-- checkstyle for java
-- codeLLDB
-- debugger for java
-- java test runner
-- docker
-- **dotenv**
-- gnuplot
-- haskell syntax highlighting
-- Language Support for Java by RedHat
-- **lua-language-server**
-- Nim language support
-- vimL
-- x86 / x64 Assembly
