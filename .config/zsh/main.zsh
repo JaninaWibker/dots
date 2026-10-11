@@ -1,6 +1,7 @@
 . $XDG_CONFIG_HOME/zsh/keybinds.zsh
 . $XDG_CONFIG_HOME/zsh/aliases.zsh
 . $XDG_CONFIG_HOME/zsh/functions.zsh
+. $XDG_CONFIG_HOME/zsh/secrets.zsh
 . $XDG_CONFIG_HOME/zsh/themes/janina.zsh-theme
 
 if [[ $OSTYPE == darwin* ]]; then
