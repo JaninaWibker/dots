@@ -5,7 +5,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>org.sil.ukelele.keyboardlayout.mac-xkb-adaptation</string>
 	<key>CFBundleName</key>
-	<string>mac-xkb-adaptation</string>
+	<string>layout-janina</string>
 	<key>CFBundleVersion</key>
 	<string></string>
 	<key>KLInfo_janina's layout</key>
