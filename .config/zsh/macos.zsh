@@ -8,6 +8,9 @@ fi
 
 export LANG=en_US.UTF-8
 
+# obsidian vault
+export NOTES="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes"
+
 function cdf() {
   cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`" # cd's to the folder currently opened in finder
 }

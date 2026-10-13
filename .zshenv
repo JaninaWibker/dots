@@ -6,7 +6,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export PRJ="$HOME/Desktop/projects"
 export EDITOR="vim"
 
-
 # setting path variable
 # homebrew first so it wins over the macOS versions in /usr/bin
 path=('/opt/homebrew/bin' '/opt/homebrew/sbin' $path)
