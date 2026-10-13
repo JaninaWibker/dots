@@ -1,0 +1,16 @@
+# https://tombi-toml.github.io/tombi/docs/configuration/
+
+toml-version = "v1.1.0"
+
+[format.rules]
+group-blank-lines-limit = 2
+trailing-comment-space-width = 1
+string-quote-style = "double"
+
+[lint.rules]
+dotted-keys-out-of-order = "off"
+tables-out-of-order = "off"
+
+[schema]
+enabled = true
+
